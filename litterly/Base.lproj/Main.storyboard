@@ -21,7 +21,7 @@
                         <viewLayoutGuide key="safeArea" id="Wmu-L2-XQH"/>
                     </view>
                     <connections>
-                        <segue destination="BYZ-38-t0r" kind="show" id="NYa-en-081"/>
+                        <segue destination="BYZ-38-t0r" kind="show" identifier="SigninViewController" id="NYa-en-081"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nEV-Wh-NV2" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -39,7 +39,7 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
-                        <segue destination="BLU-kC-Bc2" kind="show" id="f7S-Sj-PMM"/>
+                        <segue destination="BLU-kC-Bc2" kind="show" identifier="MapsViewController" id="f7S-Sj-PMM"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -57,7 +57,7 @@
                         <viewLayoutGuide key="safeArea" id="ACC-VP-zFu"/>
                     </view>
                     <connections>
-                        <segue destination="hmH-0O-Pg0" kind="show" id="7a5-gp-ZVq"/>
+                        <segue destination="hmH-0O-Pg0" kind="show" identifier="ProfileViewController" id="7a5-gp-ZVq"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="l5Y-Xv-eKL" userLabel="First Responder" sceneMemberID="firstResponder"/>
