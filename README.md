@@ -87,10 +87,11 @@ Group Project - README Template
    * Tap to open Profile page
 
 ## Wireframes
-[Add picture of your hand sketched wireframes in this section]
-<img src="YOUR_WIREFRAME_IMAGE_URL" width=600>
+This was our initial idea. We eneded up going a totally different route as shown with the digital mockup.
+<img src="https://i.imgur.com/XSRA5tX.jpg">
 
 ### [BONUS] Digital Wireframes & Mockups
+<img src="https://i.imgur.com/jwIO0w6.jpg">
 
 ### [BONUS] Interactive Prototype
 
