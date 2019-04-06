@@ -11,16 +11,15 @@ Group Project - README Template
 
 ## Overview
 ### Description
-[Description of your app]
+litterly is an app that encourages any individual to help clean up their environment together as a community through a gamified points system.
 
 ### App Evaluation
-[Evaluation of your app across the following attributes]
-- **Category: Social**
-- **Mobile: What the heck is this**
-- **Story:**
-- **Market:**
-- **Habit:**
-- **Scope:**
+- **Category: Social/Environment**
+- **Mobile: This app relies heavily on the GPS functionality of a phone. However if we do decide to build a website for it, it will have limited functionality**
+- **Story: Mark any location on the map that is dirty and then team up with others to clean up the site**
+- **Market: Any individual that would like to help their community to be trash free**
+- **Habit: After your clean up, you would be rewarded with points. The points then later can be used to help acquire real world objects**
+- **Scope: Potentially the world. You need google maps enabled for your country and internet access**
 
 ## Product Spec
 
@@ -36,7 +35,6 @@ Group Project - README Template
 * User is able to tap on a marker and host an event for that location
 * User is able to view the profile icons of all the people that are going to the event
 * User is able to create a marker on the map based on their location and become the event lead
-* 
 * User is able to view all the events that they are going to on the events view page
 * A logout button
 * A profile view where user is able to view their past clean up events
