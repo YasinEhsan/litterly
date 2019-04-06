@@ -8,10 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		C5D83E2122581793009CB884 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5D83E2022581793009CB884 /* AppDelegate.swift */; };
-		C5D83E2322581793009CB884 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5D83E2222581793009CB884 /* ViewController.swift */; };
 		C5D83E2622581793009CB884 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C5D83E2422581793009CB884 /* Main.storyboard */; };
 		C5D83E2822581794009CB884 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C5D83E2722581794009CB884 /* Assets.xcassets */; };
 		C5D83E2B22581794009CB884 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C5D83E2922581794009CB884 /* LaunchScreen.storyboard */; };
+		C5DD088122584562000988A3 /* IntroViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5DD088022584562000988A3 /* IntroViewController.swift */; };
+		C5DD088322584589000988A3 /* SigninViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5DD088222584589000988A3 /* SigninViewController.swift */; };
+		C5DD0885225845B7000988A3 /* MapsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5DD0884225845B7000988A3 /* MapsViewController.swift */; };
+		C5DD0887225845D1000988A3 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5DD0886225845D1000988A3 /* ProfileViewController.swift */; };
 		D34B1F79709B5F5A3BD8D8B6 /* Pods_litterly.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A6E706035DFCD681245FB63D /* Pods_litterly.framework */; };
 /* End PBXBuildFile section */
 
@@ -20,11 +23,14 @@
 		A6E706035DFCD681245FB63D /* Pods_litterly.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_litterly.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C5D83E1D22581793009CB884 /* litterly.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = litterly.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C5D83E2022581793009CB884 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		C5D83E2222581793009CB884 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		C5D83E2522581793009CB884 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		C5D83E2722581794009CB884 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C5D83E2A22581794009CB884 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C5D83E2C22581794009CB884 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C5DD088022584562000988A3 /* IntroViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroViewController.swift; sourceTree = "<group>"; };
+		C5DD088222584589000988A3 /* SigninViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SigninViewController.swift; sourceTree = "<group>"; };
+		C5DD0884225845B7000988A3 /* MapsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapsViewController.swift; sourceTree = "<group>"; };
+		C5DD0886225845D1000988A3 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		CCB928DB4E5E78DB217C54B3 /* Pods-litterly.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-litterly.debug.xcconfig"; path = "Target Support Files/Pods-litterly/Pods-litterly.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -46,7 +52,6 @@
 				CCB928DB4E5E78DB217C54B3 /* Pods-litterly.debug.xcconfig */,
 				39E256F25A70D3C807D7B6F4 /* Pods-litterly.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -72,11 +77,14 @@
 			isa = PBXGroup;
 			children = (
 				C5D83E2022581793009CB884 /* AppDelegate.swift */,
-				C5D83E2222581793009CB884 /* ViewController.swift */,
 				C5D83E2422581793009CB884 /* Main.storyboard */,
 				C5D83E2722581794009CB884 /* Assets.xcassets */,
 				C5D83E2922581794009CB884 /* LaunchScreen.storyboard */,
 				C5D83E2C22581794009CB884 /* Info.plist */,
+				C5DD088022584562000988A3 /* IntroViewController.swift */,
+				C5DD088222584589000988A3 /* SigninViewController.swift */,
+				C5DD0884225845B7000988A3 /* MapsViewController.swift */,
+				C5DD0886225845D1000988A3 /* ProfileViewController.swift */,
 			);
 			path = litterly;
 			sourceTree = "<group>";
@@ -246,8 +254,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C5D83E2322581793009CB884 /* ViewController.swift in Sources */,
+				C5DD088322584589000988A3 /* SigninViewController.swift in Sources */,
+				C5DD088122584562000988A3 /* IntroViewController.swift in Sources */,
+				C5DD0887225845D1000988A3 /* ProfileViewController.swift in Sources */,
 				C5D83E2122581793009CB884 /* AppDelegate.swift in Sources */,
+				C5DD0885225845B7000988A3 /* MapsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
