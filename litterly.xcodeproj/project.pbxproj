@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C5D3E903225BB10900C03AFB /* CardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5D3E901225BB10900C03AFB /* CardViewController.swift */; };
+		C5D3E904225BB10900C03AFB /* CardViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C5D3E902225BB10900C03AFB /* CardViewController.xib */; };
 		C5D83E2122581793009CB884 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5D83E2022581793009CB884 /* AppDelegate.swift */; };
 		C5D83E2622581793009CB884 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C5D83E2422581793009CB884 /* Main.storyboard */; };
 		C5D83E2822581794009CB884 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C5D83E2722581794009CB884 /* Assets.xcassets */; };
@@ -21,6 +23,8 @@
 /* Begin PBXFileReference section */
 		39E256F25A70D3C807D7B6F4 /* Pods-litterly.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-litterly.release.xcconfig"; path = "Target Support Files/Pods-litterly/Pods-litterly.release.xcconfig"; sourceTree = "<group>"; };
 		A6E706035DFCD681245FB63D /* Pods_litterly.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_litterly.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C5D3E901225BB10900C03AFB /* CardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardViewController.swift; sourceTree = "<group>"; };
+		C5D3E902225BB10900C03AFB /* CardViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CardViewController.xib; sourceTree = "<group>"; };
 		C5D83E1D22581793009CB884 /* litterly.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = litterly.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C5D83E2022581793009CB884 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C5D83E2522581793009CB884 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -85,6 +89,8 @@
 				C5DD088222584589000988A3 /* SigninViewController.swift */,
 				C5DD0884225845B7000988A3 /* MapsViewController.swift */,
 				C5DD0886225845D1000988A3 /* ProfileViewController.swift */,
+				C5D3E901225BB10900C03AFB /* CardViewController.swift */,
+				C5D3E902225BB10900C03AFB /* CardViewController.xib */,
 			);
 			path = litterly;
 			sourceTree = "<group>";
@@ -158,6 +164,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C5D3E904225BB10900C03AFB /* CardViewController.xib in Resources */,
 				C5D83E2B22581794009CB884 /* LaunchScreen.storyboard in Resources */,
 				C5D83E2822581794009CB884 /* Assets.xcassets in Resources */,
 				C5D83E2622581793009CB884 /* Main.storyboard in Resources */,
@@ -256,6 +263,7 @@
 			files = (
 				C5DD088322584589000988A3 /* SigninViewController.swift in Sources */,
 				C5DD088122584562000988A3 /* IntroViewController.swift in Sources */,
+				C5D3E903225BB10900C03AFB /* CardViewController.swift in Sources */,
 				C5DD0887225845D1000988A3 /* ProfileViewController.swift in Sources */,
 				C5D83E2122581793009CB884 /* AppDelegate.swift in Sources */,
 				C5DD0885225845B7000988A3 /* MapsViewController.swift in Sources */,

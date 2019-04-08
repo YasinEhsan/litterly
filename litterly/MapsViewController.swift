@@ -9,22 +9,197 @@
 import UIKit
 
 class MapsViewController: UIViewController {
+    
+    //the view state of the card that we will be reffering to
+    enum CardState{
+        case expanded
+        case collapsed
+    }
+    
+    //init some vars
+    var cardViewController:CardViewController!
+    var visualEffectView:UIVisualEffectView!
+    
+    //define some costants
+    let cardHeight:CGFloat = 350
+    let cardHandleAreaHeight:CGFloat = 65
+    
+    //card is not visible by default
+    var cardVisible = false
+    
+    //next state will return collapsed or expanded based on cardVisibility value
+    var nextState:CardState {
+        return cardVisible ? .collapsed : .expanded
+    }
+    
+    //runningAnimations is an array of UIViewPropertyAnimator that we will use to animate our views
+    var runningAnimations = [UIViewPropertyAnimator]()
+    
+    //when animation is interrupted, set the value to 0
+    var animatorProgressWhenInterrupted:CGFloat = 0
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        addCardToMapView()
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    //sets up the card from the CardViewController.xib file and adds to our view's subview
+    func addCardToMapView(){
+        //init a visualEffectView and add it to our subview
+        visualEffectView = UIVisualEffectView()
+        visualEffectView.frame = self.view.frame
+        self.view.addSubview(visualEffectView)
+        
+        //init the .xib file for the CardViewController, add as a child to our own view and add as a subview
+        cardViewController = CardViewController(nibName: "CardViewController", bundle: nil)
+        self.addChild(cardViewController)
+        self.view.addSubview(cardViewController.view)
+        
+        //giving the card an x, y, with and height to follow
+        cardViewController.view.frame = CGRect(x: 0, y: self.view.frame.height - cardHandleAreaHeight, width: self.view.bounds.width, height: cardHeight)
+        
+        //making sure it clips to bounds
+        cardViewController.view.clipsToBounds = true
+        
+        //init our pan and tap gestures with their respective objc funcs and then adding them to the CVC's handleArea view
+        let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(MapsViewController.handleCardTap(recognizer:)))
+        let panGestureRecognizer = UIPanGestureRecognizer(target: self, action: #selector(MapsViewController.handleCardPan(recognizer:)))
+        
+        cardViewController.handleArea.addGestureRecognizer(tapGestureRecognizer)
+        cardViewController.handleArea.addGestureRecognizer(panGestureRecognizer)
+        
     }
-    */
+    
+    //handles tap gesture by switching the state and calling animateTransitionIfNeeded
+    @objc
+    func handleCardTap(recognizer:UITapGestureRecognizer){
+        switch recognizer.state{
+        case.ended:
+            animateTransitionIfNeeded(state: nextState, duration: 0.9)
+        default:
+            break
+        }
+    }
+    
+    //handles pan gesture by cycling through the possible cases and calling the animation funcs
+    @objc
+    func handleCardPan(recognizer: UIPanGestureRecognizer){
+        switch recognizer.state{
+            
+        case .possible:
+            //it should always be possible?
+            break
+        case .began:
+            //start transition
+            startInteractiveTransition(state: nextState, duration: 0.9)
+        case .changed:
+            //update transition
+            //translates the user's pan gesture into a fraction so that updateInteractiveTransition can use it to animate accordingly
+            let translation = recognizer.translation(in: self.cardViewController.handleArea)
+            var fractionComplete = translation.y / cardHeight
+            fractionComplete = cardVisible ? fractionComplete : -fractionComplete
+            
+            updateInteractiveTransition(fractionCompleted: fractionComplete)
+            
+        case .ended:
+            //continue transition till the transition itself ends
+            continuesInteractiveTransition()
+        case .cancelled:
+            //once started can't be cancelled
+            break
+        case .failed:
+            //
+            break
+        @unknown default:
+            print("error on cardPanGes")
+            fatalError()
+        }
+    }
+    
+    //the animation funcs that handles the animations based on the current state of the card
+    
+    func animateTransitionIfNeeded(state: CardState, duration:TimeInterval){
+        //if no running animation, add a UIPropertyAnimator with duration and dampRation. We animate using the view's y axis since the
+        //caerd only goes up or down
+        if runningAnimations.isEmpty{
+            let frameAnimator = UIViewPropertyAnimator(duration: duration, dampingRatio: 1) {
+                
+                switch state{
+                case . expanded:
+                    self.cardViewController.view.frame.origin.y = self.view.frame.height - self.cardHeight
+                case .collapsed:
+                    self.cardViewController.view.frame.origin.y = self.view.frame.height - self.cardHandleAreaHeight
+                }
+            }
+            
+            //Completion block for frame animation. After an animation is complete, remove all runningAnimations
+            frameAnimator.addCompletion {_ in
+                self.cardVisible = !self.cardVisible
+                self.runningAnimations.removeAll()
+            }
+            
+            //start the animation and appened to the array
+            frameAnimator.startAnimation()
+            runningAnimations.append(frameAnimator)
+            
+            //animates the corner radius modification
+            let cornerRadiusAnimator = UIViewPropertyAnimator(duration: duration, curve: .linear) {
+                switch state{
+                case .expanded:
+                    self.cardViewController.view.layer.cornerRadius = 12
+                
+                case .collapsed:
+                    self.cardViewController.view.layer.cornerRadius = 0
+                }
+            }
+            
+            cornerRadiusAnimator.startAnimation()
+            runningAnimations.append(cornerRadiusAnimator)
+            
+            //aniamtes a blur effect on the parent view itself
+            let blurAnimator = UIViewPropertyAnimator(duration: duration, dampingRatio: 1) {
+                switch state{
+                case .expanded:
+                    self.visualEffectView.effect = UIBlurEffect(style: .light)
+                case .collapsed:
+                    self.visualEffectView.effect = nil
+                }
+            }
+            
+            blurAnimator.startAnimation()
+            runningAnimations.append(blurAnimator)
+        }
+    }
+    
+    //call when you need to start an interactiveTransition
+    func startInteractiveTransition(state: CardState, duration:TimeInterval){
+        
+        if runningAnimations.isEmpty{
+            animateTransitionIfNeeded(state: state, duration: duration)
+        }
+        
+        //when animation is paused, the animation progress completed takes the value of animator's fraction completed
+        for animator in runningAnimations{
+            animator.pauseAnimation()
+            animatorProgressWhenInterrupted = animator.fractionComplete
+        }
+        
+    }
+    
+    //gets called when animation value has changed and needs a new fractionCompleted
+    func  updateInteractiveTransition(fractionCompleted:CGFloat){
+        for animator in runningAnimations{
+            animator.fractionComplete = fractionCompleted + animatorProgressWhenInterrupted
+        }
+    }
+    
+    //gets called when interactive transition needs to be completed regardless
+    func continuesInteractiveTransition(){
+        for animator in runningAnimations{
+            animator.continueAnimation(withTimingParameters: nil, durationFactor: 0)
+        }
+    }
 
 }
