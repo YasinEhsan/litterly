@@ -1,52 +1,17 @@
 //
-//  MapsViewController.swift
+//  MapsViewController-Slide-In-Card.swift
 //  litterly
 //
-//  Created by Joy Paul on 4/5/19.
+//  Created by Joy Paul on 4/9/19.
 //  Copyright © 2019 Joy Paul. All rights reserved.
 //
 
 import UIKit
 
-class MapsViewController: UIViewController {
-    
-    //the view state of the card that we will be reffering to
-    enum CardState{
-        case expanded
-        case collapsed
-    }
-    
-    //init some vars
-    var cardViewController:CardViewController!
-    var visualEffectView:UIVisualEffectView!
-    
-    //define some costants
-    let cardHeight:CGFloat = 350
-    let cardHandleAreaHeight:CGFloat = 65
-    
-    //card is not visible by default
-    var cardVisible = false
-    
-    //next state will return collapsed or expanded based on cardVisibility value
-    var nextState:CardState {
-        return cardVisible ? .collapsed : .expanded
-    }
-    
-    //runningAnimations is an array of UIViewPropertyAnimator that we will use to animate our views
-    var runningAnimations = [UIViewPropertyAnimator]()
-    
-    //when animation is interrupted, set the value to 0
-    var animatorProgressWhenInterrupted:CGFloat = 0
-    
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        addCardToMapView()
-    }
+extension MapsViewController{
     
     //sets up the card from the CardViewController.xib file and adds to our view's subview
-    func addCardToMapView(){
+    func addSlideInCardToMapView(){
         //init a visualEffectView and add it to our subview
         visualEffectView = UIVisualEffectView()
         visualEffectView.frame = self.view.frame
@@ -62,6 +27,9 @@ class MapsViewController: UIViewController {
         
         //making sure it clips to bounds
         cardViewController.view.clipsToBounds = true
+        
+        //modifying the corner radius upon loading
+        cardViewController.view.layer.cornerRadius = 12
         
         //init our pan and tap gestures with their respective objc funcs and then adding them to the CVC's handleArea view
         let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(MapsViewController.handleCardTap(recognizer:)))
@@ -149,7 +117,7 @@ class MapsViewController: UIViewController {
                 switch state{
                 case .expanded:
                     self.cardViewController.view.layer.cornerRadius = 12
-                
+                    
                 case .collapsed:
                     self.cardViewController.view.layer.cornerRadius = 0
                 }
@@ -201,5 +169,4 @@ class MapsViewController: UIViewController {
             animator.continueAnimation(withTimingParameters: nil, durationFactor: 0)
         }
     }
-
 }
