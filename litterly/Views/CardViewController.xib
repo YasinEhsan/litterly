@@ -87,10 +87,10 @@
                             <nil key="highlightedColor"/>
                         </label>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wqw-4o-a67">
-                            <rect key="frame" x="24" y="191" width="327" height="52"/>
+                            <rect key="frame" x="24" y="191" width="337" height="52"/>
                             <color key="backgroundColor" red="0.0" green="0.56284224989999998" blue="0.31881666180000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <constraints>
-                                <constraint firstAttribute="width" constant="327" id="2UQ-3N-wEu"/>
+                                <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="327" id="2UQ-3N-wEu"/>
                                 <constraint firstAttribute="height" constant="52" id="f5T-CU-erW"/>
                             </constraints>
                             <fontDescription key="fontDescription" name="MarkerFelt-Wide" family="Marker Felt" pointSize="17"/>
@@ -107,7 +107,7 @@
                                     <color key="backgroundColor" red="0.43529412150000002" green="0.4431372583" blue="0.47450980539999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="76" id="Ogn-gi-2Mw"/>
-                                        <constraint firstAttribute="width" constant="101" id="tJP-dc-zuL"/>
+                                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="101" id="tJP-dc-zuL"/>
                                     </constraints>
                                     <fontDescription key="fontDescription" name=".SFNSText" family=".SF NS Text" pointSize="16"/>
                                     <state key="normal" image="icons8-natural-food-100">
@@ -122,7 +122,7 @@
                                     <color key="backgroundColor" red="0.43529412150000002" green="0.4431372583" blue="0.47450980539999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="76" id="7Uw-i2-IG0"/>
-                                        <constraint firstAttribute="width" constant="101" id="Zem-eK-dhZ"/>
+                                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="101" id="Zem-eK-dhZ"/>
                                     </constraints>
                                     <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="16"/>
                                     <inset key="titleEdgeInsets" minX="0.0" minY="0.0" maxX="12" maxY="0.0"/>
@@ -137,7 +137,7 @@
                                     <rect key="frame" x="232.5" y="0.0" width="104.5" height="76"/>
                                     <color key="backgroundColor" red="0.43529412150000002" green="0.4431372583" blue="0.47450980539999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <constraints>
-                                        <constraint firstAttribute="width" constant="101" id="TOD-Tr-DUu"/>
+                                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="101" id="TOD-Tr-DUu"/>
                                         <constraint firstAttribute="height" constant="76" id="vP6-TJ-7Cs"/>
                                     </constraints>
                                     <fontDescription key="fontDescription" name=".SFNSText" family=".SF NS Text" pointSize="16"/>

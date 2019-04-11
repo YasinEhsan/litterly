@@ -65,7 +65,7 @@ extension MapsViewController{
             break
         case .began:
             //start transition
-            startInteractiveTransition(state: nextState, duration: 0.9)
+            startInteractiveTransition(state: nextState, duration: 0.5)
         case .changed:
             //update transition
             //translates the user's pan gesture into a fraction so that updateInteractiveTransition can use it to animate accordingly
@@ -100,8 +100,11 @@ extension MapsViewController{
                 
                 switch state{
                 case . expanded:
-                     //***VERY IMPORTANT*** use view.bringSubviewToFront(viewName) in order to make the mapsView interactable
+                     //***VERY IMPORTANT*** use view.bringSubviewToFront(viewName) in order to have card slidein properly
+                    //make sure to send the maps View to back to achieve the blur
+                    //effect
                     self.view.bringSubviewToFront(self.cardViewController.view)
+                    self.view.sendSubviewToBack(self.mapView!)
                     self.cardViewController.view.frame.origin.y = self.view.frame.height - self.cardHeight
                 case .collapsed:
                     self.cardViewController.view.frame.origin.y = self.view.frame.height - self.cardHandleAreaHeight
@@ -112,6 +115,14 @@ extension MapsViewController{
             frameAnimator.addCompletion {_ in
                 self.cardVisible = !self.cardVisible
                 self.runningAnimations.removeAll()
+                
+                //once the card slide down animation is finished, bring
+                //the mapview to front first and then bring the cardView to front
+                //second
+                if self.cardVisible == false{
+                    self.view.bringSubviewToFront(self.mapView!)
+                    self.view.bringSubviewToFront(self.cardViewController.view)
+                }
             }
             
             //start the animation and appened to the array
@@ -136,7 +147,7 @@ extension MapsViewController{
             let blurAnimator = UIViewPropertyAnimator(duration: duration, dampingRatio: 1) {
                 switch state{
                 case .expanded:
-                    self.visualEffectView.effect = UIBlurEffect(style: .light)
+                    self.visualEffectView.effect = UIBlurEffect(style: .dark)
                 case .collapsed:
                     self.visualEffectView.effect = nil
                 }
