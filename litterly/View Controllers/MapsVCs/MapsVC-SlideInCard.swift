@@ -29,7 +29,7 @@ extension MapsViewController{
         cardViewController.view.clipsToBounds = true
         
         //modifying the corner radius upon loading
-        cardViewController.view.layer.cornerRadius = 12
+        //cardViewController.view.layer.cornerRadius = 12
         
         //init our pan and tap gestures with their respective objc funcs and then adding them to the CVC's handleArea view
         let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(MapsViewController.handleCardTap(recognizer:)))
@@ -45,6 +45,10 @@ extension MapsViewController{
     func handleCardTap(recognizer:UITapGestureRecognizer){
         switch recognizer.state{
         case.ended:
+            //***VERY IMPORTANT*** use view.bringSubviewToFront(viewName) in order to juggle between which view is interactable
+            //not sure why this seems to fix the problem of view conflicts between mapsView and card view... but I'm not
+            //complaining -.-
+            //view.bringSubviewToFront(cardViewController.view)
             animateTransitionIfNeeded(state: nextState, duration: 0.9)
         default:
             break
@@ -96,6 +100,8 @@ extension MapsViewController{
                 
                 switch state{
                 case . expanded:
+                     //***VERY IMPORTANT*** use view.bringSubviewToFront(viewName) in order to make the mapsView interactable
+                    self.view.bringSubviewToFront(self.cardViewController.view)
                     self.cardViewController.view.frame.origin.y = self.view.frame.height - self.cardHeight
                 case .collapsed:
                     self.cardViewController.view.frame.origin.y = self.view.frame.height - self.cardHandleAreaHeight

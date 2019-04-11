@@ -18,6 +18,8 @@ extension UIColor{
     static let unSelectedTrashTypeGrey = UIColor(hex: 0x353A50)
     static let reportTrashGreen = UIColor(hex: 0x2ECC71)
     static let slideInCardTextWhite = UIColor(hex: 0xFFFFFF)
+    static let searchBoxTextColor = UIColor(hex: 0x78849E)
+    static let searchBoxShadowColor = UIColor(hex: 0x455B63)
     
     //init method for RGB type UIColor
     convenience init(red: Int, green: Int, blue: Int, a: CGFloat = 1.0){

@@ -8,8 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		C56CEA33225D977A005DC40E /* SelectedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = C56CEA32225D977A005DC40E /* SelectedButton.swift */; };
+		C56CEA35225D9E87005DC40E /* MapsVC-GoogleMaps.swift in Sources */ = {isa = PBXBuildFile; fileRef = C56CEA34225D9E87005DC40E /* MapsVC-GoogleMaps.swift */; };
 		C58D911B225D527A006A0390 /* AppColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = C58D911A225D527A006A0390 /* AppColors.swift */; };
-		C58D911D225D54B2006A0390 /* MapsViewController-Slide-In-Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = C58D911C225D54B2006A0390 /* MapsViewController-Slide-In-Card.swift */; };
+		C58D911D225D54B2006A0390 /* MapsVC-SlideInCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = C58D911C225D54B2006A0390 /* MapsVC-SlideInCard.swift */; };
+		C5931BD6225EBBA400ECBEEB /* MapsVC-SearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5931BD5225EBBA400ECBEEB /* MapsVC-SearchBar.swift */; };
 		C5D3E903225BB10900C03AFB /* CardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5D3E901225BB10900C03AFB /* CardViewController.swift */; };
 		C5D3E904225BB10900C03AFB /* CardViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C5D3E902225BB10900C03AFB /* CardViewController.xib */; };
 		C5D83E2122581793009CB884 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5D83E2022581793009CB884 /* AppDelegate.swift */; };
@@ -27,8 +29,10 @@
 		39E256F25A70D3C807D7B6F4 /* Pods-litterly.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-litterly.release.xcconfig"; path = "Target Support Files/Pods-litterly/Pods-litterly.release.xcconfig"; sourceTree = "<group>"; };
 		A6E706035DFCD681245FB63D /* Pods_litterly.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_litterly.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C56CEA32225D977A005DC40E /* SelectedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectedButton.swift; sourceTree = "<group>"; };
+		C56CEA34225D9E87005DC40E /* MapsVC-GoogleMaps.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MapsVC-GoogleMaps.swift"; sourceTree = "<group>"; };
 		C58D911A225D527A006A0390 /* AppColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppColors.swift; sourceTree = "<group>"; };
-		C58D911C225D54B2006A0390 /* MapsViewController-Slide-In-Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MapsViewController-Slide-In-Card.swift"; sourceTree = "<group>"; };
+		C58D911C225D54B2006A0390 /* MapsVC-SlideInCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MapsVC-SlideInCard.swift"; sourceTree = "<group>"; };
+		C5931BD5225EBBA400ECBEEB /* MapsVC-SearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MapsVC-SearchBar.swift"; sourceTree = "<group>"; };
 		C5D3E901225BB10900C03AFB /* CardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardViewController.swift; sourceTree = "<group>"; };
 		C5D3E902225BB10900C03AFB /* CardViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CardViewController.xib; sourceTree = "<group>"; };
 		C5D83E1D22581793009CB884 /* litterly.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = litterly.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -94,8 +98,10 @@
 		C58D9121225D6003006A0390 /* MapsVCs */ = {
 			isa = PBXGroup;
 			children = (
-				C58D911C225D54B2006A0390 /* MapsViewController-Slide-In-Card.swift */,
 				C5DD0884225845B7000988A3 /* MapsViewController.swift */,
+				C58D911C225D54B2006A0390 /* MapsVC-SlideInCard.swift */,
+				C5931BD5225EBBA400ECBEEB /* MapsVC-SearchBar.swift */,
+				C56CEA34225D9E87005DC40E /* MapsVC-GoogleMaps.swift */,
 				C5D3E901225BB10900C03AFB /* CardViewController.swift */,
 			);
 			path = MapsVCs;
@@ -304,13 +310,15 @@
 			files = (
 				C5DD088322584589000988A3 /* SigninViewController.swift in Sources */,
 				C5DD088122584562000988A3 /* IntroViewController.swift in Sources */,
-				C58D911D225D54B2006A0390 /* MapsViewController-Slide-In-Card.swift in Sources */,
+				C58D911D225D54B2006A0390 /* MapsVC-SlideInCard.swift in Sources */,
 				C58D911B225D527A006A0390 /* AppColors.swift in Sources */,
 				C5D3E903225BB10900C03AFB /* CardViewController.swift in Sources */,
 				C5DD0887225845D1000988A3 /* ProfileViewController.swift in Sources */,
+				C56CEA35225D9E87005DC40E /* MapsVC-GoogleMaps.swift in Sources */,
 				C5D83E2122581793009CB884 /* AppDelegate.swift in Sources */,
 				C56CEA33225D977A005DC40E /* SelectedButton.swift in Sources */,
 				C5DD0885225845B7000988A3 /* MapsViewController.swift in Sources */,
+				C5931BD6225EBBA400ECBEEB /* MapsVC-SearchBar.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

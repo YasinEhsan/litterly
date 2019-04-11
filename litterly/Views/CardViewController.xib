@@ -12,6 +12,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CardViewController" customModule="litterly" customModuleProvider="target">
             <connections>
+                <outlet property="cardView" destination="i5M-Pr-FkT" id="iwC-OX-DaH"/>
                 <outlet property="cardViewArea" destination="REE-LG-VS8" id="XMo-2W-DdC"/>
                 <outlet property="handleArea" destination="K0t-iM-8uf" id="hnn-kQ-DeO"/>
                 <outlet property="litterlySign" destination="3pA-u8-pBn" id="dBu-iK-NDx"/>

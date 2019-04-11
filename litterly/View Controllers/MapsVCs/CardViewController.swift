@@ -11,6 +11,7 @@ import UIKit
 class CardViewController: UIViewController {
 
     //all the outlets for the cardView controller
+    @IBOutlet weak var cardView: UIView!
     @IBOutlet weak var handleArea: UIView!
     @IBOutlet weak var cardViewArea: UIView!
     @IBOutlet weak var litterlySign: UILabel!

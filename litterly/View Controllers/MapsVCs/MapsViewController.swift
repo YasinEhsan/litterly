@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import GoogleMaps
 
 class MapsViewController: UIViewController {
     
@@ -38,12 +39,27 @@ class MapsViewController: UIViewController {
     //when animation is interrupted, set the value to 0
     var animatorProgressWhenInterrupted:CGFloat = 0
     
-
+    var mapView: GMSMapView?
+    
+    lazy var customSearchBar: UISearchBar = {
+        let bar = UISearchBar()
+        bar.translatesAutoresizingMaskIntoConstraints = false
+        return bar
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        initMapView()
         addSlideInCardToMapView()
     }
-   
-
+    
+    //when view has appeared successfully, we call in to add the sliding card
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        makeTheNavBarClear()
+        addASearchBar()
+    }
+    
+    
 }
