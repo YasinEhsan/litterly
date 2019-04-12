@@ -84,6 +84,7 @@ PODS:
     - nanopb/encode (= 0.3.901)
   - nanopb/decode (0.3.901)
   - nanopb/encode (0.3.901)
+  - OnboardKit (1.3.0)
 
 DEPENDENCIES:
   - Firebase/Core
@@ -91,6 +92,7 @@ DEPENDENCIES:
   - FirebaseUI/Google
   - GoogleMaps
   - GooglePlaces
+  - OnboardKit
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
@@ -109,6 +111,7 @@ SPEC REPOS:
     - GoogleUtilities
     - GTMSessionFetcher
     - nanopb
+    - OnboardKit
 
 SPEC CHECKSUMS:
   Firebase: c60d49e9c2630875a96207d15e2affb8364996d1
@@ -126,7 +129,8 @@ SPEC CHECKSUMS:
   GoogleUtilities: 6481e6318c5fcabaaa8513ef8120f329055d7c10
   GTMSessionFetcher: 32aeca0aa144acea523e1c8e053089dec2cb98ca
   nanopb: 2901f78ea1b7b4015c860c2fdd1ea2fee1a18d48
+  OnboardKit: 9f985b1e2012cebbbbc85d52502fa9e09f3b89b4
 
-PODFILE CHECKSUM: 4e8e0d7f4b55038f01626ce3e0d85010fce502b6
+PODFILE CHECKSUM: 59dab6868ff1747ad9143138730f594fe4e15692
 
 COCOAPODS: 1.6.1
