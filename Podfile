@@ -12,7 +12,6 @@ pod 'GooglePlaces'
 pod 'Firebase/Core'
 pod 'FirebaseUI/Google'
 pod 'FirebaseUI/Auth'
-pod 'OnboardKit'
 
 
 end
