@@ -91,13 +91,40 @@ This was our initial idea. We eneded up going a totally different route as shown
 ### [BONUS] Digital Wireframes & Mockups
 <img src="https://i.imgur.com/jwIO0w6.jpg">
 
-### [BONUS] Interactive Prototype
-
 ## Schema 
-[This section will be completed in Unit 9]
 ### Models
-[Add table of models]
-### Networking
-- [Add list of network requests by screen ]
-- [Create basic snippets for each Parse network request]
-- [OPTIONAL: List endpoints if using existing API such as Yelp]
+#### User 
+
+   | Property      | Type     | Description |
+   | ------------- | -------- | ------------|
+   | name          | String   | User's display name from googleAuth API |
+   | city          | String   | The home city of USer |
+   | profileImage  | URL      | Image url from googleAuth API |
+   | tags          | Int      | Number of trash spots that the user has tagged, pointer to the Trash |
+   | points        | Int      | Number of points that the user has earned |
+   
+#### Trash
+
+   | Property      | Type     | Description |
+   | ------------- | -------- | ------------|
+   | lat           | Float    | The latitude of trash |
+   | lon           | Float    | The longititude of trash |
+   | trashType     | String   | The type of trash this is [organic, plastic, metal] |
+   | address       | String   | Address stored from google places |
+   | author        | User     | The tagger of this trash pile |
+   | picture       | ImageFile| The picture taken during the tag |
+   | isEventScheduled| Bool   | Does the trash have a cleanup event scheduled |
+   if isEventScheduled == true:
+   | listOfUsers  | [URL]    | [profile_imageURL] |
+   
+#### Events
+
+   | Property      | Type     | Description |
+   | ------------- | -------- | ------------|
+   | lat           | Float    | The latitude of trash |
+   | lon           | Float    | The longititude of trash |
+   | trashType     | String   | The type of trash this is [organic, plastic, metal] |
+   | address       | String   | Address stored from google places |
+   | date          | String   | Date of the event |
+   | time          | String   | Time of the event |
+   | listOfUsers   | [URL]    | [profile imageURL] |
