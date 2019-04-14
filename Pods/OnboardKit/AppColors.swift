@@ -13,12 +13,13 @@ import UIKit
 
 extension UIColor{
     
-    static let slideInCardBlue = UIColor(hex: 0x4E5DF8)
-    static let selectedTrashTypeOrange = UIColor(hex: 0xFFB900)
-    static let unSelectedTrashTypeGrey = UIColor(hex: 0x353A50)
-    static let reportTrashGreen = UIColor(hex: 0x2ECC71)
-    static let slideInCardTextWhite = UIColor(hex: 0xFFFFFF)
-    static let searchBoxTextColor = UIColor(hex: 0x78849E)
+    static let mainBlue = UIColor(hex: 0x4E5DF8)
+    static let trashOrange = UIColor(hex: 0xFFB900)
+    static let unselectedGrey = UIColor(hex: 0x353A50)
+    static let mainGreen = UIColor(hex: 0x2ECC71)
+    static let pageControlUnselectedPageGreen = UIColor(hex: 0x2ECC71, a: 0.32)
+    static let textWhite = UIColor(hex: 0xFFFFFF)
+    static let searchBoxTextWhite = UIColor(hex: 0x78849E)
     static let searchBoxShadowColor = UIColor(hex: 0x455B63)
     
     //init method for RGB type UIColor

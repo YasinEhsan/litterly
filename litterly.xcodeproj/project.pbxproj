@@ -12,13 +12,16 @@
 		C58D911B225D527A006A0390 /* AppColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = C58D911A225D527A006A0390 /* AppColors.swift */; };
 		C58D911D225D54B2006A0390 /* MapsVC-SlideInCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = C58D911C225D54B2006A0390 /* MapsVC-SlideInCard.swift */; };
 		C5931BD6225EBBA400ECBEEB /* MapsVC-SearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5931BD5225EBBA400ECBEEB /* MapsVC-SearchBar.swift */; };
+		C599F5EA2262FD830038A1A6 /* PageOneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C599F5E92262FD830038A1A6 /* PageOneViewController.swift */; };
+		C599F5EC2263044C0038A1A6 /* PageTwoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C599F5EB2263044C0038A1A6 /* PageTwoViewController.swift */; };
+		C599F5EE226304590038A1A6 /* PageThreeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C599F5ED226304590038A1A6 /* PageThreeViewController.swift */; };
 		C5D3E903225BB10900C03AFB /* CardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5D3E901225BB10900C03AFB /* CardViewController.swift */; };
 		C5D3E904225BB10900C03AFB /* CardViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C5D3E902225BB10900C03AFB /* CardViewController.xib */; };
 		C5D83E2122581793009CB884 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5D83E2022581793009CB884 /* AppDelegate.swift */; };
 		C5D83E2622581793009CB884 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C5D83E2422581793009CB884 /* Main.storyboard */; };
 		C5D83E2822581794009CB884 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C5D83E2722581794009CB884 /* Assets.xcassets */; };
 		C5D83E2B22581794009CB884 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C5D83E2922581794009CB884 /* LaunchScreen.storyboard */; };
-		C5DD088122584562000988A3 /* IntroViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5DD088022584562000988A3 /* IntroViewController.swift */; };
+		C5DD088122584562000988A3 /* IntroPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5DD088022584562000988A3 /* IntroPageViewController.swift */; };
 		C5DD088322584589000988A3 /* SigninViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5DD088222584589000988A3 /* SigninViewController.swift */; };
 		C5DD0885225845B7000988A3 /* MapsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5DD0884225845B7000988A3 /* MapsViewController.swift */; };
 		C5DD0887225845D1000988A3 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5DD0886225845D1000988A3 /* ProfileViewController.swift */; };
@@ -30,9 +33,12 @@
 		A6E706035DFCD681245FB63D /* Pods_litterly.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_litterly.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C56CEA32225D977A005DC40E /* SelectedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectedButton.swift; sourceTree = "<group>"; };
 		C56CEA34225D9E87005DC40E /* MapsVC-GoogleMaps.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MapsVC-GoogleMaps.swift"; sourceTree = "<group>"; };
-		C58D911A225D527A006A0390 /* AppColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppColors.swift; sourceTree = "<group>"; };
+		C58D911A225D527A006A0390 /* AppColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppColors.swift; path = ../../Pods/OnboardKit/AppColors.swift; sourceTree = "<group>"; };
 		C58D911C225D54B2006A0390 /* MapsVC-SlideInCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MapsVC-SlideInCard.swift"; sourceTree = "<group>"; };
 		C5931BD5225EBBA400ECBEEB /* MapsVC-SearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MapsVC-SearchBar.swift"; sourceTree = "<group>"; };
+		C599F5E92262FD830038A1A6 /* PageOneViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageOneViewController.swift; sourceTree = "<group>"; };
+		C599F5EB2263044C0038A1A6 /* PageTwoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageTwoViewController.swift; sourceTree = "<group>"; };
+		C599F5ED226304590038A1A6 /* PageThreeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageThreeViewController.swift; sourceTree = "<group>"; };
 		C5D3E901225BB10900C03AFB /* CardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardViewController.swift; sourceTree = "<group>"; };
 		C5D3E902225BB10900C03AFB /* CardViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CardViewController.xib; sourceTree = "<group>"; };
 		C5D83E1D22581793009CB884 /* litterly.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = litterly.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -41,7 +47,7 @@
 		C5D83E2722581794009CB884 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C5D83E2A22581794009CB884 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C5D83E2C22581794009CB884 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		C5DD088022584562000988A3 /* IntroViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroViewController.swift; sourceTree = "<group>"; };
+		C5DD088022584562000988A3 /* IntroPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroPageViewController.swift; sourceTree = "<group>"; };
 		C5DD088222584589000988A3 /* SigninViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SigninViewController.swift; sourceTree = "<group>"; };
 		C5DD0884225845B7000988A3 /* MapsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapsViewController.swift; sourceTree = "<group>"; };
 		C5DD0886225845D1000988A3 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
@@ -69,6 +75,17 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		C5186B3D2261822000568951 /* IntroVC */ = {
+			isa = PBXGroup;
+			children = (
+				C5DD088022584562000988A3 /* IntroPageViewController.swift */,
+				C599F5E92262FD830038A1A6 /* PageOneViewController.swift */,
+				C599F5EB2263044C0038A1A6 /* PageTwoViewController.swift */,
+				C599F5ED226304590038A1A6 /* PageThreeViewController.swift */,
+			);
+			path = IntroVC;
+			sourceTree = "<group>";
+		};
 		C58D911E225D5581006A0390 /* Views */ = {
 			isa = PBXGroup;
 			children = (
@@ -81,6 +98,7 @@
 		C58D911F225D559D006A0390 /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				C5186B3D2261822000568951 /* IntroVC */,
 				C58D9121225D6003006A0390 /* MapsVCs */,
 			);
 			path = "View Controllers";
@@ -135,7 +153,6 @@
 				C5D83E2722581794009CB884 /* Assets.xcassets */,
 				C5D83E2922581794009CB884 /* LaunchScreen.storyboard */,
 				C5D83E2C22581794009CB884 /* Info.plist */,
-				C5DD088022584562000988A3 /* IntroViewController.swift */,
 				C5DD088222584589000988A3 /* SigninViewController.swift */,
 				C5DD0886225845D1000988A3 /* ProfileViewController.swift */,
 			);
@@ -310,12 +327,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C599F5EC2263044C0038A1A6 /* PageTwoViewController.swift in Sources */,
+				C599F5EA2262FD830038A1A6 /* PageOneViewController.swift in Sources */,
 				C5DD088322584589000988A3 /* SigninViewController.swift in Sources */,
-				C5DD088122584562000988A3 /* IntroViewController.swift in Sources */,
+				C5DD088122584562000988A3 /* IntroPageViewController.swift in Sources */,
 				C58D911D225D54B2006A0390 /* MapsVC-SlideInCard.swift in Sources */,
 				C58D911B225D527A006A0390 /* AppColors.swift in Sources */,
 				C5D3E903225BB10900C03AFB /* CardViewController.swift in Sources */,
 				C5DD0887225845D1000988A3 /* ProfileViewController.swift in Sources */,
+				C599F5EE226304590038A1A6 /* PageThreeViewController.swift in Sources */,
 				C56CEA35225D9E87005DC40E /* MapsVC-GoogleMaps.swift in Sources */,
 				C5D83E2122581793009CB884 /* AppDelegate.swift in Sources */,
 				C56CEA33225D977A005DC40E /* SelectedButton.swift in Sources */,

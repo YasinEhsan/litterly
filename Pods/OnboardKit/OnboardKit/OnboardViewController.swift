@@ -84,7 +84,7 @@ public extension OnboardViewController {
   /// - Parameters:
   ///   - viewController: the presenting view controller
   ///   - animated: Defines if the presentation should be animated
-  public func presentFrom(_ viewController: UIViewController, animated: Bool) {
+    func presentFrom(_ viewController: UIViewController, animated: Bool) {
     viewController.present(self, animated: animated)
   }
 }
@@ -190,15 +190,15 @@ public extension OnboardViewController {
     /// - note: Defualts to nil. If not used, the button will be customized based on the title properties
     let actionButtonStyling: ButtonStyling?
 
-    public init(tintColor: UIColor = UIColor(red: 0.0, green: 122.0/255.0, blue: 1.0, alpha: 1.0),
+    public init(tintColor: UIColor = UIColor(red: 48.0/255, green: 197.0/255, blue: 58.0/255, alpha: 1.0),
                 titleColor: UIColor? = nil,
-                textColor: UIColor = .darkText,
+                textColor: UIColor = .black,
                 backgroundColor: UIColor = .white,
-                titleFont: UIFont = UIFont.preferredFont(forTextStyle: .title1),
-                textFont: UIFont = UIFont.preferredFont(forTextStyle: .body),
+                titleFont: UIFont = UIFont(name: "MarkerFelt-Wide", size: 20)!,
+                textFont: UIFont = UIFont(name: "MarkerFelt-Wide", size: 20)!,
                 advanceButtonStyling: ButtonStyling? = nil,
                 actionButtonStyling: ButtonStyling? = nil) {
-      self.tintColor = tintColor
+      self.tintColor = UIColor.green
       self.titleColor = titleColor ?? textColor
       self.textColor = textColor
       self.backgroundColor = backgroundColor

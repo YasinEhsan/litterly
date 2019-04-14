@@ -15,7 +15,7 @@ class SelectedButton: UIButton{
     
     override var isSelected: Bool{
         didSet{
-            backgroundColor = isSelected ? .selectedTrashTypeOrange : .unSelectedTrashTypeGrey
+            backgroundColor = isSelected ? .trashOrange : .unselectedGrey
         }
     }
 }

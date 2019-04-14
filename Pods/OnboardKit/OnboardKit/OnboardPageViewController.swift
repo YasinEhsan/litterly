@@ -36,7 +36,7 @@ internal final class OnboardPageViewController: UIViewController {
   private lazy var titleLabel: UILabel = {
     let label = UILabel()
     label.translatesAutoresizingMaskIntoConstraints = false
-    label.font = UIFont.preferredFont(forTextStyle: .title1)
+    label.font = UIFont(name: "MarkerFelt-Wide", size: 20)
     label.textAlignment = .center
     return label
   }()

@@ -44,16 +44,16 @@ class CardViewController: UIViewController {
     
     //sets up all the widgets with their corresponding colors
     func setUpWidgetColors(){
-        handleArea.backgroundColor = UIColor.slideInCardBlue
-        cardViewArea.backgroundColor = UIColor.slideInCardBlue
-        nearbySign.textColor = UIColor.slideInCardTextWhite
-        nearbySignSubTitle.textColor = UIColor.slideInCardTextWhite
-        nearByCount.textColor = UIColor.reportTrashGreen
-        litterlySign.textColor = UIColor.slideInCardTextWhite
-        trashType1.backgroundColor = UIColor.unSelectedTrashTypeGrey
-        trashType2.backgroundColor = UIColor.unSelectedTrashTypeGrey
-        trashType3.backgroundColor = UIColor.unSelectedTrashTypeGrey
-        reportTrashButton.backgroundColor = UIColor.reportTrashGreen
+        handleArea.backgroundColor = UIColor.mainBlue
+        cardViewArea.backgroundColor = UIColor.mainBlue
+        nearbySign.textColor = UIColor.textWhite
+        nearbySignSubTitle.textColor = UIColor.textWhite
+        nearByCount.textColor = UIColor.mainGreen
+        litterlySign.textColor = UIColor.textWhite
+        trashType1.backgroundColor = UIColor.unselectedGrey
+        trashType2.backgroundColor = UIColor.unselectedGrey
+        trashType3.backgroundColor = UIColor.unselectedGrey
+        reportTrashButton.backgroundColor = UIColor.mainGreen
     }
     
     //the trash type buttons, user must select one

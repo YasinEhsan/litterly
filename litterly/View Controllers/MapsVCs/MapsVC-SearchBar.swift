@@ -24,7 +24,7 @@ extension MapsViewController{
     func addASearchBar(){
         
         let searchView = UIView(frame: CGRect(x: 16, y: 5, width: self.view.frame.width - 31, height: 52))
-        searchView.backgroundColor = UIColor.slideInCardTextWhite
+        searchView.backgroundColor = UIColor.textWhite
         searchView.translatesAutoresizingMaskIntoConstraints = false
         
         //add a gesture recognizer in order to bring the navigation drawer from the left
@@ -37,8 +37,8 @@ extension MapsViewController{
         
         let searchBox = UITextField()
         searchBox.frame = CGRect(x: 73, y: 16, width: self.view.frame.width - 104, height: 24)
-        searchBox.backgroundColor = UIColor.slideInCardTextWhite
-        searchBox.textColor = UIColor.searchBoxTextColor
+        searchBox.backgroundColor = UIColor.textWhite
+        searchBox.textColor = UIColor.searchBoxTextWhite
         searchBox.font = UIFont(name: "MarkerFelt-Wide", size: 16)
         searchBox.text = "Search a place?"
         searchBox.translatesAutoresizingMaskIntoConstraints = false
