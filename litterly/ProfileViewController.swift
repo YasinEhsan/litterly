@@ -9,9 +9,12 @@
 import UIKit
 
 class ProfileViewController: UIViewController {
-
+    
+    //this is a test from my first attempt of pushing through my profileView branch :) 
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        
 
         // Do any additional setup after loading the view.
     }
