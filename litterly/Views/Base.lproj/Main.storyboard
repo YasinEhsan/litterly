@@ -45,7 +45,7 @@
                                     </label>
                                 </subviews>
                             </stackView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="trash-can" translatesAutoresizingMaskIntoConstraints="NO" id="juc-vA-rN0">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="trash-can" translatesAutoresizingMaskIntoConstraints="NO" id="juc-vA-rN0">
                                 <rect key="frame" x="44" y="191" width="287" height="326"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fO0-2s-LDk">
@@ -60,7 +60,7 @@
                                     <color key="titleColor" red="0.96078431372549022" green="0.95686274509803915" blue="0.98039215686274506" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
-                                    <action selector="onBeginTap:" destination="ZYJ-ip-zin" eventType="touchUpInside" id="caM-JJ-kZA"/>
+                                    <action selector="onBeginTapped:" destination="ZYJ-ip-zin" eventType="touchUpInside" id="8kY-3N-9rH"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -85,36 +85,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QN0-zU-pcs" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1281" y="833"/>
-        </scene>
-        <!--Page Two View Controller-->
-        <scene sceneID="7HI-4A-hEt">
-            <objects>
-                <viewController storyboardIdentifier="pageTwo" id="hLE-Dk-y8u" customClass="PageTwoViewController" customModule="litterly" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="Bos-Ni-M8p">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <viewLayoutGuide key="safeArea" id="rlj-sY-qN9"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="b9o-HS-nZd" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-497" y="833"/>
-        </scene>
-        <!--Page Three View Controller-->
-        <scene sceneID="4CT-XJ-0MT">
-            <objects>
-                <viewController storyboardIdentifier="pageThree" id="syM-qw-EQb" customClass="PageThreeViewController" customModule="litterly" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="Lcw-uM-eOr">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <viewLayoutGuide key="safeArea" id="dC0-2p-RLV"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="c0B-SN-TUg" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="289" y="833"/>
         </scene>
         <!--Intro Page View Controller-->
         <scene sceneID="bAb-48-ejc">
@@ -228,6 +198,158 @@
             </objects>
             <point key="canvasLocation" x="2024.6376811594205" y="134.59821428571428"/>
         </scene>
+        <!--Page Two View Controller-->
+        <scene sceneID="z7o-lg-DPx">
+            <objects>
+                <viewController storyboardIdentifier="pageTwo" id="hdb-mt-cPY" customClass="PageTwoViewController" customModule="litterly" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="rHG-g7-Sxz">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="blue" translatesAutoresizingMaskIntoConstraints="NO" id="jQy-3X-5JF">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="519.5"/>
+                            </imageView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="top" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="bLq-HU-MfX">
+                                <rect key="frame" x="18" y="38" width="339" height="157"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Save the City," textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mbe-XN-FiR">
+                                        <rect key="frame" x="0.0" y="0.0" width="179" height="47"/>
+                                        <fontDescription key="fontDescription" name="MarkerFelt-Wide" family="Marker Felt" pointSize="30"/>
+                                        <color key="textColor" red="0.96078431369999995" green="0.95686274510000002" blue="0.98039215690000003" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                        <size key="shadowOffset" width="0.0" height="0.0"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Meet others in your community" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cfj-OK-lNG">
+                                        <rect key="frame" x="0.0" y="55" width="307.5" height="47"/>
+                                        <fontDescription key="fontDescription" name="MarkerFelt-Wide" family="Marker Felt" pointSize="22"/>
+                                        <color key="textColor" red="0.96078431369999995" green="0.95686274510000002" blue="0.98039215690000003" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="and clean the environment by collecting trash together " textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cuy-32-Dd5">
+                                        <rect key="frame" x="0.0" y="110" width="319.5" height="47"/>
+                                        <fontDescription key="fontDescription" name="MarkerFelt-Wide" family="Marker Felt" pointSize="18"/>
+                                        <color key="textColor" red="0.96078431369999995" green="0.95686274510000002" blue="0.98039215690000003" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="building" translatesAutoresizingMaskIntoConstraints="NO" id="O6X-GG-wpn">
+                                <rect key="frame" x="44" y="215" width="287" height="191"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gpl-ZN-vcB">
+                                <rect key="frame" x="98.5" y="559.5" width="178" height="47.5"/>
+                                <color key="backgroundColor" red="0.18039215689999999" green="0.80000000000000004" blue="0.4431372549" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="47.5" id="2YH-Mn-MdS"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="178" id="SgI-6G-gl6"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="MarkerFelt-Wide" family="Marker Felt" pointSize="20"/>
+                                <state key="normal" title="Begin">
+                                    <color key="titleColor" red="0.96078431369999995" green="0.95686274510000002" blue="0.98039215690000003" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="onBeginTapped:" destination="hdb-mt-cPY" eventType="touchUpInside" id="9WL-y1-8Ho"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="K2u-eX-eMI" firstAttribute="trailing" secondItem="O6X-GG-wpn" secondAttribute="trailing" constant="44" id="2Rb-dX-Bgo"/>
+                            <constraint firstAttribute="trailing" secondItem="jQy-3X-5JF" secondAttribute="trailing" id="3hO-TS-Mht"/>
+                            <constraint firstItem="K2u-eX-eMI" firstAttribute="bottom" secondItem="Gpl-ZN-vcB" secondAttribute="bottom" constant="60" id="CJo-Li-3uJ"/>
+                            <constraint firstItem="jQy-3X-5JF" firstAttribute="top" secondItem="rHG-g7-Sxz" secondAttribute="top" id="I9f-sa-kEt"/>
+                            <constraint firstItem="jQy-3X-5JF" firstAttribute="leading" secondItem="rHG-g7-Sxz" secondAttribute="leading" id="MyT-eV-O87"/>
+                            <constraint firstItem="bLq-HU-MfX" firstAttribute="top" secondItem="K2u-eX-eMI" secondAttribute="top" constant="18" id="NM2-Tn-Jvj"/>
+                            <constraint firstItem="O6X-GG-wpn" firstAttribute="top" secondItem="bLq-HU-MfX" secondAttribute="bottom" constant="20" id="QdU-cY-be3"/>
+                            <constraint firstItem="bLq-HU-MfX" firstAttribute="leading" secondItem="K2u-eX-eMI" secondAttribute="leading" constant="18" id="UHE-Jo-PSx"/>
+                            <constraint firstItem="O6X-GG-wpn" firstAttribute="leading" secondItem="K2u-eX-eMI" secondAttribute="leading" constant="44" id="m2p-bq-unZ"/>
+                            <constraint firstItem="Gpl-ZN-vcB" firstAttribute="centerX" secondItem="rHG-g7-Sxz" secondAttribute="centerX" id="mSV-yP-pWG"/>
+                            <constraint firstItem="Gpl-ZN-vcB" firstAttribute="top" secondItem="jQy-3X-5JF" secondAttribute="bottom" constant="40" id="mYm-xZ-NSd"/>
+                            <constraint firstItem="K2u-eX-eMI" firstAttribute="trailing" secondItem="bLq-HU-MfX" secondAttribute="trailing" constant="18" id="oQE-9O-sDQ"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="K2u-eX-eMI"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="CFE-xs-Oh4" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-538" y="833"/>
+        </scene>
+        <!--Page Three View Controller-->
+        <scene sceneID="dcb-uw-Ci9">
+            <objects>
+                <viewController storyboardIdentifier="pageThree" id="qAh-p0-GlF" customClass="PageThreeViewController" customModule="litterly" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="wwY-G6-8Ox">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="blue" translatesAutoresizingMaskIntoConstraints="NO" id="pKV-Dm-3yl">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="519.5"/>
+                            </imageView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="top" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="155-aQ-9ho">
+                                <rect key="frame" x="18" y="38" width="339" height="133"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Be a hero," textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A7O-fc-NEc">
+                                        <rect key="frame" x="0.0" y="0.0" width="125.5" height="39"/>
+                                        <fontDescription key="fontDescription" name="MarkerFelt-Wide" family="Marker Felt" pointSize="30"/>
+                                        <color key="textColor" red="0.96078431369999995" green="0.95686274510000002" blue="0.98039215690000003" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                        <size key="shadowOffset" width="0.0" height="0.0"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Earn points" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Aal-Ce-eZc">
+                                        <rect key="frame" x="0.0" y="47" width="110" height="39"/>
+                                        <fontDescription key="fontDescription" name="MarkerFelt-Wide" family="Marker Felt" pointSize="22"/>
+                                        <color key="textColor" red="0.96078431369999995" green="0.95686274510000002" blue="0.98039215690000003" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="and redeem them for exclusive prizes" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="r3K-yA-W30">
+                                        <rect key="frame" x="0.0" y="94" width="293.5" height="39"/>
+                                        <fontDescription key="fontDescription" name="MarkerFelt-Wide" family="Marker Felt" pointSize="18"/>
+                                        <color key="textColor" red="0.96078431369999995" green="0.95686274510000002" blue="0.98039215690000003" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="liberty" translatesAutoresizingMaskIntoConstraints="NO" id="lV0-aJ-ct8">
+                                <rect key="frame" x="44" y="190.99999999999997" width="287.00000000000006" height="214.00000000000009"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mbR-b6-pL1">
+                                <rect key="frame" x="98.5" y="559.5" width="178" height="47.5"/>
+                                <color key="backgroundColor" red="0.18039215689999999" green="0.80000000000000004" blue="0.4431372549" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="47.5" id="h1G-by-41L"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="178" id="mbl-ec-bqq"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="MarkerFelt-Wide" family="Marker Felt" pointSize="20"/>
+                                <state key="normal" title="Begin">
+                                    <color key="titleColor" red="0.96078431369999995" green="0.95686274510000002" blue="0.98039215690000003" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="onBeginTapped:" destination="qAh-p0-GlF" eventType="touchUpInside" id="e0s-8Y-2hu"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="lV0-aJ-ct8" firstAttribute="top" secondItem="155-aQ-9ho" secondAttribute="bottom" constant="20" id="5BV-4v-r7G"/>
+                            <constraint firstItem="155-aQ-9ho" firstAttribute="top" secondItem="QB5-Tz-4TC" secondAttribute="top" constant="18" id="6Sm-R9-iDl"/>
+                            <constraint firstItem="lV0-aJ-ct8" firstAttribute="leading" secondItem="QB5-Tz-4TC" secondAttribute="leading" constant="44" id="9rY-ND-uWU"/>
+                            <constraint firstItem="pKV-Dm-3yl" firstAttribute="leading" secondItem="wwY-G6-8Ox" secondAttribute="leading" id="FNb-tZ-Dy9"/>
+                            <constraint firstItem="pKV-Dm-3yl" firstAttribute="top" secondItem="wwY-G6-8Ox" secondAttribute="top" id="M0I-9C-jeK"/>
+                            <constraint firstItem="QB5-Tz-4TC" firstAttribute="trailing" secondItem="155-aQ-9ho" secondAttribute="trailing" constant="18" id="OYq-a4-gAV"/>
+                            <constraint firstItem="mbR-b6-pL1" firstAttribute="top" secondItem="pKV-Dm-3yl" secondAttribute="bottom" constant="40" id="bWJ-p4-VOH"/>
+                            <constraint firstAttribute="trailing" secondItem="pKV-Dm-3yl" secondAttribute="trailing" id="j0W-8Q-acn"/>
+                            <constraint firstItem="155-aQ-9ho" firstAttribute="leading" secondItem="QB5-Tz-4TC" secondAttribute="leading" constant="18" id="nl2-8k-iHf"/>
+                            <constraint firstItem="mbR-b6-pL1" firstAttribute="centerX" secondItem="wwY-G6-8Ox" secondAttribute="centerX" id="qs3-2R-HCL"/>
+                            <constraint firstItem="QB5-Tz-4TC" firstAttribute="trailing" secondItem="lV0-aJ-ct8" secondAttribute="trailing" constant="44" id="stk-uN-VZy"/>
+                            <constraint firstItem="QB5-Tz-4TC" firstAttribute="bottom" secondItem="mbR-b6-pL1" secondAttribute="bottom" constant="60" id="xTE-PG-zf8"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="QB5-Tz-4TC"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="RYU-rT-BED" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="201" y="833"/>
+        </scene>
     </scenes>
     <resources>
         <image name="Group 38" width="613" height="617"/>
@@ -237,6 +359,7 @@
         <image name="building" width="191" height="191"/>
         <image name="icons-85" width="68" height="68"/>
         <image name="icons-91" width="38" height="38"/>
+        <image name="liberty" width="214" height="214"/>
         <image name="trash-can" width="326" height="326"/>
     </resources>
 </document>

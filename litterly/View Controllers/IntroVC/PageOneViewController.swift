@@ -16,9 +16,10 @@ class PageOneViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
    
-    @IBAction func onBeginTap(_ sender: UIButton) {
-        print("Tapped beign")
+    @IBAction func onBeginTapped(_ sender: UIButton) {
+        print("begin tapped on pageOne")
     }
+    
     
 
 }
