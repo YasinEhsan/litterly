@@ -7,6 +7,7 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="Stack View standard spacing" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -21,7 +22,7 @@
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="blue" translatesAutoresizingMaskIntoConstraints="NO" id="Pp5-Cg-mzB">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="519.5"/>
                             </imageView>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="top" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="k1g-AA-ojl">
+                            <stackView opaque="NO" contentMode="scaleAspectFill" axis="vertical" distribution="fillEqually" alignment="top" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="k1g-AA-ojl">
                                 <rect key="frame" x="18" y="38" width="339" height="133"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hi there," textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="39j-Gq-bBB">
@@ -45,7 +46,7 @@
                                     </label>
                                 </subviews>
                             </stackView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="trash-can" translatesAutoresizingMaskIntoConstraints="NO" id="juc-vA-rN0">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="trash-can" translatesAutoresizingMaskIntoConstraints="NO" id="juc-vA-rN0">
                                 <rect key="frame" x="44" y="191" width="287" height="326"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fO0-2s-LDk">
@@ -61,6 +62,7 @@
                                 </state>
                                 <connections>
                                     <action selector="onBeginTapped:" destination="ZYJ-ip-zin" eventType="touchUpInside" id="8kY-3N-9rH"/>
+                                    <segue destination="lT9-AD-Nm9" kind="show" id="EBF-Qz-JWe"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -84,7 +86,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QN0-zU-pcs" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1281" y="833"/>
+            <point key="canvasLocation" x="-295" y="134"/>
         </scene>
         <!--Intro Page View Controller-->
         <scene sceneID="bAb-48-ejc">
@@ -92,7 +94,7 @@
                 <pageViewController autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="eW3-mQ-ne9" customClass="IntroPageViewController" customModule="litterly" customModuleProvider="target" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hlc-HZ-QVe" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-626" y="134"/>
+            <point key="canvasLocation" x="-1335" y="134"/>
         </scene>
         <!--Signin View Controller-->
         <scene sceneID="tne-QT-ifu">
@@ -101,56 +103,17 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" fixedFrame="YES" image="Group 38" translatesAutoresizingMaskIntoConstraints="NO" id="kta-Mr-Ljz">
-                                <rect key="frame" x="-99" y="50" width="613" height="617"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" fixedFrame="YES" image="building" translatesAutoresizingMaskIntoConstraints="NO" id="KHc-XJ-gUR">
-                                <rect key="frame" x="208" y="437" width="205" height="204"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" fixedFrame="YES" image="icons-91" translatesAutoresizingMaskIntoConstraints="NO" id="z0S-DS-1py">
-                                <rect key="frame" x="38" y="403" width="112" height="107"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" fixedFrame="YES" image="Group 7" translatesAutoresizingMaskIntoConstraints="NO" id="o3n-a5-yew">
-                                <rect key="frame" x="0.0" y="333" width="172" height="378"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" fixedFrame="YES" image="Group 8(1)" translatesAutoresizingMaskIntoConstraints="NO" id="M8a-1J-MHD">
-                                <rect key="frame" x="99" y="149" width="464" height="286"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Begin your jouney! " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sdf-cj-gd0">
-                                <rect key="frame" x="20" y="161" width="229" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="25"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Help the environment with fellow citizens" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tbW-Ze-dh5">
-                                <rect key="frame" x="20" y="214" width="347" height="23"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="19"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" fixedFrame="YES" image="icons-85" translatesAutoresizingMaskIntoConstraints="NO" id="KuW-3y-MdU">
-                                <rect key="frame" x="70" y="350" width="246" height="250"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <navigationItem key="navigationItem" id="tZI-PV-GQC"/>
                     <connections>
                         <segue destination="HRz-J6-zT4" kind="show" identifier="MapsViewController" id="f7S-Sj-PMM"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1050.7246376811595" y="134.59821428571428"/>
+            <point key="canvasLocation" x="2076.8115942028985" y="133.92857142857142"/>
         </scene>
         <!--Maps View Controller-->
         <scene sceneID="g7N-rQ-bs6">
@@ -163,7 +126,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="l5Y-Xv-eKL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2936.2318840579715" y="134.59821428571428"/>
+            <point key="canvasLocation" x="4615.9420289855079" y="134.59821428571428"/>
         </scene>
         <!--Profile View Controller-->
         <scene sceneID="j1H-c8-Q1m">
@@ -178,7 +141,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Wvf-nk-b8f" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3844.9275362318845" y="134.59821428571428"/>
+            <point key="canvasLocation" x="5579.7101449275369" y="134.59821428571428"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Lof-Qr-XcF">
@@ -196,7 +159,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1Vf-FI-zi4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2024.6376811594205" y="134.59821428571428"/>
+            <point key="canvasLocation" x="3810.144927536232" y="133.92857142857142"/>
         </scene>
         <!--Page Two View Controller-->
         <scene sceneID="z7o-lg-DPx">
@@ -209,7 +172,7 @@
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="blue" translatesAutoresizingMaskIntoConstraints="NO" id="jQy-3X-5JF">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="519.5"/>
                             </imageView>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="top" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="bLq-HU-MfX">
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="top" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="bLq-HU-MfX">
                                 <rect key="frame" x="18" y="38" width="339" height="157"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Save the City," textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mbe-XN-FiR">
@@ -233,7 +196,7 @@
                                     </label>
                                 </subviews>
                             </stackView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="building" translatesAutoresizingMaskIntoConstraints="NO" id="O6X-GG-wpn">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="building" translatesAutoresizingMaskIntoConstraints="NO" id="O6X-GG-wpn">
                                 <rect key="frame" x="44" y="215" width="287" height="191"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gpl-ZN-vcB">
@@ -249,6 +212,7 @@
                                 </state>
                                 <connections>
                                     <action selector="onBeginTapped:" destination="hdb-mt-cPY" eventType="touchUpInside" id="9WL-y1-8Ho"/>
+                                    <segue destination="lT9-AD-Nm9" kind="show" id="3KF-zc-Jdj"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -272,7 +236,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CFE-xs-Oh4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-538" y="833"/>
+            <point key="canvasLocation" x="412" y="-232"/>
         </scene>
         <!--Page Three View Controller-->
         <scene sceneID="dcb-uw-Ci9">
@@ -285,7 +249,7 @@
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="blue" translatesAutoresizingMaskIntoConstraints="NO" id="pKV-Dm-3yl">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="519.5"/>
                             </imageView>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="top" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="155-aQ-9ho">
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="top" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="155-aQ-9ho">
                                 <rect key="frame" x="18" y="38" width="339" height="133"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Be a hero," textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A7O-fc-NEc">
@@ -309,8 +273,8 @@
                                     </label>
                                 </subviews>
                             </stackView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="liberty" translatesAutoresizingMaskIntoConstraints="NO" id="lV0-aJ-ct8">
-                                <rect key="frame" x="44" y="190.99999999999997" width="287.00000000000006" height="214.00000000000009"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="liberty" translatesAutoresizingMaskIntoConstraints="NO" id="lV0-aJ-ct8">
+                                <rect key="frame" x="44" y="191" width="287" height="16"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mbR-b6-pL1">
                                 <rect key="frame" x="98.5" y="559.5" width="178" height="47.5"/>
@@ -325,6 +289,7 @@
                                 </state>
                                 <connections>
                                     <action selector="onBeginTapped:" destination="qAh-p0-GlF" eventType="touchUpInside" id="e0s-8Y-2hu"/>
+                                    <segue destination="lT9-AD-Nm9" kind="show" id="ppe-Go-QEB"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -348,18 +313,34 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RYU-rT-BED" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="201" y="833"/>
+            <point key="canvasLocation" x="412" y="520"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Ie4-ok-1VO">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="lT9-AD-Nm9" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="brc-lK-q0u">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="UAN-cd-kDe"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Qw7-ok-WJe" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1166.6666666666667" y="133.92857142857142"/>
         </scene>
     </scenes>
     <resources>
-        <image name="Group 38" width="613" height="617"/>
-        <image name="Group 7" width="126" height="259"/>
-        <image name="Group 8(1)" width="222" height="218"/>
         <image name="blue" width="341" height="341"/>
         <image name="building" width="191" height="191"/>
-        <image name="icons-85" width="68" height="68"/>
-        <image name="icons-91" width="38" height="38"/>
         <image name="liberty" width="214" height="214"/>
         <image name="trash-can" width="326" height="326"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="EBF-Qz-JWe"/>
+    </inferredMetricsTieBreakers>
 </document>
