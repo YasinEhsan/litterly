@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import GoogleSignIn
 
 //extends UIPageController and their delegates + data source
 class IntroPageViewController: UIPageViewController, UIPageViewControllerDelegate, UIPageViewControllerDataSource{

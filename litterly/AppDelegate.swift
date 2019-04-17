@@ -20,12 +20,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate{
         GMSServices.provideAPIKey("AIzaSyB1srdvHEWS867OD0jFSewpsSqok9vahcM")
         FirebaseApp.configure()
         
+        //if user didn't sign out, send the user directly to the mapsVC
         if let alreadySignedIn = Auth.auth().currentUser{
             print("User already signed in \(alreadySignedIn) \(Auth.auth().currentUser?.displayName as! String)")
             
             let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
             
-            let mapsViewController = storyBoard.instantiateViewController(withIdentifier: "MapsVC")
+            let mapsViewController = storyBoard.instantiateViewController(withIdentifier: "MapsNavVC")
             
             self.window?.rootViewController = mapsViewController
             
@@ -57,6 +58,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate{
 
     func applicationWillTerminate(_ application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+        
+        //siging the user out when the user terminates the app, for testing purposes
+        do {
+            try Auth.auth().signOut()
+        } catch {
+            print("couldn't sign out")
+        }
     }
 
 
