@@ -11,26 +11,8 @@ import Lottie
 
 class AuthPickerViewController: UIViewController {
     
-    let animationView = AnimationView()
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-    }
-    
-    func setUpAnimation(){
-        let animation = Animation.named("plant")
         
-        animationView.animation = animation
-        animationView.frame = .zero
-        animationView.contentMode = .center
-        animationView.translatesAutoresizingMaskIntoConstraints = false
-        view.translatesAutoresizingMaskIntoConstraints = false
-        view.addSubview(animationView)
-        animationView.play()
-        
-    }
-    
-    override func viewDidAppear(_ animated: Bool) {
-        setUpAnimation()
     }
 }
