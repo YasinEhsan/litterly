@@ -9,7 +9,7 @@
 import UIKit
 
 //extends UIPageController and their delegates + data source
-class IntroPageViewController: UIPageViewController, UIPageViewControllerDelegate, UIPageViewControllerDataSource {
+class IntroPageViewController: UIPageViewController, UIPageViewControllerDelegate, UIPageViewControllerDataSource{
     
     //contains an array of VCs that we crated and have given them unique storyBoard IDs
     lazy var orderedVC: [UIViewController] = {

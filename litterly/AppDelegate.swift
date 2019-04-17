@@ -11,18 +11,32 @@ import GoogleMaps
 import Firebase
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate {
-
+class AppDelegate: UIResponder, UIApplicationDelegate{
+    
     var window: UIWindow?
-
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
         GMSServices.provideAPIKey("AIzaSyB1srdvHEWS867OD0jFSewpsSqok9vahcM")
         FirebaseApp.configure()
         
+        //if user didn't sign out, send the user directly to the mapsVC
+        if let alreadySignedIn = Auth.auth().currentUser{
+            print("User already signed in \(alreadySignedIn) \(Auth.auth().currentUser?.displayName as! String)")
+            
+            let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+            
+            let mapsViewController = storyBoard.instantiateViewController(withIdentifier: "MapsNavVC")
+            
+            self.window?.rootViewController = mapsViewController
+            
+        } else {
+            print("User needs to sign in again")
+        }
+        
         return true
     }
+
 
     func applicationWillResignActive(_ application: UIApplication) {
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
@@ -44,6 +58,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func applicationWillTerminate(_ application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+        
+        //siging the user out when the user terminates the app, for testing purposes
+        do {
+            try Auth.auth().signOut()
+        } catch {
+            print("couldn't sign out")
+        }
     }
 
 

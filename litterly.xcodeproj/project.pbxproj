@@ -7,12 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		C538A0F52264F54100E8FC01 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C538A0F42264F54100E8FC01 /* GoogleService-Info.plist */; };
 		C56CEA33225D977A005DC40E /* SelectedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = C56CEA32225D977A005DC40E /* SelectedButton.swift */; };
 		C56CEA35225D9E87005DC40E /* MapsVC-GoogleMaps.swift in Sources */ = {isa = PBXBuildFile; fileRef = C56CEA34225D9E87005DC40E /* MapsVC-GoogleMaps.swift */; };
 		C584FC6122668F3300ED1B53 /* alert.json in Resources */ = {isa = PBXBuildFile; fileRef = C584FC6022668F3200ED1B53 /* alert.json */; };
 		C584FC64226698E700ED1B53 /* plant.json in Resources */ = {isa = PBXBuildFile; fileRef = C584FC63226698E700ED1B53 /* plant.json */; };
 		C584FC6622669DC300ED1B53 /* town.json in Resources */ = {isa = PBXBuildFile; fileRef = C584FC6522669DC300ED1B53 /* town.json */; };
+		C58776BA2267DA86007C680D /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C58776B92267DA86007C680D /* GoogleService-Info.plist */; };
 		C58D911D225D54B2006A0390 /* MapsVC-SlideInCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = C58D911C225D54B2006A0390 /* MapsVC-SlideInCard.swift */; };
 		C5931BD6225EBBA400ECBEEB /* MapsVC-SearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5931BD5225EBBA400ECBEEB /* MapsVC-SearchBar.swift */; };
 		C597957C2264E01100B1797D /* AppColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = C597957B2264E01100B1797D /* AppColors.swift */; };
@@ -37,12 +37,12 @@
 /* Begin PBXFileReference section */
 		39E256F25A70D3C807D7B6F4 /* Pods-litterly.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-litterly.release.xcconfig"; path = "Target Support Files/Pods-litterly/Pods-litterly.release.xcconfig"; sourceTree = "<group>"; };
 		A6E706035DFCD681245FB63D /* Pods_litterly.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_litterly.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		C538A0F42264F54100E8FC01 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		C56CEA32225D977A005DC40E /* SelectedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectedButton.swift; sourceTree = "<group>"; };
 		C56CEA34225D9E87005DC40E /* MapsVC-GoogleMaps.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MapsVC-GoogleMaps.swift"; sourceTree = "<group>"; };
 		C584FC6022668F3200ED1B53 /* alert.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = alert.json; sourceTree = "<group>"; };
 		C584FC63226698E700ED1B53 /* plant.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = plant.json; sourceTree = "<group>"; };
 		C584FC6522669DC300ED1B53 /* town.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = town.json; sourceTree = "<group>"; };
+		C58776B92267DA86007C680D /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		C58D911C225D54B2006A0390 /* MapsVC-SlideInCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MapsVC-SlideInCard.swift"; sourceTree = "<group>"; };
 		C5931BD5225EBBA400ECBEEB /* MapsVC-SearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MapsVC-SearchBar.swift"; sourceTree = "<group>"; };
 		C597957B2264E01100B1797D /* AppColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppColors.swift; sourceTree = "<group>"; };
@@ -187,7 +187,7 @@
 				C5D83E2722581794009CB884 /* Assets.xcassets */,
 				C5D83E2922581794009CB884 /* LaunchScreen.storyboard */,
 				C5D83E2C22581794009CB884 /* Info.plist */,
-				C538A0F42264F54100E8FC01 /* GoogleService-Info.plist */,
+				C58776B92267DA86007C680D /* GoogleService-Info.plist */,
 				C5DD0886225845D1000988A3 /* ProfileViewController.swift */,
 			);
 			path = litterly;
@@ -264,10 +264,10 @@
 			files = (
 				C5E8F20622656A0C009FAE68 /* AuthPickerViewController.xib in Resources */,
 				C584FC64226698E700ED1B53 /* plant.json in Resources */,
+				C58776BA2267DA86007C680D /* GoogleService-Info.plist in Resources */,
 				C584FC6122668F3300ED1B53 /* alert.json in Resources */,
 				C5D3E904225BB10900C03AFB /* CardViewController.xib in Resources */,
 				C5D83E2B22581794009CB884 /* LaunchScreen.storyboard in Resources */,
-				C538A0F52264F54100E8FC01 /* GoogleService-Info.plist in Resources */,
 				C5D83E2822581794009CB884 /* Assets.xcassets in Resources */,
 				C5D83E2622581793009CB884 /* Main.storyboard in Resources */,
 				C584FC6622669DC300ED1B53 /* town.json in Resources */,

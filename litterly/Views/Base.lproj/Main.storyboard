@@ -47,7 +47,7 @@
                                 </subviews>
                             </stackView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="trash-can" translatesAutoresizingMaskIntoConstraints="NO" id="juc-vA-rN0">
-                                <rect key="frame" x="44" y="191" width="287" height="16"/>
+                                <rect key="frame" x="44" y="191" width="287" height="326"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fO0-2s-LDk">
                                 <rect key="frame" x="98.5" y="559.5" width="178" height="47.5"/>
@@ -146,7 +146,7 @@
         <!--Navigation Controller-->
         <scene sceneID="Lof-Qr-XcF">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="HRz-J6-zT4" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="MapsNavVC" automaticallyAdjustsScrollViewInsets="NO" id="HRz-J6-zT4" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="sjG-jE-3DP">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
@@ -197,7 +197,7 @@
                                 </subviews>
                             </stackView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="building" translatesAutoresizingMaskIntoConstraints="NO" id="O6X-GG-wpn">
-                                <rect key="frame" x="44" y="215" width="287" height="16"/>
+                                <rect key="frame" x="44" y="215" width="287" height="191"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gpl-ZN-vcB">
                                 <rect key="frame" x="98.5" y="559.5" width="178" height="47.5"/>
@@ -274,7 +274,7 @@
                                 </subviews>
                             </stackView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="liberty" translatesAutoresizingMaskIntoConstraints="NO" id="lV0-aJ-ct8">
-                                <rect key="frame" x="44" y="191" width="287" height="16"/>
+                                <rect key="frame" x="44" y="190.99999999999997" width="287.00000000000006" height="214.00000000000009"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mbR-b6-pL1">
                                 <rect key="frame" x="98.5" y="559.5" width="178" height="47.5"/>
