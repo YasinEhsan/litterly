@@ -25,6 +25,7 @@
 		C5DD088322584589000988A3 /* SigninViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5DD088222584589000988A3 /* SigninViewController.swift */; };
 		C5DD0885225845B7000988A3 /* MapsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5DD0884225845B7000988A3 /* MapsViewController.swift */; };
 		C5DD0887225845D1000988A3 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5DD0886225845D1000988A3 /* ProfileViewController.swift */; };
+		D2680D0E226634BB009A18BF /* MeetupsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2680D0D226634BB009A18BF /* MeetupsViewController.swift */; };
 		D34B1F79709B5F5A3BD8D8B6 /* Pods_litterly.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A6E706035DFCD681245FB63D /* Pods_litterly.framework */; };
 /* End PBXBuildFile section */
 
@@ -52,6 +53,7 @@
 		C5DD0884225845B7000988A3 /* MapsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapsViewController.swift; sourceTree = "<group>"; };
 		C5DD0886225845D1000988A3 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		CCB928DB4E5E78DB217C54B3 /* Pods-litterly.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-litterly.debug.xcconfig"; path = "Target Support Files/Pods-litterly/Pods-litterly.debug.xcconfig"; sourceTree = "<group>"; };
+		D2680D0D226634BB009A18BF /* MeetupsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeetupsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -155,6 +157,7 @@
 				C5D83E2C22581794009CB884 /* Info.plist */,
 				C5DD088222584589000988A3 /* SigninViewController.swift */,
 				C5DD0886225845D1000988A3 /* ProfileViewController.swift */,
+				D2680D0D226634BB009A18BF /* MeetupsViewController.swift */,
 			);
 			path = litterly;
 			sourceTree = "<group>";
@@ -247,18 +250,22 @@
 			);
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-litterly/Pods-litterly-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Cards/Cards.framework",
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
+				"${BUILT_PRODUCTS_DIR}/Player/Player.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
 			);
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Cards.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Player.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -326,6 +333,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C599F5EC2263044C0038A1A6 /* PageTwoViewController.swift in Sources */,
+				D2680D0E226634BB009A18BF /* MeetupsViewController.swift in Sources */,
 				C599F5EA2262FD830038A1A6 /* PageOneViewController.swift in Sources */,
 				C5DD088322584589000988A3 /* SigninViewController.swift in Sources */,
 				C5DD088122584562000988A3 /* IntroPageViewController.swift in Sources */,

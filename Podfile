@@ -12,6 +12,6 @@ pod 'GooglePlaces'
 pod 'Firebase/Core'
 pod 'FirebaseUI/Google'
 pod 'FirebaseUI/Auth'
-
+pod 'Cards', '~> 1.4'
 
 end
