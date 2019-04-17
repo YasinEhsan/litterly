@@ -128,7 +128,7 @@ extension SigninViewController: FUIAuthDelegate{
             //log the error
             return
         }
-        
+
         performSegue(withIdentifier: "MapsViewController", sender: self)
   
     }
