@@ -13,6 +13,7 @@
 		C584FC64226698E700ED1B53 /* plant.json in Resources */ = {isa = PBXBuildFile; fileRef = C584FC63226698E700ED1B53 /* plant.json */; };
 		C584FC6622669DC300ED1B53 /* town.json in Resources */ = {isa = PBXBuildFile; fileRef = C584FC6522669DC300ED1B53 /* town.json */; };
 		C58776BA2267DA86007C680D /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C58776B92267DA86007C680D /* GoogleService-Info.plist */; };
+		C58A62582268F23200729914 /* MapsVCLocationServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = C58A62572268F23200729914 /* MapsVCLocationServices.swift */; };
 		C58D911D225D54B2006A0390 /* MapsVC-SlideInCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = C58D911C225D54B2006A0390 /* MapsVC-SlideInCard.swift */; };
 		C5931BD6225EBBA400ECBEEB /* MapsVC-SearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5931BD5225EBBA400ECBEEB /* MapsVC-SearchBar.swift */; };
 		C597957C2264E01100B1797D /* AppColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = C597957B2264E01100B1797D /* AppColors.swift */; };
@@ -43,6 +44,7 @@
 		C584FC63226698E700ED1B53 /* plant.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = plant.json; sourceTree = "<group>"; };
 		C584FC6522669DC300ED1B53 /* town.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = town.json; sourceTree = "<group>"; };
 		C58776B92267DA86007C680D /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		C58A62572268F23200729914 /* MapsVCLocationServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapsVCLocationServices.swift; sourceTree = "<group>"; };
 		C58D911C225D54B2006A0390 /* MapsVC-SlideInCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MapsVC-SlideInCard.swift"; sourceTree = "<group>"; };
 		C5931BD5225EBBA400ECBEEB /* MapsVC-SearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MapsVC-SearchBar.swift"; sourceTree = "<group>"; };
 		C597957B2264E01100B1797D /* AppColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppColors.swift; sourceTree = "<group>"; };
@@ -149,11 +151,12 @@
 		C58D9121225D6003006A0390 /* MapsVCs */ = {
 			isa = PBXGroup;
 			children = (
+				C5D3E901225BB10900C03AFB /* CardViewController.swift */,
 				C5DD0884225845B7000988A3 /* MapsViewController.swift */,
 				C58D911C225D54B2006A0390 /* MapsVC-SlideInCard.swift */,
 				C5931BD5225EBBA400ECBEEB /* MapsVC-SearchBar.swift */,
 				C56CEA34225D9E87005DC40E /* MapsVC-GoogleMaps.swift */,
-				C5D3E901225BB10900C03AFB /* CardViewController.swift */,
+				C58A62572268F23200729914 /* MapsVCLocationServices.swift */,
 			);
 			path = MapsVCs;
 			sourceTree = "<group>";
@@ -380,6 +383,7 @@
 				C597957C2264E01100B1797D /* AppColors.swift in Sources */,
 				C5DD0885225845B7000988A3 /* MapsViewController.swift in Sources */,
 				C5E8F20522656A0C009FAE68 /* AuthPickerViewController.swift in Sources */,
+				C58A62582268F23200729914 /* MapsVCLocationServices.swift in Sources */,
 				C5931BD6225EBBA400ECBEEB /* MapsVC-SearchBar.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
