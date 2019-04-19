@@ -29,7 +29,7 @@ extension MapsViewController: CLLocationManagerDelegate{
     //sets up location manager. Call when location services are enabled
     func setupLocationManger(){
         locationManager.delegate = self
-        locationManager.desiredAccuracy = kCLLocationAccuracyBest
+        locationManager.desiredAccuracy = kCLLocationAccuracyHundredMeters
     }
     
     
@@ -71,7 +71,7 @@ extension MapsViewController: CLLocationManagerDelegate{
             print(location.latitude)
             print(location.longitude)
             
-            let camera = GMSCameraPosition.camera(withLatitude: location.latitude, longitude: location.longitude, zoom: 13.0)
+            let camera = GMSCameraPosition.camera(withLatitude: location.latitude, longitude: location.longitude, zoom: 17.0)
             mapView?.animate(to: camera)
             mapView?.isMyLocationEnabled = true
             
@@ -83,9 +83,11 @@ extension MapsViewController: CLLocationManagerDelegate{
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         let location = locations.last
         
-        let camera = GMSCameraPosition.camera(withLatitude: (location?.coordinate.latitude)!, longitude: (location?.coordinate.longitude)!, zoom: 13.0)
+        let camera = GMSCameraPosition.camera(withLatitude: (location?.coordinate.latitude)!, longitude: (location?.coordinate.longitude)!, zoom: 17.0)
         
         mapView?.animate(to: camera)
+        
+        locationManager.startUpdatingLocation()
         
         //Finally stop updating location otherwise it will come again and again in this delegate
         locationManager.stopUpdatingLocation()

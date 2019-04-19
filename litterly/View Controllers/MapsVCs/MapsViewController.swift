@@ -54,6 +54,8 @@ class MapsViewController: UIViewController {
     
     let db = Firestore.firestore()
     
+    var trashModelArray = [TrashDataModel]()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         

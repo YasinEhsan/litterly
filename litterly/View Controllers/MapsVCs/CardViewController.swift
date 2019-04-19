@@ -29,6 +29,7 @@ class CardViewController: UIViewController {
     let db = Firestore.firestore()
     let trashTypes: [String] = ["organic", "plastic", "metal"]
     var submitTrashType: String!
+    var trashModelArray = [TrashDataModel]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -105,16 +106,20 @@ class CardViewController: UIViewController {
     @IBAction func reportTrashButtonOnTap(_ sender: UIButton) {
         print("report trash tapped!!")
         
+        //checking to see if location services is enabled, then proceeding to report the trash
         let mapFuncs = MapsViewController()
         mapFuncs.checkLocationServices()
         if let coordinates = mapFuncs.locationManager.location?.coordinate{
             print(coordinates.latitude)
             print(coordinates.longitude)
             
+            //assigning values to our trash datamodel
             let reportThisTrash = TrashDataModel(lat: coordinates.latitude, lon: coordinates.longitude, trashType: "\(submitTrashType as String)")
+            
             print(reportThisTrash)
             
-            submitTrashToFirestore(onLat: reportThisTrash.lat, onLon: reportThisTrash.lon, type: reportThisTrash.trashType)
+            //passing our data to firestore as a dictionary that we init within our trash data model
+            submitTrashToFirestore(with: reportThisTrash.dictionary)
             
         } else{
             //show an alert saying that location is off
@@ -122,20 +127,21 @@ class CardViewController: UIViewController {
         
     }
     
-    func submitTrashToFirestore(onLat lat: Double, onLon lon: Double, type trashType: String){
-        db.collection("reportedTrash").addDocument(data: [
+    //using the db reference, we add documents to the collection "reportedTrash"
+    func submitTrashToFirestore(with dictionary: [String:Any]){
         
-            "lat": lat,
-            "lon": lon,
-            "type": trashType
-            
-        ]) { (error: Error?) in
-            if let error = error{
-                print(error.localizedDescription)
-            } else {
-                print("submitted to firestore successfully!")
-            }
-        }
+        var docRef:DocumentReference? = nil
+        
+        docRef = db.collection("reportedTrash").addDocument(data: dictionary, completion: { (error:Error?) in
+                
+                if let error = error{
+                    //show an alert
+                    print("error submitting data to firestore \(error.localizedDescription)")
+                }else{
+                    //show an alert
+                    print("successfully submitted to firestore")
+                }
+        })
     }
 
 }
