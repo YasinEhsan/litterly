@@ -10,7 +10,6 @@ target 'litterly' do
 pod 'GoogleMaps'
 pod 'GooglePlaces'
 pod 'Firebase/Core'
-pod 'Firebase/Firestore'
 pod 'FirebaseUI/Google'
 pod 'FirebaseUI/Auth'
 pod 'lottie-ios'
