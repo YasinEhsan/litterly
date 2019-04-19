@@ -13,18 +13,13 @@
 		C584FC64226698E700ED1B53 /* plant.json in Resources */ = {isa = PBXBuildFile; fileRef = C584FC63226698E700ED1B53 /* plant.json */; };
 		C584FC6622669DC300ED1B53 /* town.json in Resources */ = {isa = PBXBuildFile; fileRef = C584FC6522669DC300ED1B53 /* town.json */; };
 		C58776BA2267DA86007C680D /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C58776B92267DA86007C680D /* GoogleService-Info.plist */; };
-		C58A62582268F23200729914 /* MapsVCLocationServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = C58A62572268F23200729914 /* MapsVCLocationServices.swift */; };
 		C58D911D225D54B2006A0390 /* MapsVC-SlideInCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = C58D911C225D54B2006A0390 /* MapsVC-SlideInCard.swift */; };
 		C5931BD6225EBBA400ECBEEB /* MapsVC-SearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5931BD5225EBBA400ECBEEB /* MapsVC-SearchBar.swift */; };
 		C597957C2264E01100B1797D /* AppColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = C597957B2264E01100B1797D /* AppColors.swift */; };
 		C599F5EA2262FD830038A1A6 /* PageOneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C599F5E92262FD830038A1A6 /* PageOneViewController.swift */; };
 		C599F5EC2263044C0038A1A6 /* PageTwoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C599F5EB2263044C0038A1A6 /* PageTwoViewController.swift */; };
 		C599F5EE226304590038A1A6 /* PageThreeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C599F5ED226304590038A1A6 /* PageThreeViewController.swift */; };
-<<<<<<< HEAD
-		C5B110FD22698A3C008F9FEA /* TrashDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5B110FC22698A3C008F9FEA /* TrashDataModel.swift */; };
-=======
 		C5CA15A3226950AD008B04EB /* MeetupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5CA15A2226950AD008B04EB /* MeetupViewController.swift */; };
->>>>>>> master
 		C5D3E903225BB10900C03AFB /* CardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5D3E901225BB10900C03AFB /* CardViewController.swift */; };
 		C5D3E904225BB10900C03AFB /* CardViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C5D3E902225BB10900C03AFB /* CardViewController.xib */; };
 		C5D83E2122581793009CB884 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5D83E2022581793009CB884 /* AppDelegate.swift */; };
@@ -49,18 +44,13 @@
 		C584FC63226698E700ED1B53 /* plant.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = plant.json; sourceTree = "<group>"; };
 		C584FC6522669DC300ED1B53 /* town.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = town.json; sourceTree = "<group>"; };
 		C58776B92267DA86007C680D /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		C58A62572268F23200729914 /* MapsVCLocationServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapsVCLocationServices.swift; sourceTree = "<group>"; };
 		C58D911C225D54B2006A0390 /* MapsVC-SlideInCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MapsVC-SlideInCard.swift"; sourceTree = "<group>"; };
 		C5931BD5225EBBA400ECBEEB /* MapsVC-SearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MapsVC-SearchBar.swift"; sourceTree = "<group>"; };
 		C597957B2264E01100B1797D /* AppColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppColors.swift; sourceTree = "<group>"; };
 		C599F5E92262FD830038A1A6 /* PageOneViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageOneViewController.swift; sourceTree = "<group>"; };
 		C599F5EB2263044C0038A1A6 /* PageTwoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageTwoViewController.swift; sourceTree = "<group>"; };
 		C599F5ED226304590038A1A6 /* PageThreeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageThreeViewController.swift; sourceTree = "<group>"; };
-<<<<<<< HEAD
-		C5B110FC22698A3C008F9FEA /* TrashDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrashDataModel.swift; sourceTree = "<group>"; };
-=======
 		C5CA15A2226950AD008B04EB /* MeetupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeetupViewController.swift; sourceTree = "<group>"; };
->>>>>>> master
 		C5D3E901225BB10900C03AFB /* CardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardViewController.swift; sourceTree = "<group>"; };
 		C5D3E902225BB10900C03AFB /* CardViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CardViewController.xib; sourceTree = "<group>"; };
 		C5D83E1D22581793009CB884 /* litterly.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = litterly.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -162,31 +152,21 @@
 		C58D9121225D6003006A0390 /* MapsVCs */ = {
 			isa = PBXGroup;
 			children = (
-				C5D3E901225BB10900C03AFB /* CardViewController.swift */,
 				C5DD0884225845B7000988A3 /* MapsViewController.swift */,
 				C58D911C225D54B2006A0390 /* MapsVC-SlideInCard.swift */,
 				C5931BD5225EBBA400ECBEEB /* MapsVC-SearchBar.swift */,
 				C56CEA34225D9E87005DC40E /* MapsVC-GoogleMaps.swift */,
-				C58A62572268F23200729914 /* MapsVCLocationServices.swift */,
+				C5D3E901225BB10900C03AFB /* CardViewController.swift */,
 			);
 			path = MapsVCs;
 			sourceTree = "<group>";
 		};
-<<<<<<< HEAD
-		C5B110FB22698A1C008F9FEA /* Models */ = {
-			isa = PBXGroup;
-			children = (
-				C5B110FC22698A3C008F9FEA /* TrashDataModel.swift */,
-			);
-			path = Models;
-=======
 		C5CA15A122695080008B04EB /* MeetupVC */ = {
 			isa = PBXGroup;
 			children = (
 				C5CA15A2226950AD008B04EB /* MeetupViewController.swift */,
 			);
 			path = MeetupVC;
->>>>>>> master
 			sourceTree = "<group>";
 		};
 		C5D83E1422581793009CB884 = {
@@ -210,13 +190,12 @@
 		C5D83E1F22581793009CB884 /* litterly */ = {
 			isa = PBXGroup;
 			children = (
-				C5B110FB22698A1C008F9FEA /* Models */,
 				C584FC622266986D00ED1B53 /* Animations */,
 				C58D9120225D55BE006A0390 /* Colors */,
 				C58D911F225D559D006A0390 /* View Controllers */,
 				C58D911E225D5581006A0390 /* Views */,
-				C5D83E2722581794009CB884 /* Assets.xcassets */,
 				C5D83E2022581793009CB884 /* AppDelegate.swift */,
+				C5D83E2722581794009CB884 /* Assets.xcassets */,
 				C5D83E2922581794009CB884 /* LaunchScreen.storyboard */,
 				C5D83E2C22581794009CB884 /* Info.plist */,
 				C58776B92267DA86007C680D /* GoogleService-Info.plist */,
@@ -318,14 +297,9 @@
 			);
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-litterly/Pods-litterly-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/BoringSSL-GRPC/openssl_grpc.framework",
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
-				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
-				"${BUILT_PRODUCTS_DIR}/gRPC-C++/grpcpp.framework",
-				"${BUILT_PRODUCTS_DIR}/gRPC-Core/grpc.framework",
-				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
 				"${BUILT_PRODUCTS_DIR}/lottie-ios/Lottie.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
@@ -333,14 +307,9 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/openssl_grpc.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/grpcpp.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/grpc.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Lottie.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
@@ -422,9 +391,7 @@
 				C56CEA33225D977A005DC40E /* SelectedButton.swift in Sources */,
 				C597957C2264E01100B1797D /* AppColors.swift in Sources */,
 				C5DD0885225845B7000988A3 /* MapsViewController.swift in Sources */,
-				C5B110FD22698A3C008F9FEA /* TrashDataModel.swift in Sources */,
 				C5E8F20522656A0C009FAE68 /* AuthPickerViewController.swift in Sources */,
-				C58A62582268F23200729914 /* MapsVCLocationServices.swift in Sources */,
 				C5931BD6225EBBA400ECBEEB /* MapsVC-SearchBar.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
