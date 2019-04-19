@@ -20,7 +20,11 @@
 		C599F5EA2262FD830038A1A6 /* PageOneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C599F5E92262FD830038A1A6 /* PageOneViewController.swift */; };
 		C599F5EC2263044C0038A1A6 /* PageTwoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C599F5EB2263044C0038A1A6 /* PageTwoViewController.swift */; };
 		C599F5EE226304590038A1A6 /* PageThreeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C599F5ED226304590038A1A6 /* PageThreeViewController.swift */; };
+<<<<<<< HEAD
 		C5B110FD22698A3C008F9FEA /* TrashDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5B110FC22698A3C008F9FEA /* TrashDataModel.swift */; };
+=======
+		C5CA15A3226950AD008B04EB /* MeetupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5CA15A2226950AD008B04EB /* MeetupViewController.swift */; };
+>>>>>>> master
 		C5D3E903225BB10900C03AFB /* CardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5D3E901225BB10900C03AFB /* CardViewController.swift */; };
 		C5D3E904225BB10900C03AFB /* CardViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C5D3E902225BB10900C03AFB /* CardViewController.xib */; };
 		C5D83E2122581793009CB884 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5D83E2022581793009CB884 /* AppDelegate.swift */; };
@@ -52,7 +56,11 @@
 		C599F5E92262FD830038A1A6 /* PageOneViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageOneViewController.swift; sourceTree = "<group>"; };
 		C599F5EB2263044C0038A1A6 /* PageTwoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageTwoViewController.swift; sourceTree = "<group>"; };
 		C599F5ED226304590038A1A6 /* PageThreeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageThreeViewController.swift; sourceTree = "<group>"; };
+<<<<<<< HEAD
 		C5B110FC22698A3C008F9FEA /* TrashDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrashDataModel.swift; sourceTree = "<group>"; };
+=======
+		C5CA15A2226950AD008B04EB /* MeetupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeetupViewController.swift; sourceTree = "<group>"; };
+>>>>>>> master
 		C5D3E901225BB10900C03AFB /* CardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardViewController.swift; sourceTree = "<group>"; };
 		C5D3E902225BB10900C03AFB /* CardViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CardViewController.xib; sourceTree = "<group>"; };
 		C5D83E1D22581793009CB884 /* litterly.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = litterly.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -134,6 +142,7 @@
 		C58D911F225D559D006A0390 /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				C5CA15A122695080008B04EB /* MeetupVC */,
 				C5186B3D2261822000568951 /* IntroVCs */,
 				C538A0F12264F16E00E8FC01 /* SignInVC */,
 				C58D9121225D6003006A0390 /* MapsVCs */,
@@ -163,12 +172,21 @@
 			path = MapsVCs;
 			sourceTree = "<group>";
 		};
+<<<<<<< HEAD
 		C5B110FB22698A1C008F9FEA /* Models */ = {
 			isa = PBXGroup;
 			children = (
 				C5B110FC22698A3C008F9FEA /* TrashDataModel.swift */,
 			);
 			path = Models;
+=======
+		C5CA15A122695080008B04EB /* MeetupVC */ = {
+			isa = PBXGroup;
+			children = (
+				C5CA15A2226950AD008B04EB /* MeetupViewController.swift */,
+			);
+			path = MeetupVC;
+>>>>>>> master
 			sourceTree = "<group>";
 		};
 		C5D83E1422581793009CB884 = {
@@ -394,6 +412,7 @@
 				C599F5EA2262FD830038A1A6 /* PageOneViewController.swift in Sources */,
 				C5DD088322584589000988A3 /* SigninViewController.swift in Sources */,
 				C5DD088122584562000988A3 /* IntroPageViewController.swift in Sources */,
+				C5CA15A3226950AD008B04EB /* MeetupViewController.swift in Sources */,
 				C58D911D225D54B2006A0390 /* MapsVC-SlideInCard.swift in Sources */,
 				C5D3E903225BB10900C03AFB /* CardViewController.swift in Sources */,
 				C5DD0887225845D1000988A3 /* ProfileViewController.swift in Sources */,
