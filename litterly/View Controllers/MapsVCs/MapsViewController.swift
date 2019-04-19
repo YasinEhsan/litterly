@@ -9,6 +9,8 @@
 import UIKit
 import GoogleMaps
 import CoreLocation
+import Firebase
+import FirebaseFirestore
 
 class MapsViewController: UIViewController {
     
@@ -49,6 +51,8 @@ class MapsViewController: UIViewController {
         bar.translatesAutoresizingMaskIntoConstraints = false
         return bar
     }()
+    
+    let db = Firestore.firestore()
     
     override func viewDidLoad() {
         super.viewDidLoad()

@@ -23,31 +23,62 @@ extension MapsViewController {
             //***note the value 86, it is the height of the handleArea and the map's view must end before it touches handle area
             mapView = GMSMapView.map(withFrame: CGRect(x: 0, y: 0, width: self.view.frame.width, height: self.view.frame.height - 86), camera: camera)
             
-            createMapMarkers(with: "stuff", with: "stuff caption", with: CLLocationCoordinate2D(latitude: 40.740666, longitude: -73.984691))
+            createMapMarkers()
             
             //adding the mapsView as subview to the parent view
             self.view.addSubview(mapView!)
-        } else {
+            locateMeButton()
+            
+        } else { //else pass a default coordinate to center the location
                 mapView = GMSMapView.map(withFrame: CGRect(x: 0, y: 0, width: self.view.frame.width, height: self.view.frame.height - 86), camera: GMSCameraPosition.camera(withLatitude: 40.74069, longitude: -73.983114, zoom: 15))
             self.view.addSubview(mapView!)
+             locateMeButton()
         }
 
     }
     
+    //add a button to help center the screen position on device location
+    func locateMeButton(){
+        let gpsButton = UIButton(frame: CGRect(x: 0, y: 0, width: 52, height: 52))
+        gpsButton.backgroundColor = UIColor.textWhite
+        
+        gpsButton.setImage(UIImage(named: "52gps"), for: .normal)
+        
+        gpsButton.translatesAutoresizingMaskIntoConstraints = false
+        mapView?.addSubview(gpsButton)
+        
+        gpsButton.addTarget(self, action: #selector(onLocateMeTap(sender:)), for: .touchUpInside)
+        
+        
+        gpsButton.imageEdgeInsets = UIEdgeInsets(top: 15, left: 15, bottom: 15, right: 15)
+        
+        gpsButton.bottomAnchor.constraint(equalTo: mapView!.bottomAnchor, constant: -16).isActive = true
+        gpsButton.rightAnchor.constraint(equalTo: mapView!.rightAnchor, constant: -16).isActive = true
+        
+        gpsButton.layer.cornerRadius = 12
+        gpsButton.layer.shadowRadius = 50
+        gpsButton.layer.shadowColor = UIColor.searchBoxShadowColor.cgColor
+    }
+    
+    @objc func onLocateMeTap(sender: UIButton){
+        print("locate me tapped")
+        checkLocationServices()
+    }
+    
+    //************TODO
     //creates markers on lat, lon and with title and sinppet
-    func createMapMarkers(with title: String, with snippet: String, with latandlon: CLLocationCoordinate2D){
-        // init marker variable
-        let marker = GMSMarker()
+    func createMapMarkers(){
+        let docRef = db.collection("reportedTrash").document()
         
-        //specify the positions (lat and lon)
-        marker.position = latandlon
+        docRef.getDocument { (document, error) in
+            if let document = document, document.exists {
+                let dataDescription = document.data().map(String.init(describing:)) ?? "nil"
+                print("Document data: \(dataDescription)")
+            } else {
+                print("Document does not exist")
+            }
+        }
         
-        //any title and text you need
-        marker.title = "\(title)"
-        marker.snippet = "\(snippet)"
-        
-        //map the marker
-        marker.map = mapView
     }
     
     
