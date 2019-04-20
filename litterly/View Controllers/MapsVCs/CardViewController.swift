@@ -7,6 +7,9 @@
 //
 
 import UIKit
+import Firebase
+import FirebaseFirestore
+import CoreLocation
 
 class CardViewController: UIViewController {
 
@@ -23,13 +26,17 @@ class CardViewController: UIViewController {
     @IBOutlet weak var trashType3: UIButton!
     @IBOutlet weak var reportTrashButton: UIButton!
     
-    
+    let db = Firestore.firestore()
+    let trashTypes: [String] = ["organic", "plastic", "metal"]
+    var submitTrashType: String!
+    var trashModelArray = [TrashDataModel]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         setUpWidgetColors()
         roundButtonCorners()
+        reportTrashButton.isEnabled = false
     }
 
     //rounds the button's corners
@@ -59,19 +66,79 @@ class CardViewController: UIViewController {
     //the trash type buttons, user must select one
     @IBAction func trashType1ButtonOnTap(_ sender: UIButton) {
         trashType1.isSelected = !trashType1.isSelected
+        trashType2.isSelected = false
+        trashType3.isSelected = false
+        if trashType1.isSelected == true{
+            reportTrashButton.isEnabled = true
+            submitTrashType = trashTypes[0]
+        } else{
+            reportTrashButton.isEnabled = false
+        }
     }
     
     @IBAction func trashType2ButtonOnTap(_ sender: SelectedButton) {
         trashType2.isSelected = !trashType2.isSelected
+        trashType1.isSelected = false
+        trashType3.isSelected = false
+        if trashType2.isSelected == true{
+            reportTrashButton.isEnabled = true
+            submitTrashType = trashTypes[1]
+        } else{
+            reportTrashButton.isEnabled = false
+        }
     }
     
     @IBAction func trashType3ButtonOnTap(_ sender: SelectedButton) {
         trashType3.isSelected = !trashType3.isSelected
+        trashType1.isSelected = false
+        trashType2.isSelected = false
+        if trashType3.isSelected == true{
+            reportTrashButton.isEnabled = true
+            submitTrashType = trashTypes[2]
+        } else{
+            reportTrashButton.isEnabled = false
+        }
     }
     
     //func that will request lat, lon, trash type in order to got to the next steps of reporting trash
     @IBAction func reportTrashButtonOnTap(_ sender: UIButton) {
-        //make a request to the firebase server
+        print("report trash tapped!!")
+        
+        //checking to see if location services is enabled, then proceeding to report the trash
+        let mapFuncs = MapsViewController()
+        mapFuncs.checkLocationServices()
+        if let coordinates = mapFuncs.locationManager.location?.coordinate{
+            print(coordinates.latitude)
+            print(coordinates.longitude)
+            
+            //assigning values to our trash datamodel
+            let reportThisTrash = TrashDataModel(lat: coordinates.latitude, lon: coordinates.longitude, trashType: "\(submitTrashType as String)")
+            
+            print(reportThisTrash)
+            
+            //passing our data to firestore as a dictionary that we init within our trash data model
+            submitTrashToFirestore(with: reportThisTrash.dictionary)
+            
+        } else{
+            //show an alert saying that location is off
+        }
+    }
+    
+    //using the db reference, we add documents to the collection "reportedTrash"
+    func submitTrashToFirestore(with dictionary: [String:Any]){
+        
+        var docRef:DocumentReference? = nil
+        
+        docRef = db.collection("reportedTrash").addDocument(data: dictionary, completion: { (error:Error?) in
+            
+            if let error = error{
+                //show an alert
+                print("error submitting data to firestore \(error.localizedDescription)")
+            }else{
+                //show an alert
+                print("successfully submitted to firestore")
+            }
+        })
     }
     
     
