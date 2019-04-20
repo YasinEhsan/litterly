@@ -100,7 +100,7 @@ extension MapsViewController{
                 
                 switch state{
                 case . expanded:
-                     //***VERY IMPORTANT*** use view.bringSubviewToFront(viewName) in order to have card slidein properly
+                    //***VERY IMPORTANT*** use view.bringSubviewToFront(viewName) in order to have card slidein properly
                     //make sure to send the maps View to back to achieve the blur
                     //effect
                     self.view.bringSubviewToFront(self.cardViewController.view)
@@ -187,3 +187,4 @@ extension MapsViewController{
         }
     }
 }
+

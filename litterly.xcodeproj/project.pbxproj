@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C564B480226A9EB300F2DEF1 /* MapsVCLocationServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = C564B47F226A9EB300F2DEF1 /* MapsVCLocationServices.swift */; };
+		C564B483226AA05B00F2DEF1 /* TrashDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C564B482226AA05B00F2DEF1 /* TrashDataModel.swift */; };
 		C56CEA33225D977A005DC40E /* SelectedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = C56CEA32225D977A005DC40E /* SelectedButton.swift */; };
 		C56CEA35225D9E87005DC40E /* MapsVC-GoogleMaps.swift in Sources */ = {isa = PBXBuildFile; fileRef = C56CEA34225D9E87005DC40E /* MapsVC-GoogleMaps.swift */; };
 		C584FC6122668F3300ED1B53 /* alert.json in Resources */ = {isa = PBXBuildFile; fileRef = C584FC6022668F3200ED1B53 /* alert.json */; };
@@ -38,6 +40,8 @@
 /* Begin PBXFileReference section */
 		39E256F25A70D3C807D7B6F4 /* Pods-litterly.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-litterly.release.xcconfig"; path = "Target Support Files/Pods-litterly/Pods-litterly.release.xcconfig"; sourceTree = "<group>"; };
 		A6E706035DFCD681245FB63D /* Pods_litterly.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_litterly.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C564B47F226A9EB300F2DEF1 /* MapsVCLocationServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapsVCLocationServices.swift; sourceTree = "<group>"; };
+		C564B482226AA05B00F2DEF1 /* TrashDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrashDataModel.swift; sourceTree = "<group>"; };
 		C56CEA32225D977A005DC40E /* SelectedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectedButton.swift; sourceTree = "<group>"; };
 		C56CEA34225D9E87005DC40E /* MapsVC-GoogleMaps.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MapsVC-GoogleMaps.swift"; sourceTree = "<group>"; };
 		C584FC6022668F3200ED1B53 /* alert.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = alert.json; sourceTree = "<group>"; };
@@ -109,6 +113,14 @@
 			path = SignInVC;
 			sourceTree = "<group>";
 		};
+		C564B481226AA03D00F2DEF1 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				C564B482226AA05B00F2DEF1 /* TrashDataModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		C584FC622266986D00ED1B53 /* Animations */ = {
 			isa = PBXGroup;
 			children = (
@@ -157,6 +169,7 @@
 				C5931BD5225EBBA400ECBEEB /* MapsVC-SearchBar.swift */,
 				C56CEA34225D9E87005DC40E /* MapsVC-GoogleMaps.swift */,
 				C5D3E901225BB10900C03AFB /* CardViewController.swift */,
+				C564B47F226A9EB300F2DEF1 /* MapsVCLocationServices.swift */,
 			);
 			path = MapsVCs;
 			sourceTree = "<group>";
@@ -190,6 +203,7 @@
 		C5D83E1F22581793009CB884 /* litterly */ = {
 			isa = PBXGroup;
 			children = (
+				C564B481226AA03D00F2DEF1 /* Models */,
 				C584FC622266986D00ED1B53 /* Animations */,
 				C58D9120225D55BE006A0390 /* Colors */,
 				C58D911F225D559D006A0390 /* View Controllers */,
@@ -297,9 +311,14 @@
 			);
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-litterly/Pods-litterly-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/BoringSSL-GRPC/openssl_grpc.framework",
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
+				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
+				"${BUILT_PRODUCTS_DIR}/gRPC-C++/grpcpp.framework",
+				"${BUILT_PRODUCTS_DIR}/gRPC-Core/grpc.framework",
+				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
 				"${BUILT_PRODUCTS_DIR}/lottie-ios/Lottie.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
@@ -307,9 +326,14 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/openssl_grpc.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/grpcpp.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/grpc.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Lottie.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
@@ -381,12 +405,14 @@
 				C599F5EA2262FD830038A1A6 /* PageOneViewController.swift in Sources */,
 				C5DD088322584589000988A3 /* SigninViewController.swift in Sources */,
 				C5DD088122584562000988A3 /* IntroPageViewController.swift in Sources */,
+				C564B483226AA05B00F2DEF1 /* TrashDataModel.swift in Sources */,
 				C5CA15A3226950AD008B04EB /* MeetupViewController.swift in Sources */,
 				C58D911D225D54B2006A0390 /* MapsVC-SlideInCard.swift in Sources */,
 				C5D3E903225BB10900C03AFB /* CardViewController.swift in Sources */,
 				C5DD0887225845D1000988A3 /* ProfileViewController.swift in Sources */,
 				C599F5EE226304590038A1A6 /* PageThreeViewController.swift in Sources */,
 				C56CEA35225D9E87005DC40E /* MapsVC-GoogleMaps.swift in Sources */,
+				C564B480226A9EB300F2DEF1 /* MapsVCLocationServices.swift in Sources */,
 				C5D83E2122581793009CB884 /* AppDelegate.swift in Sources */,
 				C56CEA33225D977A005DC40E /* SelectedButton.swift in Sources */,
 				C597957C2264E01100B1797D /* AppColors.swift in Sources */,

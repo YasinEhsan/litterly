@@ -8,6 +8,9 @@
 
 import UIKit
 import GoogleMaps
+import CoreLocation
+import Firebase
+import FirebaseFirestore
 
 class MapsViewController: UIViewController {
     
@@ -40,6 +43,8 @@ class MapsViewController: UIViewController {
     var animatorProgressWhenInterrupted:CGFloat = 0
     
     var mapView: GMSMapView?
+    //init the location manager for device location
+    let locationManager = CLLocationManager()
     
     lazy var customSearchBar: UISearchBar = {
         let bar = UISearchBar()
@@ -47,10 +52,15 @@ class MapsViewController: UIViewController {
         return bar
     }()
     
+    let db = Firestore.firestore()
+    
+    var trashModelArray = [TrashDataModel]()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         initMapView()
+        checkLocationServices()
         addSlideInCardToMapView()
     }
     
@@ -63,3 +73,4 @@ class MapsViewController: UIViewController {
     
     
 }
+
