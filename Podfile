@@ -14,6 +14,7 @@ pod 'FirebaseUI/Google'
 pod 'FirebaseUI/Auth'
 pod 'lottie-ios'
 pod 'Firebase/Firestore'
+pod 'Cards'
 
 
 end
