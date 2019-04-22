@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="eW3-mQ-ne9">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="G8Q-WF-Tfv">
     <device id="retina5_9" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -156,18 +156,21 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Meetups" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Em-9d-uwV">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Meetups" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Em-9d-uwV">
                                 <rect key="frame" x="16" y="68" width="161" height="47"/>
                                 <fontDescription key="fontDescription" name="Gibson-SemiBold" family="Gibson" pointSize="40"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <view clipsSubviews="YES" contentMode="scaleAspectFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jSb-4B-8tW" customClass="CardGroup" customModule="Cards">
+                            <view clipsSubviews="YES" contentMode="scaleAspectFill" translatesAutoresizingMaskIntoConstraints="NO" id="jSb-4B-8tW" customClass="CardGroup" customModule="Cards">
                                 <rect key="frame" x="16" y="459" width="343" height="156"/>
                                 <color key="backgroundColor" red="0.20784313725490194" green="0.22745098039215686" blue="0.31372549019607843" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="tintColor" red="0.20784313725490194" green="0.22745098039215686" blue="0.31372549019607843" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="156" id="H50-nj-bUu"/>
                                     <constraint firstAttribute="width" constant="343" id="Odu-2W-vAi"/>
                                     <constraint firstAttribute="height" constant="156" id="VPg-vi-2sk"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="343" id="f18-hc-VlG"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="image" keyPath="backgroundImage" value="NoPath - Copy (18)"/>
@@ -183,15 +186,18 @@
                                         <real key="value" value="14"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="color" keyPath="textColor">
-                                        <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="value" cocoaTouchSystemColor="darkTextColor"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
-                            <view clipsSubviews="YES" contentMode="scaleAspectFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="rt4-Qg-clA" customClass="CardGroup" customModule="Cards">
+                            <view clipsSubviews="YES" contentMode="scaleAspectFill" translatesAutoresizingMaskIntoConstraints="NO" id="rt4-Qg-clA" customClass="CardGroup" customModule="Cards">
                                 <rect key="frame" x="16" y="627" width="343" height="156"/>
                                 <color key="backgroundColor" red="0.20784313725490194" green="0.22745098039215686" blue="0.31372549019607843" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="tintColor" red="0.20784313725490194" green="0.22745098039215686" blue="0.31372549019607843" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="343" id="A0f-n0-GRy"/>
                                     <constraint firstAttribute="width" constant="343" id="Ico-3M-9ba"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="156" id="XNG-uV-qXJ"/>
                                     <constraint firstAttribute="height" constant="156" id="hCv-hV-R1o"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
@@ -207,12 +213,18 @@
                                     <userDefinedRuntimeAttribute type="number" keyPath="subtitleSize">
                                         <real key="value" value="14"/>
                                     </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="textColor">
+                                        <color key="value" cocoaTouchSystemColor="darkTextColor"/>
+                                    </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
-                            <view clipsSubviews="YES" contentMode="scaleAspectFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wzX-6B-jJX" customClass="CardGroup" customModule="Cards">
+                            <view clipsSubviews="YES" contentMode="scaleAspectFill" translatesAutoresizingMaskIntoConstraints="NO" id="wzX-6B-jJX" customClass="CardGroup" customModule="Cards">
                                 <rect key="frame" x="16" y="123" width="343" height="156"/>
                                 <color key="backgroundColor" red="0.20784313725490194" green="0.22745098039215686" blue="0.31372549019607843" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="tintColor" red="0.20784313725490194" green="0.22745098039215686" blue="0.31372549019607843" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="156" id="URR-8m-WFB"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="343" id="cOq-yZ-MuN"/>
                                     <constraint firstAttribute="height" constant="156" id="dN2-cK-pGM"/>
                                     <constraint firstAttribute="width" constant="343" id="dUd-fa-S2a"/>
                                 </constraints>
@@ -230,15 +242,17 @@
                                         <real key="value" value="14"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="color" keyPath="textColor">
-                                        <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="value" cocoaTouchSystemColor="darkTextColor"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
-                            <view clipsSubviews="YES" contentMode="scaleAspectFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="oU4-gc-aTp" customClass="CardGroup" customModule="Cards">
+                            <view clipsSubviews="YES" contentMode="scaleAspectFill" translatesAutoresizingMaskIntoConstraints="NO" id="oU4-gc-aTp" customClass="CardGroup" customModule="Cards">
                                 <rect key="frame" x="16" y="291" width="343" height="156"/>
                                 <color key="backgroundColor" red="0.20784313725490194" green="0.22745098039215686" blue="0.31372549019607843" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="343" id="D1h-Tn-mYI"/>
                                     <constraint firstAttribute="height" constant="156" id="HlF-kO-AIB"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="156" id="gMc-Xh-9CG"/>
                                     <constraint firstAttribute="width" constant="343" id="v34-kh-ArD"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
@@ -255,11 +269,14 @@
                                         <real key="value" value="14"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="color" keyPath="textColor">
-                                        <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="value" cocoaTouchSystemColor="darkTextColor"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
+                                        <color key="value" cocoaTouchSystemColor="darkTextColor"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="&lt;" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c41-qH-871">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" text="&lt;" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c41-qH-871">
                                 <rect key="frame" x="16" y="44" width="42" height="21"/>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -268,28 +285,27 @@
                         </subviews>
                         <color key="backgroundColor" red="0.30588235294117649" green="0.36470588235294116" blue="0.97254901960784312" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="wzX-6B-jJX" firstAttribute="leading" secondItem="XRY-wk-bbt" secondAttribute="leading" constant="16" id="0IO-2P-Oz2"/>
-                            <constraint firstItem="1Em-9d-uwV" firstAttribute="top" secondItem="c41-qH-871" secondAttribute="bottom" constant="8" id="1fT-Dt-Q7V"/>
-                            <constraint firstItem="XRY-wk-bbt" firstAttribute="trailing" secondItem="rt4-Qg-clA" secondAttribute="trailing" constant="16" id="Bd5-mh-iaF"/>
-                            <constraint firstItem="wzX-6B-jJX" firstAttribute="top" secondItem="1Em-9d-uwV" secondAttribute="bottom" constant="12" id="CVE-ML-sgx"/>
-                            <constraint firstItem="rt4-Qg-clA" firstAttribute="top" secondItem="jSb-4B-8tW" secondAttribute="bottom" constant="12" id="Hn4-sL-KiU"/>
-                            <constraint firstItem="rt4-Qg-clA" firstAttribute="leading" secondItem="XRY-wk-bbt" secondAttribute="leading" constant="16" id="ISC-8c-I1J"/>
-                            <constraint firstItem="jSb-4B-8tW" firstAttribute="leading" secondItem="XRY-wk-bbt" secondAttribute="leading" constant="16" id="LXU-XJ-UJo"/>
-                            <constraint firstItem="XRY-wk-bbt" firstAttribute="trailing" secondItem="wzX-6B-jJX" secondAttribute="trailing" constant="16" id="Oyt-Az-UN6"/>
-                            <constraint firstItem="oU4-gc-aTp" firstAttribute="top" secondItem="wzX-6B-jJX" secondAttribute="bottom" constant="12" id="SPh-yI-LSM"/>
-                            <constraint firstItem="c41-qH-871" firstAttribute="top" secondItem="XRY-wk-bbt" secondAttribute="top" constant="8" id="SUP-I2-ive"/>
-                            <constraint firstItem="c41-qH-871" firstAttribute="leading" secondItem="XRY-wk-bbt" secondAttribute="leading" constant="16" id="Tzi-wa-2oU"/>
-                            <constraint firstItem="jSb-4B-8tW" firstAttribute="top" secondItem="oU4-gc-aTp" secondAttribute="bottom" constant="12" id="Uvz-aM-WdJ"/>
-                            <constraint firstItem="XRY-wk-bbt" firstAttribute="trailing" secondItem="jSb-4B-8tW" secondAttribute="trailing" constant="16" id="Y64-yp-0gn"/>
-                            <constraint firstItem="jSb-4B-8tW" firstAttribute="top" secondItem="oU4-gc-aTp" secondAttribute="bottom" constant="12" id="ahf-i9-yC8"/>
-                            <constraint firstAttribute="bottomMargin" secondItem="rt4-Qg-clA" secondAttribute="bottom" constant="12" id="ao3-kH-irj"/>
-                            <constraint firstItem="wzX-6B-jJX" firstAttribute="top" secondItem="1Em-9d-uwV" secondAttribute="bottom" constant="12" id="btO-I4-5NF"/>
-                            <constraint firstItem="1Em-9d-uwV" firstAttribute="top" secondItem="c41-qH-871" secondAttribute="bottom" constant="8" id="cIX-9z-IwM"/>
-                            <constraint firstItem="rt4-Qg-clA" firstAttribute="top" secondItem="jSb-4B-8tW" secondAttribute="bottom" constant="12" id="eql-cw-cyw"/>
-                            <constraint firstItem="XRY-wk-bbt" firstAttribute="trailing" secondItem="oU4-gc-aTp" secondAttribute="trailing" constant="16" id="gre-BJ-9Pv"/>
-                            <constraint firstItem="1Em-9d-uwV" firstAttribute="leading" secondItem="XRY-wk-bbt" secondAttribute="leading" constant="16" id="jD8-oR-ab6"/>
-                            <constraint firstItem="oU4-gc-aTp" firstAttribute="top" secondItem="wzX-6B-jJX" secondAttribute="bottom" constant="12" id="jl1-x4-PNp"/>
-                            <constraint firstItem="oU4-gc-aTp" firstAttribute="leading" secondItem="XRY-wk-bbt" secondAttribute="leading" constant="16" id="s9J-9h-cTz"/>
+                            <constraint firstItem="XRY-wk-bbt" firstAttribute="trailing" secondItem="rt4-Qg-clA" secondAttribute="trailing" constant="16" id="2m6-l9-apO"/>
+                            <constraint firstItem="jSb-4B-8tW" firstAttribute="top" secondItem="oU4-gc-aTp" secondAttribute="bottom" constant="12" id="3Xm-lk-M8w"/>
+                            <constraint firstItem="wzX-6B-jJX" firstAttribute="top" secondItem="1Em-9d-uwV" secondAttribute="bottom" constant="12" id="7sz-QV-c4M"/>
+                            <constraint firstItem="wzX-6B-jJX" firstAttribute="leading" secondItem="XRY-wk-bbt" secondAttribute="leading" constant="16" id="Az2-Rh-Go5"/>
+                            <constraint firstItem="oU4-gc-aTp" firstAttribute="top" secondItem="wzX-6B-jJX" secondAttribute="bottom" constant="12" id="CB0-vr-9yg"/>
+                            <constraint firstItem="rt4-Qg-clA" firstAttribute="leading" secondItem="XRY-wk-bbt" secondAttribute="leading" constant="16" id="GYw-hP-xv3"/>
+                            <constraint firstItem="jSb-4B-8tW" firstAttribute="top" secondItem="oU4-gc-aTp" secondAttribute="bottom" constant="12" id="bXY-Px-jzZ"/>
+                            <constraint firstItem="rt4-Qg-clA" firstAttribute="top" secondItem="jSb-4B-8tW" secondAttribute="bottom" constant="12" id="csz-iv-sW5"/>
+                            <constraint firstItem="oU4-gc-aTp" firstAttribute="leading" secondItem="XRY-wk-bbt" secondAttribute="leading" constant="16" id="fmt-AN-0M5"/>
+                            <constraint firstItem="1Em-9d-uwV" firstAttribute="leading" secondItem="XRY-wk-bbt" secondAttribute="leading" constant="16" id="gJP-5e-Rqh"/>
+                            <constraint firstItem="wzX-6B-jJX" firstAttribute="top" secondItem="1Em-9d-uwV" secondAttribute="bottom" constant="12" id="gX8-9E-t1Q"/>
+                            <constraint firstItem="c41-qH-871" firstAttribute="leading" secondItem="XRY-wk-bbt" secondAttribute="leading" constant="16" id="idO-Ow-cli"/>
+                            <constraint firstItem="XRY-wk-bbt" firstAttribute="trailing" secondItem="jSb-4B-8tW" secondAttribute="trailing" constant="16" id="min-mc-orh"/>
+                            <constraint firstItem="XRY-wk-bbt" firstAttribute="trailing" secondItem="wzX-6B-jJX" secondAttribute="trailing" constant="16" id="nIf-F8-EVS"/>
+                            <constraint firstItem="oU4-gc-aTp" firstAttribute="top" secondItem="wzX-6B-jJX" secondAttribute="bottom" constant="12" id="pcn-ub-4Cp"/>
+                            <constraint firstItem="c41-qH-871" firstAttribute="top" secondItem="XRY-wk-bbt" secondAttribute="top" constant="4" id="pqQ-za-kHd"/>
+                            <constraint firstItem="1Em-9d-uwV" firstAttribute="top" secondItem="c41-qH-871" secondAttribute="bottom" constant="4" id="qmH-Bc-AEj"/>
+                            <constraint firstItem="XRY-wk-bbt" firstAttribute="trailing" secondItem="oU4-gc-aTp" secondAttribute="trailing" constant="16" id="txN-1R-Vk9"/>
+                            <constraint firstItem="jSb-4B-8tW" firstAttribute="leading" secondItem="XRY-wk-bbt" secondAttribute="leading" constant="16" id="uwb-g9-FS8"/>
+                            <constraint firstItem="1Em-9d-uwV" firstAttribute="top" secondItem="c41-qH-871" secondAttribute="bottom" constant="4" id="zgG-Lx-i5l"/>
+                            <constraint firstItem="rt4-Qg-clA" firstAttribute="top" secondItem="jSb-4B-8tW" secondAttribute="bottom" constant="12" id="zyB-5i-O8j"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="XRY-wk-bbt"/>
                     </view>
@@ -313,7 +329,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Upcoming Meetups" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="INW-xQ-Ru0">
-                                <rect key="frame" x="16" y="64" width="247" height="33"/>
+                                <rect key="frame" x="16" y="64" width="251" height="33"/>
                                 <fontDescription key="fontDescription" name="Gibson-SemiBold" family="Gibson" pointSize="28"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
