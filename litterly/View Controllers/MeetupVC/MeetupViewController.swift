@@ -7,13 +7,41 @@
 //
 
 import UIKit
+import Cards
 
 class MeetupViewController: UIViewController {
-
+    
+    @IBOutlet weak var organicsCard: CardGroup!
+    @IBOutlet weak var plasticGroup: CardGroup!
+    @IBOutlet weak var electronicsGroup: CardGroup!
+    @IBOutlet weak var paperGroup: CardGroup!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        organicsCard.title = "Organics"
+        organicsCard.subtitle = "150 events"
+        
+        plasticGroup.title = "Plastic"
+        plasticGroup.subtitle = "90 events"
+        
+        electronicsGroup.title = "Electronics"
+        electronicsGroup.subtitle = "50 events"
+        
+        paperGroup.title = "Paper"
+        paperGroup.subtitle = "128 topics - 4k articles"
+        
+        let organicsCardContent = storyboard?.instantiateViewController(withIdentifier: "CardContent")
+        organicsCard.shouldPresent(organicsCardContent, from: self)
+
+        let plasticCardContent = storyboard?.instantiateViewController(withIdentifier: "CardContent")
+        plasticGroup.shouldPresent(plasticCardContent, from: self)
+
+        let electronicsCardContent = storyboard?.instantiateViewController(withIdentifier: "CardContent")
+        electronicsGroup.shouldPresent(electronicsCardContent, from: self)
+
+        let paperCardContent = storyboard?.instantiateViewController(withIdentifier: "CardContent")
+        paperGroup.shouldPresent(paperCardContent, from: self)
     }
     
 

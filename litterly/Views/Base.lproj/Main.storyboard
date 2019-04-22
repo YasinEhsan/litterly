@@ -158,36 +158,12 @@
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Meetups" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Em-9d-uwV">
                                 <rect key="frame" x="16" y="68" width="161" height="47"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="Gibson-SemiBold" family="Gibson" pointSize="40"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <view clipsSubviews="YES" contentMode="scaleAspectFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="oU4-gc-aTp" customClass="CardGroup" customModule="Cards">
-                                <rect key="frame" x="16" y="259" width="343" height="128"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.20784313725490194" green="0.22745098039215686" blue="0.31372549019607843" alpha="1" colorSpace="calibratedRGB"/>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="image" keyPath="backgroundImage" value="5c0523390f03b_610"/>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="cardRadius">
-                                        <real key="value" value="12"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="string" keyPath="title" value="Plastic"/>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="titleSize">
-                                        <real key="value" value="24"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="string" keyPath="subtitle" value="90 events"/>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="subtitleSize">
-                                        <real key="value" value="14"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="textColor">
-                                        <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                            </view>
                             <view clipsSubviews="YES" contentMode="scaleAspectFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jSb-4B-8tW" customClass="CardGroup" customModule="Cards">
-                                <rect key="frame" x="16" y="395" width="343" height="128"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <rect key="frame" x="16" y="458" width="343" height="156"/>
                                 <color key="backgroundColor" red="0.20784313725490194" green="0.22745098039215686" blue="0.31372549019607843" alpha="1" colorSpace="calibratedRGB"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="image" keyPath="backgroundImage" value="NoPath - Copy (18)"/>
@@ -208,8 +184,7 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <view clipsSubviews="YES" contentMode="scaleAspectFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="rt4-Qg-clA" customClass="CardGroup" customModule="Cards">
-                                <rect key="frame" x="16" y="531" width="343" height="128"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <rect key="frame" x="16" y="622" width="343" height="156"/>
                                 <color key="backgroundColor" red="0.20784313725490194" green="0.22745098039215686" blue="0.31372549019607843" alpha="1" colorSpace="calibratedRGB"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="image" keyPath="backgroundImage" value="NoPath - Copy (21)"/>
@@ -227,8 +202,7 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <view clipsSubviews="YES" contentMode="scaleAspectFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wzX-6B-jJX" customClass="CardGroup" customModule="Cards">
-                                <rect key="frame" x="16" y="123" width="343" height="128"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <rect key="frame" x="16" y="123" width="343" height="156"/>
                                 <color key="backgroundColor" red="0.20784313725490194" green="0.22745098039215686" blue="0.31372549019607843" alpha="1" colorSpace="calibratedRGB"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="image" keyPath="backgroundImage" value="NoPath - Copy (19)"/>
@@ -248,10 +222,65 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
+                            <view clipsSubviews="YES" contentMode="scaleAspectFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="oU4-gc-aTp" customClass="CardGroup" customModule="Cards">
+                                <rect key="frame" x="16" y="294" width="343" height="156"/>
+                                <color key="backgroundColor" red="0.20784313725490194" green="0.22745098039215686" blue="0.31372549019607843" alpha="1" colorSpace="calibratedRGB"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="image" keyPath="backgroundImage" value="5c0523390f03b_610"/>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cardRadius">
+                                        <real key="value" value="12"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="title" value="Plastic"/>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="titleSize">
+                                        <real key="value" value="24"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="subtitle" value="90 events"/>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="subtitleSize">
+                                        <real key="value" value="14"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="textColor">
+                                        <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="&lt;" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c41-qH-871">
+                                <rect key="frame" x="16" y="44" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.30588235294117649" green="0.36470588235294116" blue="0.97254901960784312" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="XRY-wk-bbt" firstAttribute="trailing" secondItem="rt4-Qg-clA" secondAttribute="trailing" constant="8" id="0ce-9M-fZG"/>
+                            <constraint firstItem="rt4-Qg-clA" firstAttribute="bottom" secondItem="XRY-wk-bbt" secondAttribute="bottom" constant="8" id="5dQ-o3-8tP"/>
+                            <constraint firstItem="rt4-Qg-clA" firstAttribute="top" secondItem="jSb-4B-8tW" secondAttribute="bottom" constant="8" id="6BL-ap-YEd"/>
+                            <constraint firstItem="jSb-4B-8tW" firstAttribute="top" secondItem="oU4-gc-aTp" secondAttribute="bottom" constant="8" id="96k-lN-Akf"/>
+                            <constraint firstItem="rt4-Qg-clA" firstAttribute="top" secondItem="jSb-4B-8tW" secondAttribute="bottom" constant="8" id="C7b-G1-Ipb"/>
+                            <constraint firstItem="c41-qH-871" firstAttribute="leading" secondItem="XRY-wk-bbt" secondAttribute="leading" constant="8" id="CgL-y2-za8"/>
+                            <constraint firstItem="XRY-wk-bbt" firstAttribute="trailing" secondItem="jSb-4B-8tW" secondAttribute="trailing" constant="8" id="Ctg-hn-kWe"/>
+                            <constraint firstItem="oU4-gc-aTp" firstAttribute="top" secondItem="wzX-6B-jJX" secondAttribute="bottom" constant="8" id="FzS-XR-6pl"/>
+                            <constraint firstItem="wzX-6B-jJX" firstAttribute="leading" secondItem="XRY-wk-bbt" secondAttribute="leading" constant="8" id="HBs-Tz-z3m"/>
+                            <constraint firstItem="oU4-gc-aTp" firstAttribute="top" secondItem="wzX-6B-jJX" secondAttribute="bottom" constant="8" id="Ul2-c6-AIT"/>
+                            <constraint firstItem="rt4-Qg-clA" firstAttribute="leading" secondItem="XRY-wk-bbt" secondAttribute="leading" constant="8" id="WF4-en-rtA"/>
+                            <constraint firstItem="wzX-6B-jJX" firstAttribute="top" secondItem="1Em-9d-uwV" secondAttribute="bottom" constant="8" id="YEe-mw-tC1"/>
+                            <constraint firstItem="1Em-9d-uwV" firstAttribute="leading" secondItem="XRY-wk-bbt" secondAttribute="leading" constant="8" id="dg6-7b-EMz"/>
+                            <constraint firstItem="1Em-9d-uwV" firstAttribute="top" secondItem="c41-qH-871" secondAttribute="bottom" constant="8" id="fhy-Vi-8fJ"/>
+                            <constraint firstItem="XRY-wk-bbt" firstAttribute="trailing" secondItem="wzX-6B-jJX" secondAttribute="trailing" constant="8" id="h0y-RZ-qet"/>
+                            <constraint firstItem="XRY-wk-bbt" firstAttribute="trailing" secondItem="oU4-gc-aTp" secondAttribute="trailing" constant="8" id="k5H-Sg-vbe"/>
+                            <constraint firstItem="jSb-4B-8tW" firstAttribute="top" secondItem="oU4-gc-aTp" secondAttribute="bottom" constant="8" id="pLg-9V-BWu"/>
+                            <constraint firstItem="c41-qH-871" firstAttribute="top" secondItem="XRY-wk-bbt" secondAttribute="top" constant="8" id="ruN-JY-yPz"/>
+                            <constraint firstItem="oU4-gc-aTp" firstAttribute="leading" secondItem="XRY-wk-bbt" secondAttribute="leading" constant="8" id="tBb-Rw-Sle"/>
+                            <constraint firstItem="jSb-4B-8tW" firstAttribute="leading" secondItem="XRY-wk-bbt" secondAttribute="leading" constant="8" id="uX9-fd-4CA"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="XRY-wk-bbt"/>
                     </view>
+                    <connections>
+                        <outlet property="electronicsGroup" destination="jSb-4B-8tW" id="Dwo-cF-HgV"/>
+                        <outlet property="organicsCard" destination="wzX-6B-jJX" id="auv-Is-LQm"/>
+                        <outlet property="paperGroup" destination="rt4-Qg-clA" id="J2T-kT-1ka"/>
+                        <outlet property="plasticGroup" destination="oU4-gc-aTp" id="u3Y-Q9-DIU"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ihF-c7-Uj0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -264,13 +293,156 @@
                     <view key="view" contentMode="scaleToFill" id="7KD-oQ-prS">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Upcoming Meetups" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="INW-xQ-Ru0">
+                                <rect key="frame" x="16" y="64" width="251" height="33"/>
+                                <fontDescription key="fontDescription" name="Gibson-SemiBold" family="Gibson" pointSize="28"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lower East Side Ecology Center Electronic Waste Recycling Warehouse" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fOx-n6-8fw">
+                                <rect key="frame" x="16" y="142" width="343" height="43"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="469 President St, Brooklyn, NY 11215" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="as3-rQ-6MG">
+                                <rect key="frame" x="16" y="189" width="285" height="19.333333333333343"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="May 4" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Eq-ME-slM">
+                                <rect key="frame" x="16" y="105" width="69" height="29"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="10am - 4pm" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Em0-LR-Laq">
+                                <rect key="frame" x="16" y="243" width="88" height="20"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="718.858.8777" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gfg-b9-ncs">
+                                <rect key="frame" x="16" y="261" width="99" height="20"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Jamaica E-waste Collection Event" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="r9L-Bo-1AL">
+                                <rect key="frame" x="16" y="289" width="343" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="172-12 Linden Blvd, Jamaica, NY 11434" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7q1-gb-h3q">
+                                <rect key="frame" x="16" y="315" width="285" height="23"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="10am - 4pm" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xtf-8Q-kRv">
+                                <rect key="frame" x="16" y="334" width="88" height="20"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="718.858.8777" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aqq-ED-6Bq">
+                                <rect key="frame" x="16" y="352" width="99" height="20"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Lower East Side Ecology Center Electronic Waste Recycling Warehouse" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gUR-Fd-3aX">
+                                <rect key="frame" x="16" y="411" width="343" height="58"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="469 President St, Brooklyn, NY 11215" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xMf-dE-i9x">
+                                <rect key="frame" x="16" y="462" width="285" height="23"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="May 7" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4SD-85-Idm">
+                                <rect key="frame" x="16" y="380" width="67" height="29"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="10am - 4pm" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bUu-hW-0dt">
+                                <rect key="frame" x="16" y="481" width="88" height="20"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="718.858.8777" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p4L-kK-rBv">
+                                <rect key="frame" x="16" y="499" width="99" height="20"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Jamaica E-waste Collection Event" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dPE-iA-nBo">
+                                <rect key="frame" x="16" y="527" width="343" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="172-12 Linden Blvd, Jamaica, NY 11434" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wGY-ee-vKS">
+                                <rect key="frame" x="16" y="553" width="285" height="23"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="10am - 4pm" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xV3-CO-Pkn">
+                                <rect key="frame" x="16" y="572" width="88" height="20"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="718.858.8777" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Lr-OM-bSh">
+                                <rect key="frame" x="16" y="590" width="99" height="20"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="9Eq-ME-slM" firstAttribute="leading" secondItem="Tdu-Zm-yO3" secondAttribute="leading" constant="16" id="1pd-Nc-jpQ"/>
+                            <constraint firstItem="Tdu-Zm-yO3" firstAttribute="trailing" secondItem="fOx-n6-8fw" secondAttribute="trailing" constant="16" id="2cu-k0-wyZ"/>
+                            <constraint firstItem="9Eq-ME-slM" firstAttribute="top" secondItem="INW-xQ-Ru0" secondAttribute="bottom" constant="8" id="5ZR-VQ-gaq"/>
+                            <constraint firstItem="as3-rQ-6MG" firstAttribute="top" secondItem="fOx-n6-8fw" secondAttribute="bottom" constant="4" id="HVk-qJ-2aU"/>
+                            <constraint firstItem="fOx-n6-8fw" firstAttribute="leading" secondItem="Tdu-Zm-yO3" secondAttribute="leading" constant="16" id="Qo5-zG-or0"/>
+                            <constraint firstItem="fOx-n6-8fw" firstAttribute="top" secondItem="9Eq-ME-slM" secondAttribute="bottom" constant="8" id="VUH-kO-Zc0"/>
+                            <constraint firstItem="INW-xQ-Ru0" firstAttribute="top" secondItem="Tdu-Zm-yO3" secondAttribute="top" constant="20" id="drc-cJ-dST"/>
+                            <constraint firstItem="9Eq-ME-slM" firstAttribute="top" secondItem="INW-xQ-Ru0" secondAttribute="bottom" constant="8" id="fDE-Wu-Xsw"/>
+                            <constraint firstItem="fOx-n6-8fw" firstAttribute="top" secondItem="9Eq-ME-slM" secondAttribute="bottom" constant="8" id="jpw-Pv-79y"/>
+                            <constraint firstItem="INW-xQ-Ru0" firstAttribute="leading" secondItem="Tdu-Zm-yO3" secondAttribute="leading" constant="16" id="nDb-Qz-gbR"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="Tdu-Zm-yO3"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="n2I-Bt-lgN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="6697" y="135"/>
+            <point key="canvasLocation" x="6696.8000000000002" y="134.48275862068965"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Lof-Qr-XcF">
