@@ -10,11 +10,6 @@
         <capability name="Stack View standard spacing" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
-    <customFonts key="customFonts">
-        <array key="gibson-semibold-webfont.ttf">
-            <string>Gibson-SemiBold</string>
-        </array>
-    </customFonts>
     <scenes>
         <!--Page One View Controller-->
         <scene sceneID="cH9-q0-3Sb">
@@ -158,7 +153,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jLR-tm-QlV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4905" y="134"/>
+            <point key="canvasLocation" x="4936.8000000000002" y="140.39408866995075"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="OAX-eI-Cgu">
@@ -168,181 +163,17 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Upcoming Meetups" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="INW-xQ-Ru0">
-                                <rect key="frame" x="16" y="64" width="251" height="33"/>
-                                <fontDescription key="fontDescription" name="Gibson-SemiBold" family="Gibson" pointSize="28"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lower East Side Ecology Center Electronic Waste Recycling Warehouse" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fOx-n6-8fw">
-                                <rect key="frame" x="16" y="142" width="343" height="43"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="469 President St, Brooklyn, NY 11215" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="as3-rQ-6MG">
-                                <rect key="frame" x="16" y="189" width="269.66666666666669" height="19.333333333333343"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="May 4" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Eq-ME-slM">
-                                <rect key="frame" x="16" y="105" width="69" height="29"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10am - 4pm" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Em0-LR-Laq">
-                                <rect key="frame" x="16" y="208.33333333333334" width="88" height="20"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="718.858.8777" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gfg-b9-ncs">
-                                <rect key="frame" x="16" y="228.33333333333334" width="99" height="20"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Jamaica E-waste Collection Event" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="r9L-Bo-1AL">
-                                <rect key="frame" x="16" y="256.33333333333331" width="343" height="21.666666666666686"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="172-12 Linden Blvd, Jamaica, NY 11434" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7q1-gb-h3q">
-                                <rect key="frame" x="16" y="282" width="284.66666666666669" height="19.333333333333314"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10am - 4pm" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xtf-8Q-kRv">
-                                <rect key="frame" x="16" y="301.33333333333331" width="88" height="20"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="718.858.8777" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aqq-ED-6Bq">
-                                <rect key="frame" x="16" y="321.33333333333331" width="99" height="20"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lower East Side Ecology Center Electronic Waste Recycling Warehouse" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gUR-Fd-3aX">
-                                <rect key="frame" x="16" y="390.33333333333331" width="343" height="43"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="469 President St, Brooklyn, NY 11215" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xMf-dE-i9x">
-                                <rect key="frame" x="16" y="437.33333333333331" width="269.66666666666669" height="19.333333333333314"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="May 7" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4SD-85-Idm">
-                                <rect key="frame" x="16" y="353.33333333333331" width="67" height="29"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10am - 4pm" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bUu-hW-0dt">
-                                <rect key="frame" x="16" y="456.66666666666669" width="88" height="20"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="718.858.8777" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p4L-kK-rBv">
-                                <rect key="frame" x="16" y="476.66666666666669" width="99" height="20"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Jamaica E-waste Collection Event" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dPE-iA-nBo">
-                                <rect key="frame" x="16" y="504.66666666666669" width="343" height="21.666666666666686"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="172-12 Linden Blvd, Jamaica, NY 11434" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wGY-ee-vKS">
-                                <rect key="frame" x="16" y="530.33333333333337" width="284.66666666666669" height="19.333333333333371"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="718.858.8777" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Lr-OM-bSh">
-                                <rect key="frame" x="16" y="569.66666666666663" width="99" height="20"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10am - 4pm" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xV3-CO-Pkn">
-                                <rect key="frame" x="16" y="549.66666666666663" width="88" height="20"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TableView set up" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oUi-9G-X90">
+                                <rect key="frame" x="27.666666666666657" y="376.66666666666669" width="320" height="58.666666666666686"/>
+                                <fontDescription key="fontDescription" name="MarkerFelt-Wide" family="Marker Felt" pointSize="45"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="aqq-ED-6Bq" firstAttribute="top" secondItem="xtf-8Q-kRv" secondAttribute="bottom" id="0B4-fC-KED"/>
-                            <constraint firstItem="r9L-Bo-1AL" firstAttribute="top" secondItem="Gfg-b9-ncs" secondAttribute="bottom" constant="8" id="0MS-lJ-ygA"/>
-                            <constraint firstItem="9Eq-ME-slM" firstAttribute="leading" secondItem="Tdu-Zm-yO3" secondAttribute="leading" constant="16" id="1pd-Nc-jpQ"/>
-                            <constraint firstItem="Tdu-Zm-yO3" firstAttribute="trailing" secondItem="fOx-n6-8fw" secondAttribute="trailing" constant="16" id="2cu-k0-wyZ"/>
-                            <constraint firstItem="Gfg-b9-ncs" firstAttribute="leading" secondItem="Tdu-Zm-yO3" secondAttribute="leading" constant="16" id="5HW-Eu-rKU"/>
-                            <constraint firstItem="9Eq-ME-slM" firstAttribute="top" secondItem="INW-xQ-Ru0" secondAttribute="bottom" constant="8" id="5ZR-VQ-gaq"/>
-                            <constraint firstItem="dPE-iA-nBo" firstAttribute="top" secondItem="p4L-kK-rBv" secondAttribute="bottom" constant="8" id="61p-XS-Kuu"/>
-                            <constraint firstItem="Em0-LR-Laq" firstAttribute="top" secondItem="as3-rQ-6MG" secondAttribute="bottom" id="7yB-Ax-yTs"/>
-                            <constraint firstItem="Tdu-Zm-yO3" firstAttribute="trailing" secondItem="dPE-iA-nBo" secondAttribute="trailing" constant="16" id="AUD-ua-qII"/>
-                            <constraint firstItem="aqq-ED-6Bq" firstAttribute="leading" secondItem="Tdu-Zm-yO3" secondAttribute="leading" constant="16" id="BPx-SQ-AZC"/>
-                            <constraint firstItem="aqq-ED-6Bq" firstAttribute="top" secondItem="xtf-8Q-kRv" secondAttribute="bottom" id="CxK-DC-EbE"/>
-                            <constraint firstItem="xtf-8Q-kRv" firstAttribute="leading" secondItem="Tdu-Zm-yO3" secondAttribute="leading" constant="16" id="E4c-iV-bZm"/>
-                            <constraint firstItem="wGY-ee-vKS" firstAttribute="top" secondItem="dPE-iA-nBo" secondAttribute="bottom" constant="4" id="Ega-qF-vMm"/>
-                            <constraint firstItem="r9L-Bo-1AL" firstAttribute="leading" secondItem="Tdu-Zm-yO3" secondAttribute="leading" constant="16" id="Gyl-ln-k0J"/>
-                            <constraint firstItem="Gfg-b9-ncs" firstAttribute="top" secondItem="Em0-LR-Laq" secondAttribute="bottom" id="HA6-Vg-84Z"/>
-                            <constraint firstItem="as3-rQ-6MG" firstAttribute="top" secondItem="fOx-n6-8fw" secondAttribute="bottom" constant="4" id="HVk-qJ-2aU"/>
-                            <constraint firstItem="4SD-85-Idm" firstAttribute="leading" secondItem="Tdu-Zm-yO3" secondAttribute="leading" constant="16" id="HWE-St-TYo"/>
-                            <constraint firstItem="p4L-kK-rBv" firstAttribute="top" secondItem="bUu-hW-0dt" secondAttribute="bottom" id="HXI-bJ-SVB"/>
-                            <constraint firstItem="dPE-iA-nBo" firstAttribute="leading" secondItem="Tdu-Zm-yO3" secondAttribute="leading" constant="16" id="Hm5-fN-AqM"/>
-                            <constraint firstItem="Em0-LR-Laq" firstAttribute="top" secondItem="as3-rQ-6MG" secondAttribute="bottom" id="IEv-12-6PP"/>
-                            <constraint firstItem="xV3-CO-Pkn" firstAttribute="top" secondItem="wGY-ee-vKS" secondAttribute="bottom" id="Ksh-0F-jvr"/>
-                            <constraint firstItem="Tdu-Zm-yO3" firstAttribute="trailing" secondItem="gUR-Fd-3aX" secondAttribute="trailing" constant="16" id="O22-r1-Zbe"/>
-                            <constraint firstItem="xMf-dE-i9x" firstAttribute="top" secondItem="gUR-Fd-3aX" secondAttribute="bottom" constant="4" id="OaP-OR-dpu"/>
-                            <constraint firstItem="fOx-n6-8fw" firstAttribute="leading" secondItem="Tdu-Zm-yO3" secondAttribute="leading" constant="16" id="Qo5-zG-or0"/>
-                            <constraint firstItem="dPE-iA-nBo" firstAttribute="top" secondItem="p4L-kK-rBv" secondAttribute="bottom" constant="8" id="Roe-aS-Qzx"/>
-                            <constraint firstItem="xMf-dE-i9x" firstAttribute="leading" secondItem="Tdu-Zm-yO3" secondAttribute="leading" constant="16" id="S4Y-Iq-74g"/>
-                            <constraint firstItem="gUR-Fd-3aX" firstAttribute="leading" secondItem="Tdu-Zm-yO3" secondAttribute="leading" constant="16" id="Snb-60-RGy"/>
-                            <constraint firstItem="p4L-kK-rBv" firstAttribute="top" secondItem="bUu-hW-0dt" secondAttribute="bottom" id="T2D-hn-G4j"/>
-                            <constraint firstItem="xtf-8Q-kRv" firstAttribute="top" secondItem="7q1-gb-h3q" secondAttribute="bottom" id="UaR-ix-1xv"/>
-                            <constraint firstItem="Gfg-b9-ncs" firstAttribute="top" secondItem="Em0-LR-Laq" secondAttribute="bottom" id="Uep-1d-lAJ"/>
-                            <constraint firstItem="r9L-Bo-1AL" firstAttribute="top" secondItem="Gfg-b9-ncs" secondAttribute="bottom" constant="8" id="UjF-0N-6K2"/>
-                            <constraint firstItem="fOx-n6-8fw" firstAttribute="top" secondItem="9Eq-ME-slM" secondAttribute="bottom" constant="8" id="VUH-kO-Zc0"/>
-                            <constraint firstItem="Em0-LR-Laq" firstAttribute="leading" secondItem="Tdu-Zm-yO3" secondAttribute="leading" constant="16" id="Wc1-76-zCg"/>
-                            <constraint firstItem="Tdu-Zm-yO3" firstAttribute="trailing" secondItem="r9L-Bo-1AL" secondAttribute="trailing" constant="16" id="YUy-3b-Hg6"/>
-                            <constraint firstItem="xMf-dE-i9x" firstAttribute="top" secondItem="gUR-Fd-3aX" secondAttribute="bottom" constant="4" id="dS6-hR-WWE"/>
-                            <constraint firstItem="INW-xQ-Ru0" firstAttribute="top" secondItem="Tdu-Zm-yO3" secondAttribute="top" constant="20" id="drc-cJ-dST"/>
-                            <constraint firstItem="4SD-85-Idm" firstAttribute="top" secondItem="aqq-ED-6Bq" secondAttribute="bottom" constant="12" id="e5X-DV-Rq9"/>
-                            <constraint firstItem="7q1-gb-h3q" firstAttribute="top" secondItem="r9L-Bo-1AL" secondAttribute="bottom" constant="4" id="eTi-ht-djj"/>
-                            <constraint firstItem="9Eq-ME-slM" firstAttribute="top" secondItem="INW-xQ-Ru0" secondAttribute="bottom" constant="8" id="fDE-Wu-Xsw"/>
-                            <constraint firstItem="bUu-hW-0dt" firstAttribute="leading" secondItem="Tdu-Zm-yO3" secondAttribute="leading" constant="16" id="gsP-Wz-6Pz"/>
-                            <constraint firstItem="wGY-ee-vKS" firstAttribute="top" secondItem="dPE-iA-nBo" secondAttribute="bottom" constant="4" id="hKZ-o1-43M"/>
-                            <constraint firstItem="bUu-hW-0dt" firstAttribute="top" secondItem="xMf-dE-i9x" secondAttribute="bottom" id="iIg-qo-jkY"/>
-                            <constraint firstItem="fOx-n6-8fw" firstAttribute="top" secondItem="9Eq-ME-slM" secondAttribute="bottom" constant="8" id="jpw-Pv-79y"/>
-                            <constraint firstItem="wGY-ee-vKS" firstAttribute="leading" secondItem="Tdu-Zm-yO3" secondAttribute="leading" constant="16" id="jrw-gz-fzg"/>
-                            <constraint firstItem="xtf-8Q-kRv" firstAttribute="top" secondItem="7q1-gb-h3q" secondAttribute="bottom" id="ldk-aF-rX4"/>
-                            <constraint firstItem="INW-xQ-Ru0" firstAttribute="leading" secondItem="Tdu-Zm-yO3" secondAttribute="leading" constant="16" id="nDb-Qz-gbR"/>
-                            <constraint firstItem="xV3-CO-Pkn" firstAttribute="leading" secondItem="Tdu-Zm-yO3" secondAttribute="leading" constant="16" id="ntb-f3-FTt"/>
-                            <constraint firstItem="7q1-gb-h3q" firstAttribute="top" secondItem="r9L-Bo-1AL" secondAttribute="bottom" constant="4" id="oCx-WB-h2s"/>
-                            <constraint firstItem="7Lr-OM-bSh" firstAttribute="top" secondItem="xV3-CO-Pkn" secondAttribute="bottom" id="ooe-nm-xDq"/>
-                            <constraint firstItem="p4L-kK-rBv" firstAttribute="leading" secondItem="Tdu-Zm-yO3" secondAttribute="leading" constant="16" id="r9L-up-XRo"/>
-                            <constraint firstItem="as3-rQ-6MG" firstAttribute="top" secondItem="fOx-n6-8fw" secondAttribute="bottom" constant="4" id="rBy-1r-vz7"/>
-                            <constraint firstItem="gUR-Fd-3aX" firstAttribute="top" secondItem="4SD-85-Idm" secondAttribute="bottom" constant="8" id="sBT-Np-XZ3"/>
-                            <constraint firstItem="7Lr-OM-bSh" firstAttribute="leading" secondItem="Tdu-Zm-yO3" secondAttribute="leading" constant="16" id="sGh-cZ-lLV"/>
-                            <constraint firstItem="gUR-Fd-3aX" firstAttribute="top" secondItem="4SD-85-Idm" secondAttribute="bottom" constant="8" id="sdA-1o-Tdl"/>
-                            <constraint firstItem="as3-rQ-6MG" firstAttribute="leading" secondItem="Tdu-Zm-yO3" secondAttribute="leading" constant="16" id="uPE-PK-y06"/>
-                            <constraint firstItem="7q1-gb-h3q" firstAttribute="leading" secondItem="Tdu-Zm-yO3" secondAttribute="leading" constant="16" id="xsI-5e-lz3"/>
-                            <constraint firstItem="7Lr-OM-bSh" firstAttribute="top" secondItem="xV3-CO-Pkn" secondAttribute="bottom" id="z8Y-xp-336"/>
-                            <constraint firstItem="bUu-hW-0dt" firstAttribute="top" secondItem="xMf-dE-i9x" secondAttribute="bottom" id="zjP-So-oWo"/>
+                            <constraint firstItem="oUi-9G-X90" firstAttribute="centerY" secondItem="7KD-oQ-prS" secondAttribute="centerY" id="F6U-3j-Dwb"/>
+                            <constraint firstItem="oUi-9G-X90" firstAttribute="centerX" secondItem="7KD-oQ-prS" secondAttribute="centerX" id="nRH-xG-JjS"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Tdu-Zm-yO3"/>
                     </view>

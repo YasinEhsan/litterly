@@ -25,7 +25,7 @@ class ContainerController: UIViewController{
     var isExpanded = false
     
     //the blur effect that will be applied to the container view and then be removed
-    let blurEffect = UIBlurEffect(style: .dark)
+    let blurEffect = UIBlurEffect(style: .regular)
     var blurEffectView: UIVisualEffectView!
     
     // MARK: - Init
