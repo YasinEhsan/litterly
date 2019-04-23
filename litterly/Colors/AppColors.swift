@@ -15,6 +15,7 @@ extension UIColor{
     static let mainBlue = UIColor(hex: 0x4E5DF8)
     static let trashOrange = UIColor(hex: 0xFFB900)
     static let unselectedGrey = UIColor(hex: 0x353A50)
+    static let containerDividerGrey = UIColor(hex: 0x454F63)
     static let mainGreen = UIColor(hex: 0x2ECC71)
     static let pageControlUnselectedPageGreen = UIColor(hex: 0x2ECC71, a: 0.32)
     static let textWhite = UIColor(hex: 0xFFFFFF)

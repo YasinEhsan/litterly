@@ -105,6 +105,10 @@ extension MapsViewController{
                     //effect
                     self.view.bringSubviewToFront(self.cardViewController.view)
                     self.view.sendSubviewToBack(self.mapView!)
+                    
+                    //diabling the nav bar
+                    //TODO add a blur effect to the nav bar
+                    self.navigationController?.navigationBar.isUserInteractionEnabled = false
                     self.cardViewController.view.frame.origin.y = self.view.frame.height - self.cardHeight
                 case .collapsed:
                     self.cardViewController.view.frame.origin.y = self.view.frame.height - self.cardHandleAreaHeight
@@ -122,6 +126,7 @@ extension MapsViewController{
                 if self.cardVisible == false{
                     self.view.bringSubviewToFront(self.mapView!)
                     self.view.bringSubviewToFront(self.cardViewController.view)
+                    self.navigationController?.navigationBar.isUserInteractionEnabled = true
                 }
             }
             

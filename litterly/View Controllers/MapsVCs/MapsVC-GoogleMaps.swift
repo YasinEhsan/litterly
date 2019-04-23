@@ -83,7 +83,7 @@ extension MapsViewController {
                 
                 self.trashModelArray = (querySnapshot!.documents.compactMap({TrashDataModel(dictionary: $0.data())}))
                 
-                print(self.trashModelArray)
+                //print(self.trashModelArray)
                 
                 //chceking if the database we query for is empty
                 guard let snapShot = querySnapshot else{return}

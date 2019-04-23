@@ -23,13 +23,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate{
         //if user didn't sign out, send the user directly to the mapsVC
         if let alreadySignedIn = Auth.auth().currentUser{
             print("User already signed in \(alreadySignedIn) \(Auth.auth().currentUser?.displayName as! String)")
-            
+
             let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-            
-            let mapsViewController = storyBoard.instantiateViewController(withIdentifier: "MapsNavVC")
-            
+
+            let mapsViewController = storyBoard.instantiateViewController(withIdentifier: "ContainerVC")
+
             self.window?.rootViewController = mapsViewController
-            
+
         } else {
             print("User needs to sign in again")
         }
@@ -58,13 +58,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate{
 
     func applicationWillTerminate(_ application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
-        
-        //siging the user out when the user terminates the app, for testing purposes
-        do {
-            try Auth.auth().signOut()
-        } catch {
-            print("couldn't sign out")
-        }
+
     }
 
 

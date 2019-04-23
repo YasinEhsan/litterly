@@ -129,14 +129,12 @@ extension SigninViewController: FUIAuthDelegate{
             return
         }
 
-        performSegue(withIdentifier: "MapsViewController", sender: self)
+        let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        
+        let mapsViewController = storyBoard.instantiateViewController(withIdentifier: "ContainerVC")
+        
+        present(mapsViewController, animated: true, completion: nil)
   
-    }
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "MapsViewController"{
-            print("Going to maps VC now")
-        }
     }
     
 }

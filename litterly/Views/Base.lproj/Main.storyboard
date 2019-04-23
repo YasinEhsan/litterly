@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="eW3-mQ-ne9">
-    <device id="retina4_7" orientation="portrait">
+    <device id="retina5_9" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -16,14 +16,14 @@
             <objects>
                 <viewController storyboardIdentifier="pageOne" id="ZYJ-ip-zin" customClass="PageOneViewController" customModule="litterly" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ZTz-mC-FQc">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="blue" translatesAutoresizingMaskIntoConstraints="NO" id="Pp5-Cg-mzB">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="519.5"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="630.66666666666663"/>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleAspectFill" axis="vertical" distribution="fillEqually" alignment="top" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="k1g-AA-ojl">
-                                <rect key="frame" x="18" y="38" width="339" height="133"/>
+                                <rect key="frame" x="18" y="62" width="339" height="133"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hi there," textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="39j-Gq-bBB">
                                         <rect key="frame" x="0.0" y="0.0" width="110" height="39"/>
@@ -33,13 +33,13 @@
                                         <size key="shadowOffset" width="0.0" height="0.0"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome to litterly!" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0X7-Bl-FFe">
-                                        <rect key="frame" x="0.0" y="47" width="189.5" height="39"/>
+                                        <rect key="frame" x="0.0" y="47" width="189.66666666666666" height="39"/>
                                         <fontDescription key="fontDescription" name="MarkerFelt-Wide" family="Marker Felt" pointSize="22"/>
                                         <color key="textColor" red="0.96078431369999995" green="0.95686274510000002" blue="0.98039215690000003" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="a journey to save the city from trash" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NM5-0Z-xms">
-                                        <rect key="frame" x="0.0" y="94" width="290.5" height="39"/>
+                                        <rect key="frame" x="0.0" y="94" width="290.66666666666669" height="39"/>
                                         <fontDescription key="fontDescription" name="MarkerFelt-Wide" family="Marker Felt" pointSize="18"/>
                                         <color key="textColor" red="0.96078431369999995" green="0.95686274510000002" blue="0.98039215690000003" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
@@ -47,10 +47,10 @@
                                 </subviews>
                             </stackView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="trash-can" translatesAutoresizingMaskIntoConstraints="NO" id="juc-vA-rN0">
-                                <rect key="frame" x="44" y="191" width="287" height="16"/>
+                                <rect key="frame" x="44" y="215" width="287" height="326"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fO0-2s-LDk">
-                                <rect key="frame" x="98.5" y="559.5" width="178" height="47.5"/>
+                                <rect key="frame" x="98.666666666666686" y="670.66666666666663" width="178" height="47.333333333333371"/>
                                 <color key="backgroundColor" red="0.1803921568627451" green="0.80000000000000004" blue="0.44313725490196076" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="47.5" id="0sc-Ja-8Mj"/>
@@ -91,7 +91,7 @@
         <!--Intro Page View Controller-->
         <scene sceneID="bAb-48-ejc">
             <objects>
-                <pageViewController autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="eW3-mQ-ne9" customClass="IntroPageViewController" customModule="litterly" customModuleProvider="target" sceneMemberID="viewController"/>
+                <pageViewController storyboardIdentifier="IntroPageVC" autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="eW3-mQ-ne9" customClass="IntroPageViewController" customModule="litterly" customModuleProvider="target" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hlc-HZ-QVe" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1335" y="134"/>
@@ -101,94 +101,100 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="SigninViewController" customModule="litterly" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" id="tZI-PV-GQC"/>
                     <connections>
-                        <segue destination="HRz-J6-zT4" kind="show" identifier="MapsViewController" id="f7S-Sj-PMM"/>
+                        <segue destination="5kT-Z7-8hQ" kind="show" identifier="MapsViewController" id="585-hd-hun"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2076.8115942028985" y="133.92857142857142"/>
+            <point key="canvasLocation" x="1943" y="134"/>
+        </scene>
+        <!--Container Controller-->
+        <scene sceneID="PWf-Ze-hPD">
+            <objects>
+                <viewController storyboardIdentifier="ContainerVC" id="5kT-Z7-8hQ" customClass="ContainerController" customModule="litterly" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="pUw-YA-XAV">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="Tze-ih-ehr"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="eKI-ZH-CeK" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2732" y="134"/>
         </scene>
         <!--Maps View Controller-->
         <scene sceneID="g7N-rQ-bs6">
             <objects>
                 <viewController id="BLU-kC-Bc2" customClass="MapsViewController" customModule="litterly" customModuleProvider="target" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="KF3-54-nch"/>
-                    <connections>
-                        <segue destination="hmH-0O-Pg0" kind="show" identifier="ProfileViewController" id="7a5-gp-ZVq"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="l5Y-Xv-eKL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4092" y="134"/>
-        </scene>
-        <!--Profile View Controller-->
-        <scene sceneID="j1H-c8-Q1m">
-            <objects>
-                <viewController id="hmH-0O-Pg0" customClass="ProfileViewController" customModule="litterly" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="xEW-5y-jPx">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <viewLayoutGuide key="safeArea" id="SEG-um-tKQ"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Wvf-nk-b8f" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="5033" y="134"/>
+            <point key="canvasLocation" x="3492" y="134"/>
         </scene>
         <!--Meetup View Controller-->
-        <scene sceneID="fvO-Qa-k9l">
+        <scene sceneID="xq6-CK-vnG">
             <objects>
-                <viewController id="G8Q-WF-Tfv" customClass="MeetupViewController" customModule="litterly" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="tYb-0U-ga3">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                <viewController id="Biy-De-03F" customClass="MeetupViewController" customModule="litterly" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="IDN-EE-M5o">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <viewLayoutGuide key="safeArea" id="XRY-wk-bbt"/>
+                        <viewLayoutGuide key="safeArea" id="neB-C5-OwA"/>
                     </view>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="ihF-c7-Uj0" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jLR-tm-QlV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5970" y="134"/>
+            <point key="canvasLocation" x="4936.8000000000002" y="140.39408866995075"/>
         </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="Lof-Qr-XcF">
+        <!--View Controller-->
+        <scene sceneID="OAX-eI-Cgu">
             <objects>
-                <navigationController storyboardIdentifier="MapsNavVC" automaticallyAdjustsScrollViewInsets="NO" id="HRz-J6-zT4" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="sjG-jE-3DP">
-                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="BLU-kC-Bc2" kind="relationship" relationship="rootViewController" id="arD-fz-Vqg"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="1Vf-FI-zi4" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <viewController storyboardIdentifier="CardContent" id="NpJ-PL-ZK5" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="7KD-oQ-prS">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TableView set up" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oUi-9G-X90">
+                                <rect key="frame" x="27.666666666666657" y="376.66666666666669" width="320" height="58.666666666666686"/>
+                                <fontDescription key="fontDescription" name="MarkerFelt-Wide" family="Marker Felt" pointSize="45"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="oUi-9G-X90" firstAttribute="centerY" secondItem="7KD-oQ-prS" secondAttribute="centerY" id="F6U-3j-Dwb"/>
+                            <constraint firstItem="oUi-9G-X90" firstAttribute="centerX" secondItem="7KD-oQ-prS" secondAttribute="centerX" id="nRH-xG-JjS"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Tdu-Zm-yO3"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="n2I-Bt-lgN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3073" y="134"/>
+            <point key="canvasLocation" x="5858" y="134"/>
         </scene>
         <!--Page Two View Controller-->
         <scene sceneID="z7o-lg-DPx">
             <objects>
                 <viewController storyboardIdentifier="pageTwo" id="hdb-mt-cPY" customClass="PageTwoViewController" customModule="litterly" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="rHG-g7-Sxz">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="blue" translatesAutoresizingMaskIntoConstraints="NO" id="jQy-3X-5JF">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="519.5"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="630.66666666666663"/>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="top" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="bLq-HU-MfX">
-                                <rect key="frame" x="18" y="38" width="339" height="157"/>
+                                <rect key="frame" x="18" y="62" width="339" height="157"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Save the City," textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mbe-XN-FiR">
                                         <rect key="frame" x="0.0" y="0.0" width="179" height="47"/>
@@ -198,13 +204,13 @@
                                         <size key="shadowOffset" width="0.0" height="0.0"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Meet others in your community" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cfj-OK-lNG">
-                                        <rect key="frame" x="0.0" y="55" width="307.5" height="47"/>
+                                        <rect key="frame" x="0.0" y="55" width="307.33333333333331" height="47"/>
                                         <fontDescription key="fontDescription" name="MarkerFelt-Wide" family="Marker Felt" pointSize="22"/>
                                         <color key="textColor" red="0.96078431369999995" green="0.95686274510000002" blue="0.98039215690000003" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="and clean the environment by collecting trash together " textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cuy-32-Dd5">
-                                        <rect key="frame" x="0.0" y="110" width="319.5" height="47"/>
+                                        <rect key="frame" x="0.0" y="110" width="319.33333333333331" height="47"/>
                                         <fontDescription key="fontDescription" name="MarkerFelt-Wide" family="Marker Felt" pointSize="18"/>
                                         <color key="textColor" red="0.96078431369999995" green="0.95686274510000002" blue="0.98039215690000003" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
@@ -212,10 +218,10 @@
                                 </subviews>
                             </stackView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="building" translatesAutoresizingMaskIntoConstraints="NO" id="O6X-GG-wpn">
-                                <rect key="frame" x="44" y="215" width="287" height="16"/>
+                                <rect key="frame" x="44" y="239" width="287" height="191"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gpl-ZN-vcB">
-                                <rect key="frame" x="98.5" y="559.5" width="178" height="47.5"/>
+                                <rect key="frame" x="98.666666666666686" y="670.66666666666663" width="178" height="47.333333333333371"/>
                                 <color key="backgroundColor" red="0.18039215689999999" green="0.80000000000000004" blue="0.4431372549" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="47.5" id="2YH-Mn-MdS"/>
@@ -258,17 +264,17 @@
             <objects>
                 <viewController storyboardIdentifier="pageThree" id="qAh-p0-GlF" customClass="PageThreeViewController" customModule="litterly" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="wwY-G6-8Ox">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="blue" translatesAutoresizingMaskIntoConstraints="NO" id="pKV-Dm-3yl">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="519.5"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="630.66666666666663"/>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="top" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="155-aQ-9ho">
-                                <rect key="frame" x="18" y="38" width="339" height="133"/>
+                                <rect key="frame" x="18" y="62" width="339" height="133"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Be a hero," textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A7O-fc-NEc">
-                                        <rect key="frame" x="0.0" y="0.0" width="125.5" height="39"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="125.33333333333333" height="39"/>
                                         <fontDescription key="fontDescription" name="MarkerFelt-Wide" family="Marker Felt" pointSize="30"/>
                                         <color key="textColor" red="0.96078431369999995" green="0.95686274510000002" blue="0.98039215690000003" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
@@ -281,7 +287,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="and redeem them for exclusive prizes" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="r3K-yA-W30">
-                                        <rect key="frame" x="0.0" y="94" width="293.5" height="39"/>
+                                        <rect key="frame" x="0.0" y="94" width="293.66666666666669" height="39"/>
                                         <fontDescription key="fontDescription" name="MarkerFelt-Wide" family="Marker Felt" pointSize="18"/>
                                         <color key="textColor" red="0.96078431369999995" green="0.95686274510000002" blue="0.98039215690000003" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
@@ -289,10 +295,10 @@
                                 </subviews>
                             </stackView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="liberty" translatesAutoresizingMaskIntoConstraints="NO" id="lV0-aJ-ct8">
-                                <rect key="frame" x="44" y="191" width="287" height="16"/>
+                                <rect key="frame" x="44" y="215" width="287" height="213.66666666666663"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mbR-b6-pL1">
-                                <rect key="frame" x="98.5" y="559.5" width="178" height="47.5"/>
+                                <rect key="frame" x="98.666666666666686" y="670.66666666666663" width="178" height="47.333333333333371"/>
                                 <color key="backgroundColor" red="0.18039215689999999" green="0.80000000000000004" blue="0.4431372549" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="47.5" id="h1G-by-41L"/>
@@ -336,7 +342,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="lT9-AD-Nm9" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="brc-lK-q0u">
-                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <rect key="frame" x="0.0" y="44" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -350,9 +356,9 @@
         </scene>
     </scenes>
     <resources>
-        <image name="blue" width="341" height="341"/>
+        <image name="blue" width="341.33334350585938" height="341.33334350585938"/>
         <image name="building" width="191" height="191"/>
-        <image name="liberty" width="214" height="214"/>
+        <image name="liberty" width="213.66667175292969" height="213.66667175292969"/>
         <image name="trash-can" width="326" height="326"/>
     </resources>
     <inferredMetricsTieBreakers>

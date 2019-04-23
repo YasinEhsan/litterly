@@ -33,6 +33,11 @@ extension MapsViewController{
         let imageView = UIImageView(image: image)
         imageView.frame = CGRect(x: 16, y: 14, width: 24, height: 24)
         imageView.translatesAutoresizingMaskIntoConstraints = false
+        
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(self.handleMenuToggle))
+        imageView.addGestureRecognizer(tapGesture)
+        imageView.isUserInteractionEnabled = true
+        
         searchView.addSubview(imageView)
         
         let searchBox = UITextField()
@@ -51,6 +56,11 @@ extension MapsViewController{
         
         self.navigationController?.navigationBar.addSubview(searchView)
         
+    }
+    
+    @objc func handleMenuToggle(){
+        delegate?.handleMenuToggle(forMenuOption: nil)
+
     }
 }
 

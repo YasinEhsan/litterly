@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C506314E226E8E430078265C /* ContainerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C506314D226E8E430078265C /* ContainerController.swift */; };
+		C5063150226E8E7C0078265C /* MenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C506314F226E8E7C0078265C /* MenuController.swift */; };
+		C5063152226E8ED00078265C /* MenuOptionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5063151226E8ED00078265C /* MenuOptionCell.swift */; };
+		C5063154226E8EF30078265C /* MenuOption.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5063153226E8EF30078265C /* MenuOption.swift */; };
+		C5063156226E8F100078265C /* Protocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5063155226E8F100078265C /* Protocols.swift */; };
 		C564B480226A9EB300F2DEF1 /* MapsVCLocationServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = C564B47F226A9EB300F2DEF1 /* MapsVCLocationServices.swift */; };
 		C564B483226AA05B00F2DEF1 /* TrashDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C564B482226AA05B00F2DEF1 /* TrashDataModel.swift */; };
 		C56CEA33225D977A005DC40E /* SelectedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = C56CEA32225D977A005DC40E /* SelectedButton.swift */; };
@@ -38,8 +43,14 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2F04E5C0226E25C1006EB956 /* gibson-semibold-webfont.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "gibson-semibold-webfont.ttf"; sourceTree = "<group>"; };
 		39E256F25A70D3C807D7B6F4 /* Pods-litterly.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-litterly.release.xcconfig"; path = "Target Support Files/Pods-litterly/Pods-litterly.release.xcconfig"; sourceTree = "<group>"; };
 		A6E706035DFCD681245FB63D /* Pods_litterly.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_litterly.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C506314D226E8E430078265C /* ContainerController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainerController.swift; sourceTree = "<group>"; };
+		C506314F226E8E7C0078265C /* MenuController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuController.swift; sourceTree = "<group>"; };
+		C5063151226E8ED00078265C /* MenuOptionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuOptionCell.swift; sourceTree = "<group>"; };
+		C5063153226E8EF30078265C /* MenuOption.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuOption.swift; sourceTree = "<group>"; };
+		C5063155226E8F100078265C /* Protocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Protocols.swift; sourceTree = "<group>"; };
 		C564B47F226A9EB300F2DEF1 /* MapsVCLocationServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapsVCLocationServices.swift; sourceTree = "<group>"; };
 		C564B482226AA05B00F2DEF1 /* TrashDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrashDataModel.swift; sourceTree = "<group>"; };
 		C56CEA32225D977A005DC40E /* SelectedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectedButton.swift; sourceTree = "<group>"; };
@@ -84,6 +95,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2F04E5BF226E25A6006EB956 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				2F04E5C0226E25C1006EB956 /* gibson-semibold-webfont.ttf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
 		6344928A19CA66CD1E8498A7 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -91,6 +110,23 @@
 				39E256F25A70D3C807D7B6F4 /* Pods-litterly.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		C506314B226E8C0B0078265C /* SideMenuVCs */ = {
+			isa = PBXGroup;
+			children = (
+				C506314D226E8E430078265C /* ContainerController.swift */,
+				C506314F226E8E7C0078265C /* MenuController.swift */,
+			);
+			path = SideMenuVCs;
+			sourceTree = "<group>";
+		};
+		C506314C226E8C4A0078265C /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				C5063155226E8F100078265C /* Protocols.swift */,
+			);
+			path = Protocols;
 			sourceTree = "<group>";
 		};
 		C5186B3D2261822000568951 /* IntroVCs */ = {
@@ -117,6 +153,7 @@
 			isa = PBXGroup;
 			children = (
 				C564B482226AA05B00F2DEF1 /* TrashDataModel.swift */,
+				C5063153226E8EF30078265C /* MenuOption.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -137,6 +174,7 @@
 				C5D83E2422581793009CB884 /* Main.storyboard */,
 				C5D3E902225BB10900C03AFB /* CardViewController.xib */,
 				C5E8F20422656A0C009FAE68 /* AuthPickerViewController.xib */,
+				C5063151226E8ED00078265C /* MenuOptionCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -144,6 +182,7 @@
 		C58D911F225D559D006A0390 /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				C506314B226E8C0B0078265C /* SideMenuVCs */,
 				C5CA15A122695080008B04EB /* MeetupVC */,
 				C5186B3D2261822000568951 /* IntroVCs */,
 				C538A0F12264F16E00E8FC01 /* SignInVC */,
@@ -203,6 +242,8 @@
 		C5D83E1F22581793009CB884 /* litterly */ = {
 			isa = PBXGroup;
 			children = (
+				C506314C226E8C4A0078265C /* Protocols */,
+				2F04E5BF226E25A6006EB956 /* Fonts */,
 				C564B481226AA03D00F2DEF1 /* Models */,
 				C584FC622266986D00ED1B53 /* Animations */,
 				C58D9120225D55BE006A0390 /* Colors */,
@@ -312,9 +353,11 @@
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-litterly/Pods-litterly-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/BoringSSL-GRPC/openssl_grpc.framework",
+				"${BUILT_PRODUCTS_DIR}/Cards/Cards.framework",
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
+				"${BUILT_PRODUCTS_DIR}/Player/Player.framework",
 				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
 				"${BUILT_PRODUCTS_DIR}/gRPC-C++/grpcpp.framework",
 				"${BUILT_PRODUCTS_DIR}/gRPC-Core/grpc.framework",
@@ -327,9 +370,11 @@
 			);
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/openssl_grpc.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Cards.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Player.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/grpcpp.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/grpc.framework",
@@ -401,18 +446,23 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C5063150226E8E7C0078265C /* MenuController.swift in Sources */,
+				C5063156226E8F100078265C /* Protocols.swift in Sources */,
 				C599F5EC2263044C0038A1A6 /* PageTwoViewController.swift in Sources */,
 				C599F5EA2262FD830038A1A6 /* PageOneViewController.swift in Sources */,
 				C5DD088322584589000988A3 /* SigninViewController.swift in Sources */,
 				C5DD088122584562000988A3 /* IntroPageViewController.swift in Sources */,
 				C564B483226AA05B00F2DEF1 /* TrashDataModel.swift in Sources */,
 				C5CA15A3226950AD008B04EB /* MeetupViewController.swift in Sources */,
+				C5063154226E8EF30078265C /* MenuOption.swift in Sources */,
+				C5063152226E8ED00078265C /* MenuOptionCell.swift in Sources */,
 				C58D911D225D54B2006A0390 /* MapsVC-SlideInCard.swift in Sources */,
 				C5D3E903225BB10900C03AFB /* CardViewController.swift in Sources */,
 				C5DD0887225845D1000988A3 /* ProfileViewController.swift in Sources */,
 				C599F5EE226304590038A1A6 /* PageThreeViewController.swift in Sources */,
 				C56CEA35225D9E87005DC40E /* MapsVC-GoogleMaps.swift in Sources */,
 				C564B480226A9EB300F2DEF1 /* MapsVCLocationServices.swift in Sources */,
+				C506314E226E8E430078265C /* ContainerController.swift in Sources */,
 				C5D83E2122581793009CB884 /* AppDelegate.swift in Sources */,
 				C56CEA33225D977A005DC40E /* SelectedButton.swift in Sources */,
 				C597957C2264E01100B1797D /* AppColors.swift in Sources */,
