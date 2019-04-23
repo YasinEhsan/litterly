@@ -24,11 +24,19 @@ class ContainerController: UIViewController{
     //is gthe menu currently expanded
     var isExpanded = false
     
+    //the blur effect that will be applied to the container view and then be removed
+    let blurEffect = UIBlurEffect(style: .dark)
+    var blurEffectView: UIVisualEffectView!
+    
     // MARK: - Init
     override func viewDidLoad() {
         super.viewDidLoad()
         
         configureHomeController()
+        
+        blurEffectView = UIVisualEffectView(effect: blurEffect)
+        
+        blurEffectView.frame = self.centerController.view.frame
     }
     
     //modifying the bar style, called with setStatusBarAppearenceUpdate()
@@ -76,10 +84,17 @@ class ContainerController: UIViewController{
     
     //animate the menu sliding in and out
     func animatePanel(shouldExpand: Bool, menuOption: MenuOption?){
+        
         if shouldExpand{
             //show menu
             UIView.animate(withDuration: 0.3, delay: 0, usingSpringWithDamping: 0.8, initialSpringVelocity: 0, options: .curveEaseInOut, animations: {
                 self.centerController.view.frame.origin.x = self.centerController.view.frame.width - 287
+                
+                //self.centerController.view.isUserInteractionEnabled = false
+                
+                //adding the blur effect
+                self.centerController.view.addSubview(self.blurEffectView)
+                
                 
             }, completion: nil)
         } else {
@@ -87,6 +102,11 @@ class ContainerController: UIViewController{
             UIView.animate(withDuration: 0.3, delay: 0, usingSpringWithDamping: 0.8, initialSpringVelocity: 0, options: .curveEaseIn, animations: {
                 
                 self.centerController.view.frame.origin.x = 0
+                
+                //self.centerController.view.isUserInteractionEnabled = true
+                
+                //removing the blur effect
+                self.blurEffectView.removeFromSuperview()
                 
             }) { (_) in
                 
@@ -147,7 +167,7 @@ class ContainerController: UIViewController{
 
 //determines if the menu is currently expanded or not and call thge respected funcs accordingly. Conforms to our protocol home controller delegate
 extension ContainerController: HomeControllerDelegate{
-    func handleMenuToggle(forMenuOption menuOption: MenuOption?) {
+    func handleMenuToggle(forMenuOption menuOption: MenuOption?){
         if !isExpanded{
             configureMenuController()
         }

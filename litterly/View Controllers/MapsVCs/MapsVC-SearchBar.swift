@@ -60,6 +60,7 @@ extension MapsViewController{
     
     @objc func handleMenuToggle(){
         delegate?.handleMenuToggle(forMenuOption: nil)
+
     }
 }
 
