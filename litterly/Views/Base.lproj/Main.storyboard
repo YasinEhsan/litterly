@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="G8Q-WF-Tfv">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="eW3-mQ-ne9">
     <device id="retina5_9" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -96,7 +96,7 @@
         <!--Intro Page View Controller-->
         <scene sceneID="bAb-48-ejc">
             <objects>
-                <pageViewController autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="eW3-mQ-ne9" customClass="IntroPageViewController" customModule="litterly" customModuleProvider="target" sceneMemberID="viewController"/>
+                <pageViewController storyboardIdentifier="IntroPageVC" autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="eW3-mQ-ne9" customClass="IntroPageViewController" customModule="litterly" customModuleProvider="target" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hlc-HZ-QVe" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1335" y="134"/>
@@ -113,212 +113,52 @@
                     </view>
                     <navigationItem key="navigationItem" id="tZI-PV-GQC"/>
                     <connections>
-                        <segue destination="HRz-J6-zT4" kind="show" identifier="MapsViewController" id="f7S-Sj-PMM"/>
+                        <segue destination="5kT-Z7-8hQ" kind="show" identifier="MapsViewController" id="585-hd-hun"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2076.8115942028985" y="133.92857142857142"/>
+            <point key="canvasLocation" x="1943" y="134"/>
+        </scene>
+        <!--Container Controller-->
+        <scene sceneID="PWf-Ze-hPD">
+            <objects>
+                <viewController storyboardIdentifier="ContainerVC" id="5kT-Z7-8hQ" customClass="ContainerController" customModule="litterly" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="pUw-YA-XAV">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="Tze-ih-ehr"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="eKI-ZH-CeK" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2732" y="134"/>
         </scene>
         <!--Maps View Controller-->
         <scene sceneID="g7N-rQ-bs6">
             <objects>
                 <viewController id="BLU-kC-Bc2" customClass="MapsViewController" customModule="litterly" customModuleProvider="target" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="KF3-54-nch"/>
-                    <connections>
-                        <segue destination="hmH-0O-Pg0" kind="show" identifier="ProfileViewController" id="7a5-gp-ZVq"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="l5Y-Xv-eKL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4092" y="134"/>
+            <point key="canvasLocation" x="3492" y="134"/>
         </scene>
-        <!--Profile View Controller-->
-        <scene sceneID="j1H-c8-Q1m">
+        <!--Meetup View Controller-->
+        <scene sceneID="xq6-CK-vnG">
             <objects>
-                <viewController id="hmH-0O-Pg0" customClass="ProfileViewController" customModule="litterly" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="xEW-5y-jPx">
+                <viewController id="Biy-De-03F" customClass="MeetupViewController" customModule="litterly" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="IDN-EE-M5o">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <viewLayoutGuide key="safeArea" id="SEG-um-tKQ"/>
+                        <viewLayoutGuide key="safeArea" id="neB-C5-OwA"/>
                     </view>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Wvf-nk-b8f" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jLR-tm-QlV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5033" y="134"/>
-        </scene>
-        <!--Meetup View Controller-->
-        <scene sceneID="fvO-Qa-k9l">
-            <objects>
-                <viewController id="G8Q-WF-Tfv" customClass="MeetupViewController" customModule="litterly" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="tYb-0U-ga3">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Meetups" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Em-9d-uwV">
-                                <rect key="frame" x="16" y="68" width="161" height="47"/>
-                                <fontDescription key="fontDescription" name="Gibson-SemiBold" family="Gibson" pointSize="40"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <view clipsSubviews="YES" contentMode="scaleAspectFill" translatesAutoresizingMaskIntoConstraints="NO" id="jSb-4B-8tW" customClass="CardGroup" customModule="Cards">
-                                <rect key="frame" x="16" y="459" width="343" height="156"/>
-                                <color key="backgroundColor" red="0.20784313725490194" green="0.22745098039215686" blue="0.31372549019607843" alpha="1" colorSpace="calibratedRGB"/>
-                                <color key="tintColor" red="0.20784313725490194" green="0.22745098039215686" blue="0.31372549019607843" alpha="1" colorSpace="calibratedRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="156" id="H50-nj-bUu"/>
-                                    <constraint firstAttribute="width" constant="343" id="Odu-2W-vAi"/>
-                                    <constraint firstAttribute="height" constant="156" id="VPg-vi-2sk"/>
-                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="343" id="f18-hc-VlG"/>
-                                </constraints>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="image" keyPath="backgroundImage" value="NoPath - Copy (18)"/>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="cardRadius">
-                                        <real key="value" value="12"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="string" keyPath="title" value="Electronics"/>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="titleSize">
-                                        <real key="value" value="24"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="string" keyPath="subtitle" value="50 events"/>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="subtitleSize">
-                                        <real key="value" value="14"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="textColor">
-                                        <color key="value" cocoaTouchSystemColor="darkTextColor"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                            </view>
-                            <view clipsSubviews="YES" contentMode="scaleAspectFill" translatesAutoresizingMaskIntoConstraints="NO" id="rt4-Qg-clA" customClass="CardGroup" customModule="Cards">
-                                <rect key="frame" x="16" y="627" width="343" height="156"/>
-                                <color key="backgroundColor" red="0.20784313725490194" green="0.22745098039215686" blue="0.31372549019607843" alpha="1" colorSpace="calibratedRGB"/>
-                                <color key="tintColor" red="0.20784313725490194" green="0.22745098039215686" blue="0.31372549019607843" alpha="1" colorSpace="calibratedRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="343" id="A0f-n0-GRy"/>
-                                    <constraint firstAttribute="width" constant="343" id="Ico-3M-9ba"/>
-                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="156" id="XNG-uV-qXJ"/>
-                                    <constraint firstAttribute="height" constant="156" id="hCv-hV-R1o"/>
-                                </constraints>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="image" keyPath="backgroundImage" value="NoPath - Copy (21)"/>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="cardRadius">
-                                        <real key="value" value="12"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="string" keyPath="title" value="Paper"/>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="titleSize">
-                                        <real key="value" value="24"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="string" keyPath="subtitle" value="128 topics - 4k articles"/>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="subtitleSize">
-                                        <real key="value" value="14"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="textColor">
-                                        <color key="value" cocoaTouchSystemColor="darkTextColor"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                            </view>
-                            <view clipsSubviews="YES" contentMode="scaleAspectFill" translatesAutoresizingMaskIntoConstraints="NO" id="wzX-6B-jJX" customClass="CardGroup" customModule="Cards">
-                                <rect key="frame" x="16" y="123" width="343" height="156"/>
-                                <color key="backgroundColor" red="0.20784313725490194" green="0.22745098039215686" blue="0.31372549019607843" alpha="1" colorSpace="calibratedRGB"/>
-                                <color key="tintColor" red="0.20784313725490194" green="0.22745098039215686" blue="0.31372549019607843" alpha="1" colorSpace="calibratedRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="156" id="URR-8m-WFB"/>
-                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="343" id="cOq-yZ-MuN"/>
-                                    <constraint firstAttribute="height" constant="156" id="dN2-cK-pGM"/>
-                                    <constraint firstAttribute="width" constant="343" id="dUd-fa-S2a"/>
-                                </constraints>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="image" keyPath="backgroundImage" value="NoPath - Copy (19)"/>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="cardRadius">
-                                        <real key="value" value="12"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="string" keyPath="title" value="Organics"/>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="titleSize">
-                                        <real key="value" value="24"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="string" keyPath="subtitle" value="150 events"/>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="subtitleSize">
-                                        <real key="value" value="14"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="textColor">
-                                        <color key="value" cocoaTouchSystemColor="darkTextColor"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                            </view>
-                            <view clipsSubviews="YES" contentMode="scaleAspectFill" translatesAutoresizingMaskIntoConstraints="NO" id="oU4-gc-aTp" customClass="CardGroup" customModule="Cards">
-                                <rect key="frame" x="16" y="291" width="343" height="156"/>
-                                <color key="backgroundColor" red="0.20784313725490194" green="0.22745098039215686" blue="0.31372549019607843" alpha="1" colorSpace="calibratedRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="343" id="D1h-Tn-mYI"/>
-                                    <constraint firstAttribute="height" constant="156" id="HlF-kO-AIB"/>
-                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="156" id="gMc-Xh-9CG"/>
-                                    <constraint firstAttribute="width" constant="343" id="v34-kh-ArD"/>
-                                </constraints>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="image" keyPath="backgroundImage" value="5c0523390f03b_610"/>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="cardRadius">
-                                        <real key="value" value="12"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="string" keyPath="title" value="Plastic"/>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="titleSize">
-                                        <real key="value" value="24"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="string" keyPath="subtitle" value="90 events"/>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="subtitleSize">
-                                        <real key="value" value="14"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="textColor">
-                                        <color key="value" cocoaTouchSystemColor="darkTextColor"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
-                                        <color key="value" cocoaTouchSystemColor="darkTextColor"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                            </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" text="&lt;" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c41-qH-871">
-                                <rect key="frame" x="16" y="44" width="42" height="21"/>
-                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
-                        <color key="backgroundColor" red="0.30588235294117649" green="0.36470588235294116" blue="0.97254901960784312" alpha="1" colorSpace="calibratedRGB"/>
-                        <constraints>
-                            <constraint firstItem="XRY-wk-bbt" firstAttribute="trailing" secondItem="rt4-Qg-clA" secondAttribute="trailing" constant="16" id="2m6-l9-apO"/>
-                            <constraint firstItem="jSb-4B-8tW" firstAttribute="top" secondItem="oU4-gc-aTp" secondAttribute="bottom" constant="12" id="3Xm-lk-M8w"/>
-                            <constraint firstItem="wzX-6B-jJX" firstAttribute="top" secondItem="1Em-9d-uwV" secondAttribute="bottom" constant="12" id="7sz-QV-c4M"/>
-                            <constraint firstItem="wzX-6B-jJX" firstAttribute="leading" secondItem="XRY-wk-bbt" secondAttribute="leading" constant="16" id="Az2-Rh-Go5"/>
-                            <constraint firstItem="oU4-gc-aTp" firstAttribute="top" secondItem="wzX-6B-jJX" secondAttribute="bottom" constant="12" id="CB0-vr-9yg"/>
-                            <constraint firstItem="rt4-Qg-clA" firstAttribute="leading" secondItem="XRY-wk-bbt" secondAttribute="leading" constant="16" id="GYw-hP-xv3"/>
-                            <constraint firstItem="jSb-4B-8tW" firstAttribute="top" secondItem="oU4-gc-aTp" secondAttribute="bottom" constant="12" id="bXY-Px-jzZ"/>
-                            <constraint firstItem="rt4-Qg-clA" firstAttribute="top" secondItem="jSb-4B-8tW" secondAttribute="bottom" constant="12" id="csz-iv-sW5"/>
-                            <constraint firstItem="oU4-gc-aTp" firstAttribute="leading" secondItem="XRY-wk-bbt" secondAttribute="leading" constant="16" id="fmt-AN-0M5"/>
-                            <constraint firstItem="1Em-9d-uwV" firstAttribute="leading" secondItem="XRY-wk-bbt" secondAttribute="leading" constant="16" id="gJP-5e-Rqh"/>
-                            <constraint firstItem="wzX-6B-jJX" firstAttribute="top" secondItem="1Em-9d-uwV" secondAttribute="bottom" constant="12" id="gX8-9E-t1Q"/>
-                            <constraint firstItem="c41-qH-871" firstAttribute="leading" secondItem="XRY-wk-bbt" secondAttribute="leading" constant="16" id="idO-Ow-cli"/>
-                            <constraint firstItem="XRY-wk-bbt" firstAttribute="trailing" secondItem="jSb-4B-8tW" secondAttribute="trailing" constant="16" id="min-mc-orh"/>
-                            <constraint firstItem="XRY-wk-bbt" firstAttribute="trailing" secondItem="wzX-6B-jJX" secondAttribute="trailing" constant="16" id="nIf-F8-EVS"/>
-                            <constraint firstItem="oU4-gc-aTp" firstAttribute="top" secondItem="wzX-6B-jJX" secondAttribute="bottom" constant="12" id="pcn-ub-4Cp"/>
-                            <constraint firstItem="c41-qH-871" firstAttribute="top" secondItem="XRY-wk-bbt" secondAttribute="top" constant="4" id="pqQ-za-kHd"/>
-                            <constraint firstItem="1Em-9d-uwV" firstAttribute="top" secondItem="c41-qH-871" secondAttribute="bottom" constant="4" id="qmH-Bc-AEj"/>
-                            <constraint firstItem="XRY-wk-bbt" firstAttribute="trailing" secondItem="oU4-gc-aTp" secondAttribute="trailing" constant="16" id="txN-1R-Vk9"/>
-                            <constraint firstItem="jSb-4B-8tW" firstAttribute="leading" secondItem="XRY-wk-bbt" secondAttribute="leading" constant="16" id="uwb-g9-FS8"/>
-                            <constraint firstItem="1Em-9d-uwV" firstAttribute="top" secondItem="c41-qH-871" secondAttribute="bottom" constant="4" id="zgG-Lx-i5l"/>
-                            <constraint firstItem="rt4-Qg-clA" firstAttribute="top" secondItem="jSb-4B-8tW" secondAttribute="bottom" constant="12" id="zyB-5i-O8j"/>
-                        </constraints>
-                        <viewLayoutGuide key="safeArea" id="XRY-wk-bbt"/>
-                    </view>
-                    <connections>
-                        <outlet property="electronicsGroup" destination="jSb-4B-8tW" id="Dwo-cF-HgV"/>
-                        <outlet property="organicsCard" destination="wzX-6B-jJX" id="auv-Is-LQm"/>
-                        <outlet property="paperGroup" destination="rt4-Qg-clA" id="J2T-kT-1ka"/>
-                        <outlet property="plasticGroup" destination="oU4-gc-aTp" id="u3Y-Q9-DIU"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="ihF-c7-Uj0" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="5968.8000000000002" y="133.74384236453201"/>
+            <point key="canvasLocation" x="4905" y="134"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="OAX-eI-Cgu">
@@ -509,25 +349,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="n2I-Bt-lgN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="6696.8000000000002" y="134.48275862068965"/>
-        </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="Lof-Qr-XcF">
-            <objects>
-                <navigationController storyboardIdentifier="MapsNavVC" automaticallyAdjustsScrollViewInsets="NO" id="HRz-J6-zT4" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="sjG-jE-3DP">
-                        <rect key="frame" x="0.0" y="44" width="375" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="BLU-kC-Bc2" kind="relationship" relationship="rootViewController" id="arD-fz-Vqg"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="1Vf-FI-zi4" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="3073" y="134"/>
+            <point key="canvasLocation" x="5858" y="134"/>
         </scene>
         <!--Page Two View Controller-->
         <scene sceneID="z7o-lg-DPx">
@@ -703,10 +525,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="5c0523390f03b_610" width="343" height="156"/>
-        <image name="NoPath - Copy (18)" width="343" height="156"/>
-        <image name="NoPath - Copy (19)" width="343" height="156"/>
-        <image name="NoPath - Copy (21)" width="343" height="156"/>
         <image name="blue" width="341.33334350585938" height="341.33334350585938"/>
         <image name="building" width="191" height="191"/>
         <image name="liberty" width="213.66667175292969" height="213.66667175292969"/>

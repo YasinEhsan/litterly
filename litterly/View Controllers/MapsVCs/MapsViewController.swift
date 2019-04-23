@@ -14,6 +14,8 @@ import FirebaseFirestore
 
 class MapsViewController: UIViewController {
     
+    var delegate: HomeControllerDelegate?
+    
     //the view state of the card that we will be reffering to
     enum CardState{
         case expanded

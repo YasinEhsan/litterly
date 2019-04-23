@@ -11,48 +11,57 @@ import Cards
 
 class MeetupViewController: UIViewController {
     
-    @IBOutlet weak var organicsCard: CardGroup!
-    @IBOutlet weak var plasticGroup: CardGroup!
-    @IBOutlet weak var electronicsGroup: CardGroup!
-    @IBOutlet weak var paperGroup: CardGroup!
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        organicsCard.title = "Organics"
-        organicsCard.subtitle = "150 events"
         
-        plasticGroup.title = "Plastic"
-        plasticGroup.subtitle = "90 events"
-        
-        electronicsGroup.title = "Electronics"
-        electronicsGroup.subtitle = "50 events"
-        
-        paperGroup.title = "Paper"
-        paperGroup.subtitle = "128 topics - 4k articles"
-        
-        let organicsCardContent = storyboard?.instantiateViewController(withIdentifier: "CardContent")
-        organicsCard.shouldPresent(organicsCardContent, from: self)
-
-        let plasticCardContent = storyboard?.instantiateViewController(withIdentifier: "CardContent")
-        plasticGroup.shouldPresent(plasticCardContent, from: self)
-
-        let electronicsCardContent = storyboard?.instantiateViewController(withIdentifier: "CardContent")
-        electronicsGroup.shouldPresent(electronicsCardContent, from: self)
-
-        let paperCardContent = storyboard?.instantiateViewController(withIdentifier: "CardContent")
-        paperGroup.shouldPresent(paperCardContent, from: self)
+        setUpCards()
+        configureUI()
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    func setUpCards(){
+        
+        let card = CardHighlight(frame: CGRect(x: 10, y: 30, width: 200 , height: 240))
+        
+        card.backgroundColor = UIColor(red: 0, green: 94/255, blue: 112/255, alpha: 1)
+        card.icon = UIImage(named: "flappy")
+        card.title = "Welcome \nto \nCards !"
+        card.itemTitle = "Flappy Bird"
+        card.itemSubtitle = "Flap That !"
+        card.textColor = UIColor.white
+        
+        card.hasParallax = true
+        
+        
+        
+        view.addSubview(card)
     }
-    */
+    
+    func configureUI(){
+        navigationController?.navigationBar.barTintColor = .darkGray
+        navigationController?.navigationBar.prefersLargeTitles = true
+        navigationItem.title = "Settings"
+        navigationController?.navigationBar.barStyle = .black
+        
+        // create the button
+        let suggestImage  = UIImage(named: "menu")!.withRenderingMode(.alwaysOriginal)
+        let suggestButton = UIButton(frame: CGRect(x: 0, y: 0, width: 40, height: 40))
+        suggestButton.setBackgroundImage(suggestImage, for: .normal)
+        suggestButton.addTarget(self, action: #selector(goBackToMap), for: .touchUpInside)
+        
+        // here where the magic happens, you can shift it where you like
+        suggestButton.transform = CGAffineTransform(translationX: 10, y: 0)
+        
+        // add the button to a container, otherwise the transform will be ignored
+        let suggestButtonContainer = UIView(frame: suggestButton.frame)
+        suggestButtonContainer.addSubview(suggestButton)
+        let suggestButtonItem = UIBarButtonItem(customView: suggestButtonContainer)
+        
+        // add button shift to the side
+        navigationItem.leftBarButtonItem = suggestButtonItem
+    }
+    
+    @objc func goBackToMap(){
+        self.dismiss(animated: true, completion: nil)
+    }
 
 }
