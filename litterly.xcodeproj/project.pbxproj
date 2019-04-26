@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2FA974CA2272AE3800115FBD /* EventsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FA974C92272AE3800115FBD /* EventsViewController.swift */; };
+		2FA974CC2272B0F000115FBD /* EmbeddedTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FA974CB2272B0F000115FBD /* EmbeddedTableViewCell.swift */; };
 		C506314E226E8E430078265C /* ContainerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C506314D226E8E430078265C /* ContainerController.swift */; };
 		C5063150226E8E7C0078265C /* MenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C506314F226E8E7C0078265C /* MenuController.swift */; };
 		C5063152226E8ED00078265C /* MenuOptionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5063151226E8ED00078265C /* MenuOptionCell.swift */; };
@@ -44,6 +46,8 @@
 
 /* Begin PBXFileReference section */
 		2F04E5C0226E25C1006EB956 /* gibson-semibold-webfont.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "gibson-semibold-webfont.ttf"; sourceTree = "<group>"; };
+		2FA974C92272AE3800115FBD /* EventsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsViewController.swift; sourceTree = "<group>"; };
+		2FA974CB2272B0F000115FBD /* EmbeddedTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmbeddedTableViewCell.swift; sourceTree = "<group>"; };
 		39E256F25A70D3C807D7B6F4 /* Pods-litterly.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-litterly.release.xcconfig"; path = "Target Support Files/Pods-litterly/Pods-litterly.release.xcconfig"; sourceTree = "<group>"; };
 		A6E706035DFCD681245FB63D /* Pods_litterly.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_litterly.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C506314D226E8E430078265C /* ContainerController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainerController.swift; sourceTree = "<group>"; };
@@ -101,6 +105,14 @@
 				2F04E5C0226E25C1006EB956 /* gibson-semibold-webfont.ttf */,
 			);
 			path = Fonts;
+			sourceTree = "<group>";
+		};
+		2F68CABC2272E049009C2AB6 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				2FA974CB2272B0F000115FBD /* EmbeddedTableViewCell.swift */,
+			);
+			path = Cells;
 			sourceTree = "<group>";
 		};
 		6344928A19CA66CD1E8498A7 /* Pods */ = {
@@ -217,6 +229,7 @@
 			isa = PBXGroup;
 			children = (
 				C5CA15A2226950AD008B04EB /* MeetupViewController.swift */,
+				2FA974C92272AE3800115FBD /* EventsViewController.swift */,
 			);
 			path = MeetupVC;
 			sourceTree = "<group>";
@@ -242,6 +255,7 @@
 		C5D83E1F22581793009CB884 /* litterly */ = {
 			isa = PBXGroup;
 			children = (
+				2F68CABC2272E049009C2AB6 /* Cells */,
 				C506314C226E8C4A0078265C /* Protocols */,
 				2F04E5BF226E25A6006EB956 /* Fonts */,
 				C564B481226AA03D00F2DEF1 /* Models */,
@@ -463,8 +477,10 @@
 				C56CEA35225D9E87005DC40E /* MapsVC-GoogleMaps.swift in Sources */,
 				C564B480226A9EB300F2DEF1 /* MapsVCLocationServices.swift in Sources */,
 				C506314E226E8E430078265C /* ContainerController.swift in Sources */,
+				2FA974CA2272AE3800115FBD /* EventsViewController.swift in Sources */,
 				C5D83E2122581793009CB884 /* AppDelegate.swift in Sources */,
 				C56CEA33225D977A005DC40E /* SelectedButton.swift in Sources */,
+				2FA974CC2272B0F000115FBD /* EmbeddedTableViewCell.swift in Sources */,
 				C597957C2264E01100B1797D /* AppColors.swift in Sources */,
 				C5DD0885225845B7000988A3 /* MapsViewController.swift in Sources */,
 				C5E8F20522656A0C009FAE68 /* AuthPickerViewController.swift in Sources */,
@@ -616,7 +632,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = BGNF8D28S2;
+				DEVELOPMENT_TEAM = A97AX3T957;
 				INFOPLIST_FILE = litterly/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -635,7 +651,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = BGNF8D28S2;
+				DEVELOPMENT_TEAM = A97AX3T957;
 				INFOPLIST_FILE = litterly/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
