@@ -13,8 +13,9 @@ class EventsViewController: UIViewController, UITableViewDelegate, UITableViewDa
     
 
     @IBOutlet weak var embeddedTableview: UITableView!
-    var data = ["Data", "data", "Data"]
+    var data = ["Joyce", "Asif", "Kevin", "Sheng", "Joyce", "Asif", "Kevin", "Sheng"]
     let indentifier = "cellId"
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,6 +23,8 @@ class EventsViewController: UIViewController, UITableViewDelegate, UITableViewDa
        // embeddedTableview.register(EmbeddedTableViewCell.self, forCellReuseIdentifier: indentifier)//
         embeddedTableview.dataSource = self
         embeddedTableview.delegate = self
+        embeddedTableview.separatorColor = UIColor.white
+       
 
         // Do any additional setup after loading the view.
     }
@@ -54,7 +57,7 @@ class EventsViewController: UIViewController, UITableViewDelegate, UITableViewDa
         
         let cell = tableView.dequeueReusableCell(withIdentifier: indentifier, for: indexPath) as! EmbeddedTableViewCell
         
-        
+        cell.eventTitle.text = data[indexPath.row]
         
         return cell
     }

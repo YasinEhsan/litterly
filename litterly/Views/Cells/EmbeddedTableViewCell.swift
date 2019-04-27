@@ -11,29 +11,56 @@ import UIKit
 class EmbeddedTableViewCell: UITableViewCell {
     
     // Cell components
-    @IBOutlet weak var timelineView: UIView!
-    @IBOutlet weak var overlayIconView: UIView!
-    @IBOutlet weak var overlayTitleLabel: UILabel!
-    @IBOutlet weak var iconView: UIImageView!
+    @IBOutlet weak var timelineView : UIView?
+    @IBOutlet weak var overlayIconView: UIView? // Blue rounded card-like overlay
+    @IBOutlet weak var overlayTitleLabel: UILabel?
+    @IBOutlet weak var iconView: UIImageView?
+    @IBOutlet weak var leftOverlayedStackview: UIStackView?
+    @IBOutlet weak var rightStackview: UIStackView?
+
+    // These are in a parent stack view
+    @IBOutlet weak var eventLocation: UILabel!
+    @IBOutlet weak var eventTitle: UILabel!
     
-    @IBOutlet weak var overlayViewChildImageview: UIImageView!
+    
+    let relativeFontConstant : CGFloat = 0.046
+    
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         
         super.init(style: style, reuseIdentifier: reuseIdentifier)
-        
-       setupCellTimeline()
+        setupDynamicFontSizing()
+        //turnOffAllConstraintsfromComponents()
+       
+        // Important
+      // setupCellTimeline()
+//   new     setupCellComponents()
+       
     }
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
-        setupCellTimeline()
+        setupDynamicFontSizing()
+       // turnOffAllConstraintsfromComponents()
+        // Important
+        //setupCellTimeline()
+       // new setupCellComponents()
+      
     }
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+      
        
+    }
+    
+    func setupDynamicFontSizing() {
+        
+        
+    }
+    
+    override func setNeedsDisplay() {
+        setupCellComponents()
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -42,20 +69,54 @@ class EmbeddedTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
+    func turnOffAllConstraintsfromComponents() {
+        
+       // timelineView.translatesAutoresizingMaskIntoConstraints = false
+//        overlayIconView.translatesAutoresizingMaskIntoConstraints = false
+//        leftOverlayedStackview.translatesAutoresizingMaskIntoConstraints = false
+//        rightStackview.translatesAutoresizingMaskIntoConstraints = false
+        
+    }
     
+    func setupCellComponents() {
+        
+        print("New Method called")
+        
+        
+        if let timelineview = timelineView {
+            contentView.addSubview(timelineview)
+            
+            // Initializing the components that claim they are NIL
+         
+            timelineview.widthAnchor.constraint(equalToConstant: 10).isActive = true
+            timelineview.heightAnchor.constraint(equalToConstant: self.bounds.height).isActive = true
+        }
+        
+        
+        // Add Subviews
+       
+      //  timelineView.leadingAnchor.constraint(equalTo: self.contentView.leadingAnchor, constant: 50).isActive = true
+        
+        
+        
+    }
+    
+    // FIXME: THIS IS NOT WORKING PROPERLY
     func setupCellTimeline() {
         
+        print("This method was called")
         
-        if let timelineviewAvail = timelineView, let overlayView = overlayIconView, let eventLabel = overlayTitleLabel, let iconImage = iconView {
+        if let timelineviewAvail = timelineView, let overlayView = overlayIconView, let eventLabel = overlayTitleLabel, let iconImage = iconView, let stackview = rightStackview {
            
+            print("--> Optional method called")
 
             timelineviewAvail.translatesAutoresizingMaskIntoConstraints = false
-          
+            stackview.translatesAutoresizingMaskIntoConstraints = false
 
             // constraints for line
             timelineviewAvail.widthAnchor.constraint(equalToConstant: 2).isActive = true
             timelineviewAvail.heightAnchor.constraint(equalToConstant: self.bounds.height).isActive = true
-
+            
             // Square View for the icon & label
             overlayView.translatesAutoresizingMaskIntoConstraints = false
             overlayView.heightAnchor.constraint(equalToConstant: 150).isActive = true
@@ -72,6 +133,12 @@ class EmbeddedTableViewCell: UITableViewCell {
             eventLabel.translatesAutoresizingMaskIntoConstraints = false
             eventLabel.topAnchor.constraint(equalTo: iconImage.topAnchor, constant: 5).isActive = true
             
+            // Constraints of the stackview
+            self.contentView.trailingAnchor.constraint(equalTo: stackview.trailingAnchor, constant: -30).isActive = true
+            stackview.topAnchor.constraint(equalTo: self.contentView.topAnchor, constant: 10).isActive = true
+            stackview.bottomAnchor.constraint(equalTo: self.contentView.bottomAnchor, constant: -10).isActive = true
+            stackview.leadingAnchor.constraint(equalTo: overlayView.trailingAnchor, constant: 5).isActive = true
+            
             
         }
         
@@ -80,8 +147,11 @@ class EmbeddedTableViewCell: UITableViewCell {
     }
     
     
+   
+    
+    
     override func layoutSubviews() {
-        overlayIconView.layer.cornerRadius = 7
+        overlayIconView!.layer.cornerRadius = 7
     }
 
 }
