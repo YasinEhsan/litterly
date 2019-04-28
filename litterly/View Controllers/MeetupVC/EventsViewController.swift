@@ -13,7 +13,7 @@ class EventsViewController: UIViewController, UITableViewDelegate, UITableViewDa
     
 
     @IBOutlet weak var embeddedTableview: UITableView!
-    var data = ["Joyce", "Asif", "Kevin", "Sheng", "Joyce", "Asif", "Kevin", "Sheng"]
+    var data = ["Recycle Meetup", "Reuse Meetup", "Reduce Meetup"]
     let indentifier = "cellId"
     
     

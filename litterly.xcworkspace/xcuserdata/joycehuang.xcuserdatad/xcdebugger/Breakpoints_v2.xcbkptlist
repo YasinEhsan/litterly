@@ -26,11 +26,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "litterly/Views/Cells/EmbeddedTableViewCell.swift"
-            timestampString = "578017764.361326"
+            timestampString = "578163117.676679"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "105"
-            endingLineNumber = "105"
+            startingLineNumber = "89"
+            endingLineNumber = "89"
             landmarkName = "setupCellTimeline()"
             landmarkType = "7">
          </BreakpointContent>

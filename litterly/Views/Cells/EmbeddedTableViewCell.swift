@@ -12,51 +12,40 @@ class EmbeddedTableViewCell: UITableViewCell {
     
     // Cell components
     @IBOutlet weak var timelineView : UIView?
-    @IBOutlet weak var overlayIconView: UIView? // Blue rounded card-like overlay
+    @IBOutlet weak var overlayIconView: UIView? // Rounded card-like overlay
     @IBOutlet weak var overlayTitleLabel: UILabel?
     @IBOutlet weak var iconView: UIImageView?
     @IBOutlet weak var leftOverlayedStackview: UIStackView?
     @IBOutlet weak var rightStackview: UIStackView?
 
-    // These are in a parent stack view
+    // These are in the right parent stack view
     @IBOutlet weak var eventLocation: UILabel!
     @IBOutlet weak var eventTitle: UILabel!
-    
-    
-    let relativeFontConstant : CGFloat = 0.046
     
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         
         super.init(style: style, reuseIdentifier: reuseIdentifier)
-        setupDynamicFontSizing()
         //turnOffAllConstraintsfromComponents()
        
         // Important
-      // setupCellTimeline()
-//   new     setupCellComponents()
+        // setupCellTimeline()
+        // new setupCellComponents()
        
     }
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
-        setupDynamicFontSizing()
        // turnOffAllConstraintsfromComponents()
         // Important
         //setupCellTimeline()
-       // new setupCellComponents()
+        // new setupCellComponents()
       
     }
     
     override func awakeFromNib() {
         super.awakeFromNib()
       
-       
-    }
-    
-    func setupDynamicFontSizing() {
-        
-        
     }
     
     override func setNeedsDisplay() {
@@ -70,8 +59,7 @@ class EmbeddedTableViewCell: UITableViewCell {
     }
     
     func turnOffAllConstraintsfromComponents() {
-        
-       // timelineView.translatesAutoresizingMaskIntoConstraints = false
+//        timelineView.translatesAutoresizingMaskIntoConstraints = false
 //        overlayIconView.translatesAutoresizingMaskIntoConstraints = false
 //        leftOverlayedStackview.translatesAutoresizingMaskIntoConstraints = false
 //        rightStackview.translatesAutoresizingMaskIntoConstraints = false
@@ -82,7 +70,6 @@ class EmbeddedTableViewCell: UITableViewCell {
         
         print("New Method called")
         
-        
         if let timelineview = timelineView {
             contentView.addSubview(timelineview)
             
@@ -91,17 +78,13 @@ class EmbeddedTableViewCell: UITableViewCell {
             timelineview.widthAnchor.constraint(equalToConstant: 10).isActive = true
             timelineview.heightAnchor.constraint(equalToConstant: self.bounds.height).isActive = true
         }
-        
-        
         // Add Subviews
        
       //  timelineView.leadingAnchor.constraint(equalTo: self.contentView.leadingAnchor, constant: 50).isActive = true
         
-        
-        
     }
     
-    // FIXME: THIS IS NOT WORKING PROPERLY
+    // FIXME: THIS IS NOT WORKING PROPERLY. Programmatic constraints don't seem to be making any changes
     func setupCellTimeline() {
         
         print("This method was called")
@@ -142,12 +125,8 @@ class EmbeddedTableViewCell: UITableViewCell {
             
         }
         
-        
-        
+    
     }
-    
-    
-   
     
     
     override func layoutSubviews() {
