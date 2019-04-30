@@ -43,7 +43,7 @@ extension MapsViewController{
         let searchBox = UITextField()
         searchBox.frame = CGRect(x: 73, y: 16, width: self.view.frame.width - 104, height: 24)
         searchBox.backgroundColor = UIColor.textWhite
-        searchBox.textColor = UIColor.searchBoxTextWhite
+        searchBox.textColor = UIColor.searchBoxTextGray
         searchBox.font = UIFont(name: "MarkerFelt-Wide", size: 16)
         searchBox.text = "Search a place?"
         searchBox.translatesAutoresizingMaskIntoConstraints = false

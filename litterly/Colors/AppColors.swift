@@ -19,8 +19,10 @@ extension UIColor{
     static let mainGreen = UIColor(hex: 0x2ECC71)
     static let pageControlUnselectedPageGreen = UIColor(hex: 0x2ECC71, a: 0.32)
     static let textWhite = UIColor(hex: 0xFFFFFF)
-    static let searchBoxTextWhite = UIColor(hex: 0x78849E)
+    static let searchBoxTextGray = UIColor(hex: 0x78849E)
     static let searchBoxShadowColor = UIColor(hex: 0x455B63)
+    static let profileViewGray = UIColor(hex: 0xF7F7FA)
+    static let backBarViewGray = UIColor(hex: 0x959DAD)
     
     //init method for RGB type UIColor
     convenience init(red: Int, green: Int, blue: Int, a: CGFloat = 1.0){
