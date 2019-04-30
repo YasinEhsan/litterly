@@ -10,41 +10,21 @@ import UIKit
 
 class EventsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
-    
-
     @IBOutlet weak var embeddedTableview: UITableView!
-    var data = ["Recycle Meetup", "Reuse Meetup", "Reduce Meetup"]
-    let indentifier = "cellId"
+    var data = ["Organic Meetup", "Metal Meetup", "Plastic Meetup"]
+    var addressData = ["14 st Union Sq", "23rd street, Baruch college", "sdfsdfsfsdfsfsdfsdfsadfgsgfdsgksdjgksjgksagkaskgsadkgjsdkgjsadgjslgjlksdjglsjdglksadjgkjsdgf"]
+    let indentifier = "CardContentTableViewCell"
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-       // embeddedTableview.register(EmbeddedTableViewCell.self, forCellReuseIdentifier: indentifier)//
         embeddedTableview.dataSource = self
         embeddedTableview.delegate = self
-        embeddedTableview.separatorColor = UIColor.white
-       
-
-        // Do any additional setup after loading the view.
-    }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-    
-    // MARK: - CONSTRAINT SETUP
-    
-    fileprivate func setupConstraint() {
-//        self.embeddedTableview.translatesAutoresizingMaskIntoConstraints = false
+        embeddedTableview.separatorColor = UIColor.textWhite
         
+        embeddedTableview.rowHeight = UITableView.automaticDimension
+        embeddedTableview.estimatedRowHeight = 100
         
     }
     
@@ -55,23 +35,28 @@ class EventsViewController: UIViewController, UITableViewDelegate, UITableViewDa
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cell = tableView.dequeueReusableCell(withIdentifier: indentifier, for: indexPath) as! EmbeddedTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: indentifier, for: indexPath) as! CardContentTableViewCell
         
-        cell.eventTitle.text = data[indexPath.row]
+        //adding color to the barView, icon's parent view and cornering it, giving the labels custom colors
+        cell.backBarView.backgroundColor = UIColor.backBarViewGray
+        cell.iconParentView.layer.cornerRadius = 12
+        cell.iconParentView.backgroundColor = UIColor.unselectedGrey
+        cell.eventAddressLabel.textColor = UIColor.backBarViewGray
+        cell.eventNameLabel.textColor = UIColor.containerDividerGrey
+        //change the icons image here if you want to
+        cell.iconImageButton.setImage(UIImage(named: "icons8-gears-100"), for: .normal)
+        
+        //passing data to the labels
+        cell.eventAddressLabel.text = addressData[indexPath.row]
+        cell.eventNameLabel.text = data[indexPath.row]
+        
         
         return cell
     }
     
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 130.0
-    }
-    
+    //this is where we would call the map screen to view the marker that was selected for meetup
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
     }
-    
-    
-    
-    
     
 }

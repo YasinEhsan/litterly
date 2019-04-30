@@ -22,6 +22,7 @@ extension UIColor{
     static let searchBoxTextGray = UIColor(hex: 0x78849E)
     static let searchBoxShadowColor = UIColor(hex: 0x455B63)
     static let profileViewGray = UIColor(hex: 0xF7F7FA)
+    static let backBarViewGray = UIColor(hex: 0x959DAD)
     
     //init method for RGB type UIColor
     convenience init(red: Int, green: Int, blue: Int, a: CGFloat = 1.0){
