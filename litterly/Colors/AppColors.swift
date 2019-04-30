@@ -1,3 +1,4 @@
+
 //
 //  File.swift
 //  litterly
@@ -5,7 +6,6 @@
 //  Created by Joy Paul on 4/9/19.
 //  Copyright © 2019 Joy Paul. All rights reserved.
 //
-
 //We use this class to store the values of the colors from the design doc as UIColor values
 //it's an extension of UIColor itself
 import UIKit
