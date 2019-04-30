@@ -58,12 +58,27 @@ class MapsViewController: UIViewController {
     
     var trashModelArray = [TrashDataModel]()
     
+    //icons for map markers. Scheduled/unscheduled
+    let organicMarkerIcon = UIImage(named: "apple")?.withRenderingMode(.alwaysOriginal)
+    let plasticMarkerIcon = UIImage(named: "water-bottle")?.withRenderingMode(.alwaysOriginal)
+    let metalMarkerIcon = UIImage(named: "settings-gears")?.withRenderingMode(.alwaysOriginal)
+    
+    let scheduledOrganicMarkerIcon = UIImage(named: "green_apple")?.withRenderingMode(.alwaysOriginal)
+    let scheduledPlasticMarkerIcon = UIImage(named: "green_bottle")?.withRenderingMode(.alwaysOriginal)
+    let scheduledMetalMarkerIcon = UIImage(named: "green_settings_gears")?.withRenderingMode(.alwaysOriginal)
+    
+    //the custom infoView for the maerkers. loadView loads the xib file
+    let markerInfoWindow = MarkerInfoWindow().loadView()
+    
+    //keeps tarnck of the tapped marker
+    var tappedMarker: CLLocationCoordinate2D!
     override func viewDidLoad() {
         super.viewDidLoad()
         
         initMapView()
         checkLocationServices()
         addSlideInCardToMapView()
+        mapView?.delegate = self
     }
     
     //when view has appeared successfully, we call in to add the sliding card
