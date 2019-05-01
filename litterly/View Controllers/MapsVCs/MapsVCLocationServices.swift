@@ -29,7 +29,7 @@ extension MapsViewController: CLLocationManagerDelegate{
     //sets up location manager. Call when location services are enabled
     func setupLocationManger(){
         locationManager.delegate = self
-        locationManager.desiredAccuracy = kCLLocationAccuracyHundredMeters
+        locationManager.desiredAccuracy = kCLLocationAccuracyBest
     }
     
     

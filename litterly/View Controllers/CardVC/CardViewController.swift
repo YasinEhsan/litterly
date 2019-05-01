@@ -103,44 +103,75 @@ class CardViewController: UIViewController {
     //func that will request lat, lon, trash type in order to got to the next steps of reporting trash
     @IBAction func reportTrashButtonOnTap(_ sender: UIButton) {
         print("report trash tapped!!")
-        
+        executeTagTrash()
+    }
+    
+    
+    func executeTagTrash(){
         //checking to see if location services is enabled, then proceeding to report the trash
         let mapFuncs = MapsViewController()
         mapFuncs.checkLocationServices()
+        
         if let coordinates = mapFuncs.locationManager.location?.coordinate{
             print(coordinates.latitude)
             print(coordinates.longitude)
             
-            //assigning values to our trash datamodel
-            let reportThisTrash = TrashDataModel(lat: coordinates.latitude, lon: coordinates.longitude, trashType: "\(submitTrashType as String)")
-            
-            print(reportThisTrash)
-            
-            //passing our data to firestore as a dictionary that we init within our trash data model
-            submitTrashToFirestore(with: reportThisTrash.dictionary)
-            
+            guard let firebaseUserInstance = Auth.auth().currentUser else {return}
+            let id = submitTrashType + "\(coordinates.latitude)" + "\(coordinates.longitude)"+"marker" as String
+            let author = firebaseUserInstance.email as! String
+            reverseGeocodeApi(on: coordinates.latitude, and: coordinates.longitude) { (address, error) in
+                if error == nil{
+                    print(address as! String)
+                    let address:String = address!
+                    let trashTag = TrashDataModel(id: id, author: author, lat: coordinates.latitude, lon: coordinates.longitude, trash_type: self.submitTrashType, street_address: address, is_meetup_scheduled: false)
+                    self.submitTrashToFirestore(with: trashTag.dictionary, for: id)
+                    
+                } else{
+                    print("Error getting address")
+                }
+            }
         } else{
             //show an alert saying that location is off
         }
     }
     
-    //using the db reference, we add documents to the collection "reportedTrash"
-    func submitTrashToFirestore(with dictionary: [String:Any]){
+    //adds document to firestore
+    func submitTrashToFirestore(with dictionary: [String:Any], for id:String){
         
-        var docRef:DocumentReference? = nil
-        
-        docRef = db.collection("reportedTrash").addDocument(data: dictionary, completion: { (error:Error?) in
-            
-            if let error = error{
-                //show an alert
-                print("error submitting data to firestore \(error.localizedDescription)")
-            }else{
-                //show an alert
-                print("successfully submitted to firestore")
+        db.collection("TaggedTrash").document("\(id)").setData(dictionary) { (error:Error?) in
+            if let err = error {
+                print("Error writing document: \(err)")
+            } else {
+                print("Document successfully written!")
             }
-        })
+            
+        }
+        
     }
     
+    //gets address from google's reverse geocoding api. Network get request with completion handler
+    func reverseGeocodeApi(on lat:Double, and lon:Double, completionHandler: @escaping (String?, Error?) -> Void){
+        let apiURL = "https://maps.googleapis.com/maps/api/geocode/json?latlng=\(lat),\(lon)&key=\(GoogleApiKey().key)"
+        guard let url:URL = URL(string: apiURL) else {return}
+        
+        URLSession.shared.dataTask(with: url) { (data, response, error) in
+            guard let data = data else {return}
+            
+            do{
+                let json = try JSONSerialization.jsonObject(with: data, options: .mutableContainers)
+                
+                let objects = json as! [String:Any]
+                let resultChunk = objects["results"] as! [Any]
+                let getAddress = resultChunk[0] as! [String:Any]
+                let formattedAddress = getAddress["formatted_address"] as! String
+                completionHandler(formattedAddress, nil)
+                
+            }catch{
+                print("error reverseGeocoding " + error.localizedDescription)
+                completionHandler(nil, error)
+            }
+            
+        }.resume()
+    }
     
-
 }
