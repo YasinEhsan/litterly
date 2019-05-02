@@ -15,6 +15,7 @@ pod 'FirebaseUI/Auth'
 pod 'lottie-ios'
 pod 'Firebase/Firestore'
 pod 'Cards'
+pod 'AlamofireImage'
 
 
 end

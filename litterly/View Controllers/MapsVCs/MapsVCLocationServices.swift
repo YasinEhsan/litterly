@@ -9,6 +9,7 @@
 import GoogleMaps
 import UIKit
 import CoreLocation
+import Firebase
 
 //contains all the location permission related cods
 
@@ -71,11 +72,18 @@ extension MapsViewController: CLLocationManagerDelegate{
             print(location.latitude)
             print(location.longitude)
             
-            let camera = GMSCameraPosition.camera(withLatitude: location.latitude, longitude: location.longitude, zoom: 17.0)
-            mapView?.animate(to: camera)
-            mapView?.isMyLocationEnabled = true
+            let userId = Auth.auth().currentUser?.email
             
-            locationManager.startUpdatingLocation()
+            reverseGeocodeApi(on: location.latitude, and: location.longitude) { (address, userCurrentNeighborhood, error) in
+                
+                self.updateUserCurrentNeighborhood(forUser: userId!, with: userCurrentNeighborhood!)
+            }
+            
+            let camera = GMSCameraPosition.camera(withLatitude: location.latitude, longitude: location.longitude, zoom: 17.0)
+            self.mapView?.animate(to: camera)
+            self.mapView?.isMyLocationEnabled = true
+            
+            self.locationManager.startUpdatingLocation()
         }
     }
     
@@ -98,6 +106,48 @@ extension MapsViewController: CLLocationManagerDelegate{
     //if auth changed, run through the switch case statements
     func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
         checkLocationAuthorization()
+    }
+    
+    //gets address from google's reverse geocoding api. Network get request with completion handler
+    func reverseGeocodeApi(on lat:Double, and lon:Double, completionHandler: @escaping (String?, String?, Error?) -> Void){
+        let apiURL = "https://maps.googleapis.com/maps/api/geocode/json?latlng=\(lat),\(lon)&key=\(GoogleApiKey().key)"
+        guard let url:URL = URL(string: apiURL) else {return}
+        
+        URLSession.shared.dataTask(with: url) { (data, response, error) in
+            guard let data = data else {return}
+            
+            do{
+                let json = try JSONSerialization.jsonObject(with: data, options: .mutableContainers)
+                
+                let objects = json as! [String:Any]
+                let resultChunk = objects["results"] as! [Any]
+                let getAddress = resultChunk[0] as! [String:Any]
+                
+                let neighborhoodChunk = getAddress["address_components"] as! [Any]
+                let neighborhood = neighborhoodChunk[2] as! [String:Any]
+                
+                let userNeighborhood = neighborhood["short_name"] as! String
+                let formattedAddress = getAddress["formatted_address"] as! String
+                completionHandler(formattedAddress, userNeighborhood, nil)
+                
+            }catch{
+                print("error reverseGeocoding " + error.localizedDescription)
+                completionHandler(nil, nil, error)
+            }
+            
+            }.resume()
+    }
+    
+    func updateUserCurrentNeighborhood(forUser id:String, with neighborhood:String){
+        db.collection("Users").document("\(id)").updateData([
+            "neighborhood" : neighborhood
+        ]) { (error:Error?) in
+            if let err = error {
+                print("Error writing document: \(err)")
+            } else {
+                print("Document successfully written!")
+            }
+        }
     }
     
 }

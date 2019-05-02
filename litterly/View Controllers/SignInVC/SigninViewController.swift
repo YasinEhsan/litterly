@@ -135,16 +135,17 @@ extension SigninViewController: FUIAuthDelegate{
             
             guard let firebaseUserInstance = Auth.auth().currentUser else {return}
             
-            let user_id = firebaseUserInstance.email as! String
-            let user_name = firebaseUserInstance.displayName as! String
+            let user_id = firebaseUserInstance.email
+            let user_name = firebaseUserInstance.displayName!
             let profile_pic_url = firebaseUserInstance.photoURL?.absoluteString as! String
             
             
-            let currentUser = UserDataModel(user_id: user_id, user_name: user_name, profile_pic_url: profile_pic_url)
+            let currentUser = UserDataModel(user_id: user_id!, user_name: user_name, profile_pic_url: profile_pic_url, neighborhood: "")
             
             print(currentUser.dictionary)
             
-            submitUserToFirestore(with: currentUser.dictionary, for: user_id)
+            //calls func to create user in firestore
+            submitUserToFirestore(with: currentUser.dictionary, for: user_id!)
             
             
             let mapsViewController = storyBoard.instantiateViewController(withIdentifier: "ContainerVC")
@@ -154,19 +155,6 @@ extension SigninViewController: FUIAuthDelegate{
             
         }
         
-    }
-    
-    func submitUserToFirestore(with dictionary: [String:Any], for id:String){
-        
-        db.collection("Users").document("\(id)").setData(dictionary) { (error:Error?) in
-            if let err = error {
-                print("Error writing document: \(err)")
-            } else {
-                print("Document successfully written!")
-            }
-
-        }
-
     }
     
 }

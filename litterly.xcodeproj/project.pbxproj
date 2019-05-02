@@ -37,6 +37,9 @@
 		C599F5EA2262FD830038A1A6 /* PageOneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C599F5E92262FD830038A1A6 /* PageOneViewController.swift */; };
 		C599F5EC2263044C0038A1A6 /* PageTwoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C599F5EB2263044C0038A1A6 /* PageTwoViewController.swift */; };
 		C599F5EE226304590038A1A6 /* PageThreeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C599F5ED226304590038A1A6 /* PageThreeViewController.swift */; };
+		C59A8BB7227B65A4009CAA90 /* CardVC-Firebase.swift in Sources */ = {isa = PBXBuildFile; fileRef = C59A8BB6227B65A4009CAA90 /* CardVC-Firebase.swift */; };
+		C59A8BB9227B665E009CAA90 /* SigninVC-Firebase.swift in Sources */ = {isa = PBXBuildFile; fileRef = C59A8BB8227B665E009CAA90 /* SigninVC-Firebase.swift */; };
+		C59A8BBB227B66DC009CAA90 /* ProfileVC-Firebase.swift in Sources */ = {isa = PBXBuildFile; fileRef = C59A8BBA227B66DC009CAA90 /* ProfileVC-Firebase.swift */; };
 		C5C35EE122791B9900103AD9 /* UserDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5C35EE022791B9900103AD9 /* UserDataModel.swift */; };
 		C5C35EE322791FD300103AD9 /* DocumentSerializableProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5C35EE222791FD300103AD9 /* DocumentSerializableProtocol.swift */; };
 		C5C35EE7227A1A9900103AD9 /* MapsVC-GMSDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5C35EE6227A1A9900103AD9 /* MapsVC-GMSDelegate.swift */; };
@@ -91,6 +94,9 @@
 		C599F5E92262FD830038A1A6 /* PageOneViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageOneViewController.swift; sourceTree = "<group>"; };
 		C599F5EB2263044C0038A1A6 /* PageTwoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageTwoViewController.swift; sourceTree = "<group>"; };
 		C599F5ED226304590038A1A6 /* PageThreeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageThreeViewController.swift; sourceTree = "<group>"; };
+		C59A8BB6227B65A4009CAA90 /* CardVC-Firebase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CardVC-Firebase.swift"; sourceTree = "<group>"; };
+		C59A8BB8227B665E009CAA90 /* SigninVC-Firebase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SigninVC-Firebase.swift"; sourceTree = "<group>"; };
+		C59A8BBA227B66DC009CAA90 /* ProfileVC-Firebase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ProfileVC-Firebase.swift"; sourceTree = "<group>"; };
 		C5C35EE022791B9900103AD9 /* UserDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDataModel.swift; sourceTree = "<group>"; };
 		C5C35EE222791FD300103AD9 /* DocumentSerializableProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentSerializableProtocol.swift; sourceTree = "<group>"; };
 		C5C35EE6227A1A9900103AD9 /* MapsVC-GMSDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MapsVC-GMSDelegate.swift"; sourceTree = "<group>"; };
@@ -185,6 +191,7 @@
 			children = (
 				C5DD088222584589000988A3 /* SigninViewController.swift */,
 				C5E8F20322656A0C009FAE68 /* AuthPickerViewController.swift */,
+				C59A8BB8227B665E009CAA90 /* SigninVC-Firebase.swift */,
 			);
 			path = SignInVC;
 			sourceTree = "<group>";
@@ -306,6 +313,7 @@
 				C5942AED2273843D004F1A43 /* TagViewController.swift */,
 				C5942AF12273845E004F1A43 /* MeetViewController.swift */,
 				C5942AF522738476004F1A43 /* PointsViewController.swift */,
+				C59A8BBA227B66DC009CAA90 /* ProfileVC-Firebase.swift */,
 			);
 			path = ProfileVCs;
 			sourceTree = "<group>";
@@ -324,6 +332,7 @@
 			isa = PBXGroup;
 			children = (
 				C5D3E901225BB10900C03AFB /* CardViewController.swift */,
+				C59A8BB6227B65A4009CAA90 /* CardVC-Firebase.swift */,
 			);
 			path = CardVC;
 			sourceTree = "<group>";
@@ -481,6 +490,8 @@
 			);
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-litterly/Pods-litterly-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/AlamofireImage/AlamofireImage.framework",
 				"${BUILT_PRODUCTS_DIR}/BoringSSL-GRPC/openssl_grpc.framework",
 				"${BUILT_PRODUCTS_DIR}/Cards/Cards.framework",
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
@@ -498,6 +509,8 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AlamofireImage.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/openssl_grpc.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Cards.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
@@ -584,7 +597,10 @@
 				C5DD088322584589000988A3 /* SigninViewController.swift in Sources */,
 				C5DD088122584562000988A3 /* IntroPageViewController.swift in Sources */,
 				C564B483226AA05B00F2DEF1 /* TrashDataModel.swift in Sources */,
+				C59A8BB9227B665E009CAA90 /* SigninVC-Firebase.swift in Sources */,
 				C5CA15A3226950AD008B04EB /* MeetupViewController.swift in Sources */,
+				C59A8BB7227B65A4009CAA90 /* CardVC-Firebase.swift in Sources */,
+				C59A8BBB227B66DC009CAA90 /* ProfileVC-Firebase.swift in Sources */,
 				C5063154226E8EF30078265C /* MenuOption.swift in Sources */,
 				C5063152226E8ED00078265C /* MenuOptionCell.swift in Sources */,
 				C58D911D225D54B2006A0390 /* MapsVC-SlideInCard.swift in Sources */,

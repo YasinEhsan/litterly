@@ -118,60 +118,23 @@ class CardViewController: UIViewController {
             
             guard let firebaseUserInstance = Auth.auth().currentUser else {return}
             let id = submitTrashType + "\(coordinates.latitude)" + "\(coordinates.longitude)"+"marker" as String
-            let author = firebaseUserInstance.email as! String
-            reverseGeocodeApi(on: coordinates.latitude, and: coordinates.longitude) { (address, error) in
-                if error == nil{
-                    print(address as! String)
-                    let address:String = address!
-                    let trashTag = TrashDataModel(id: id, author: author, lat: coordinates.latitude, lon: coordinates.longitude, trash_type: self.submitTrashType, street_address: address, is_meetup_scheduled: false)
-                    self.submitTrashToFirestore(with: trashTag.dictionary, for: id)
-                    
-                } else{
-                    print("Error getting address")
-                }
+            let author = firebaseUserInstance.email!
+            
+            //gets tag address and the neighborhood from reverseGeocode
+            mapFuncs.reverseGeocodeApi(on: coordinates.latitude, and: coordinates.longitude) { (address, userCurrentNeighborhood, error) in
+            
+                print(address!)
+                print(userCurrentNeighborhood!)
+                
+                let address = address
+                let userCurrentNeighborhood = userCurrentNeighborhood
+                let trashTag = TrashDataModel(id: id, author: author, lat: coordinates.latitude, lon: coordinates.longitude, trash_type: self.submitTrashType, street_address: address!, is_meetup_scheduled: false)
+                self.submitTrashToFirestore(with: trashTag.dictionary, for: id)
+                self.updateUserCurrentNeighborhood(forUser: author, with: userCurrentNeighborhood!)
             }
         } else{
             //show an alert saying that location is off
         }
-    }
-    
-    //adds document to firestore
-    func submitTrashToFirestore(with dictionary: [String:Any], for id:String){
-        
-        db.collection("TaggedTrash").document("\(id)").setData(dictionary) { (error:Error?) in
-            if let err = error {
-                print("Error writing document: \(err)")
-            } else {
-                print("Document successfully written!")
-            }
-            
-        }
-        
-    }
-    
-    //gets address from google's reverse geocoding api. Network get request with completion handler
-    func reverseGeocodeApi(on lat:Double, and lon:Double, completionHandler: @escaping (String?, Error?) -> Void){
-        let apiURL = "https://maps.googleapis.com/maps/api/geocode/json?latlng=\(lat),\(lon)&key=\(GoogleApiKey().key)"
-        guard let url:URL = URL(string: apiURL) else {return}
-        
-        URLSession.shared.dataTask(with: url) { (data, response, error) in
-            guard let data = data else {return}
-            
-            do{
-                let json = try JSONSerialization.jsonObject(with: data, options: .mutableContainers)
-                
-                let objects = json as! [String:Any]
-                let resultChunk = objects["results"] as! [Any]
-                let getAddress = resultChunk[0] as! [String:Any]
-                let formattedAddress = getAddress["formatted_address"] as! String
-                completionHandler(formattedAddress, nil)
-                
-            }catch{
-                print("error reverseGeocoding " + error.localizedDescription)
-                completionHandler(nil, error)
-            }
-            
-        }.resume()
     }
     
 }
