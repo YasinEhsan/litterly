@@ -19,6 +19,8 @@ extension MapsViewController: GMSMapViewDelegate{
         print("tapped on marker with lat: \(marker.position.latitude)")
         print("tapped on marker with lon: \(marker.position.longitude)")
         
+        
+        
         tappedMarker = marker.position
         
         let position = marker.position

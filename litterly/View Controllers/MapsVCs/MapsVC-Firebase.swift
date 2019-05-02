@@ -13,67 +13,36 @@ import FirebaseFirestore
 extension MapsViewController{
     
     //returns a custom map marker based on trashType
-    func giveMeAMarker(for location:CLLocationCoordinate2D, on trashType:String) -> GMSMarker{
+    func giveMeAMarker(for location:CLLocationCoordinate2D, on trashType:String, and isMeetupScheduled:Bool) -> GMSMarker{
         
         let customMarker = GMSMarker(position: location)
         
         if trashType == "organic"{
-            customMarker.icon = self.organicMarkerIcon
-            customMarker.title = "\(trashType)"
-            customMarker.snippet = "location details: \(location.latitude) and \(location.longitude)"
+            if isMeetupScheduled{
+                customMarker.icon = self.scheduledOrganicMarkerIcon
+            }else{
+                customMarker.icon = self.organicMarkerIcon
+            }
             
             return customMarker
         } else if trashType == "plastic"{
-            customMarker.icon = self.plasticMarkerIcon
-            customMarker.title = "\(trashType)"
-            customMarker.snippet = "location details: \(location.latitude) and \(location.longitude)"
+            if isMeetupScheduled{
+                customMarker.icon = self.scheduledPlasticMarkerIcon
+            }else{
+                customMarker.icon = self.plasticMarkerIcon
+            }
             
             return customMarker
         } else{
-            customMarker.icon = self.metalMarkerIcon
-            customMarker.title = "\(trashType)"
-            customMarker.snippet = "location details: \(location.latitude) and \(location.longitude)"
+            if isMeetupScheduled{
+                customMarker.icon = self.scheduledMetalMarkerIcon
+            }else{
+                customMarker.icon = self.metalMarkerIcon
+            }
             
             return customMarker
         }
         
-    }
-    
-    
-    //gets all the trash markers from the database
-    //****not necessary when realTimeMarker listener has been implemented........???
-    func getMarkersFromFireStore(){
-        db.collection("reportedTrash").getDocuments(){
-            querySnapshot, error in
-            
-            if let error = error{
-                //show an alert saying an error has occoured
-                print(error.localizedDescription)
-            } else{
-                
-                self.trashModelArray = (querySnapshot!.documents.compactMap({TrashDataModel(dictionary: $0.data())}))
-                
-                //print(self.trashModelArray)
-                
-                //chceking if the database we query for is empty
-                guard let snapShot = querySnapshot else{return}
-                
-                snapShot.documents.forEach{
-                    data in
-                    
-                    self.trashModelArray.append(TrashDataModel(dictionary: data.data())!)
-                    
-                    //print(self.trashModelArray)
-                    
-                    let position = CLLocationCoordinate2D(latitude: self.trashModelArray.last!.lat, longitude: self.trashModelArray.last!.lon)
-                    let trashType = self.trashModelArray.last!.trash_type
-                    let marker = self.giveMeAMarker(for: position, on: trashType)
-                    
-                    marker.opacity = 0.6
-                    marker.map = self.mapView
-                }
-            }
-        }
     }
     
     //a listener for markers in real time from other users
@@ -95,19 +64,53 @@ extension MapsViewController{
                     
                     
                     self.trashModelArray.append(TrashDataModel(dictionary: diff.document.data())!)
-
+                    
+                    let isMeetupScheduled = self.trashModelArray.last!.is_meetup_scheduled
+                    print(isMeetupScheduled)
                     let position = CLLocationCoordinate2D(latitude: self.trashModelArray.last!.lat, longitude: self.trashModelArray.last!.lon)
                     let trashType = self.trashModelArray.last!.trash_type
-                    let marker = self.giveMeAMarker(for: position, on: trashType)
+                    let marker = self.giveMeAMarker(for: position, on: trashType, and: isMeetupScheduled)
 
                     marker.opacity = 0.8
+                    //appends to marker tracking array
+                    self.markers.append(marker)
                     marker.map = self.mapView
                     
                     //if removed (when a clean up is complete, add a ghost trail of the previous marker
                 } else if diff.type == .removed{
                     
+                   //gotta handle remove event responsibly
+                    //reload both of the arrays??
+                    
+                    
+                  
+                    
                     //or modified an existing one (when a cleanup is scheduled)
                 } else if diff.type == .modified{
+                    
+                    //getting the modified doc's info
+                    let modifiedDocId = diff.document.documentID
+                    let modifiedDocNewIndex = diff.newIndex
+                    let modifiedDocOldIndex = Int(diff.oldIndex)
+                    print(modifiedDocId, modifiedDocOldIndex, modifiedDocNewIndex)
+                    print(self.trashModelArray[modifiedDocOldIndex].is_meetup_scheduled)
+                    
+                    //setting the modded document's marker to nil
+                    self.markers[modifiedDocOldIndex].map = nil
+                    
+                    //setting the old trash array up with the new value
+                    self.trashModelArray[modifiedDocOldIndex] = TrashDataModel(dictionary: diff.document.data())!
+                    
+                    //passing the new values and plotting the marker again
+                    let isMeetupScheduled = self.trashModelArray[modifiedDocOldIndex].is_meetup_scheduled
+                    print(isMeetupScheduled)
+                    let position = CLLocationCoordinate2D(latitude: self.trashModelArray[modifiedDocOldIndex].lat, longitude: self.trashModelArray[modifiedDocOldIndex].lon)
+                    let trashType = self.trashModelArray[modifiedDocOldIndex].trash_type
+                    let marker = self.giveMeAMarker(for: position, on: trashType, and: isMeetupScheduled)
+                    
+                    marker.opacity = 0.8
+                    self.markers[modifiedDocOldIndex] = marker
+                    marker.map = self.mapView
                     
                 }
             }
