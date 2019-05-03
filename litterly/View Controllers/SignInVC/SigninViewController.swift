@@ -8,6 +8,7 @@
 
 import UIKit
 import FirebaseAuth
+import FirebaseFirestore
 import FirebaseUI
 import Lottie
 
@@ -15,6 +16,8 @@ class SigninViewController: UIViewController {
     
     let animationView = AnimationView(name: "town")
     let signInButton = UIButton()
+    let db = Firestore.firestore()
+    var userDataModel = [UserDataModel]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -127,14 +130,31 @@ extension SigninViewController: FUIAuthDelegate{
         if error != nil{
             //log the error
             return
+        } else{
+            let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+            
+            guard let firebaseUserInstance = Auth.auth().currentUser else {return}
+            
+            let user_id = firebaseUserInstance.email
+            let user_name = firebaseUserInstance.displayName!
+            let profile_pic_url = firebaseUserInstance.photoURL?.absoluteString as! String
+            
+            
+            let currentUser = UserDataModel(user_id: user_id!, user_name: user_name, profile_pic_url: profile_pic_url, neighborhood: "")
+            
+            print(currentUser.dictionary)
+            
+            //calls func to create user in firestore
+            submitUserToFirestore(with: currentUser.dictionary, for: user_id!)
+            
+            
+            let mapsViewController = storyBoard.instantiateViewController(withIdentifier: "ContainerVC")
+            
+            present(mapsViewController, animated: true, completion: nil)
+            
+            
         }
-
-        let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
         
-        let mapsViewController = storyBoard.instantiateViewController(withIdentifier: "ContainerVC")
-        
-        present(mapsViewController, animated: true, completion: nil)
-  
     }
     
 }

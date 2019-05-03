@@ -7,6 +7,9 @@
 //
 
 import UIKit
+import FirebaseFirestore
+import Firebase
+import AlamofireImage
 
 class ProfileViewController: UIViewController {
     
@@ -26,11 +29,15 @@ class ProfileViewController: UIViewController {
     let tagVC:UIView = TagViewController().view
     let meetVC:UIView = MeetViewController().view
     let pointsVC:UIView = PointsViewController().view
+
+    let trashTagAtt = ("---", "TRASHTAG")
+    let meetupAtt = ("0", "MEETUPS")
+    let pointsAtt = ("0", "POINTS")
     
-    //tuples
-    let tagAtt = (155, "TRASHTAG")
-    let meetupAtt = (12, "MEETUPS")
-    let pointsAtt = (800, "POINTS")
+    //firestore instance and the data model vars
+    let db = Firestore.firestore()
+    var userTaggedTrash = [TrashDataModel]()
+    var userBasicInfo:UserDataModel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -40,7 +47,7 @@ class ProfileViewController: UIViewController {
         configureNavbar()
         
         configureProfilePhoto()
-        configureUsr()
+        configureUsrBasicInfo()
         
         setUpSegCtrl()
         configureSegCtrlConstraints()
@@ -50,7 +57,16 @@ class ProfileViewController: UIViewController {
         
         addViewsForContainer()
         
+        //set the count for the ctrls
+        fetchUserTaggedTrash { (count) in
+            print(count as! Int)
+            self.segmentedCtrl.setTitle("\(count as! Int)\n\(self.trashTagAtt.1)", forSegmentAt: 0)
+        }
         
+        //gets basic user info and configures them
+        fetchUserBasicInfo { (name, neighborhood) in
+            self.configureUsrBasicInfo(user: name as! String, on: neighborhood as! String)
+        }
 
     }
     
@@ -89,16 +105,24 @@ class ProfileViewController: UIViewController {
     
     
     //sets up the labels
-    func configureUsr(){
-        usrNameLabel.text = "Cosmic Rover"
+    func configureUsrBasicInfo(user name:String = "---", on location:String = "---"){
+        
+        usrNameLabel.text = "\(name)"
         usrCityLabel.textColor = UIColor.textWhite
-        usrCityLabel.text = "New York City"
+        usrCityLabel.text = "\(location)"
         usrCityLabel.textColor = UIColor.textWhite
     }
     
     //sets up the profile pic
     func configureProfilePhoto(){
-        profileImageView.image = UIImage(named: "userPhoto")
+        
+        //provides an image for the imageView using alamofire
+        let userImage = Auth.auth().currentUser?.photoURL?.absoluteString as! String
+        let imageUrl = URL(string: userImage)
+        let data = try! Data(contentsOf: imageUrl!)
+        let image = UIImage(data: data)
+        
+        profileImageView.image = image
         profileImageView.contentMode = .scaleAspectFill
         profileImageView.isOpaque = false
         
@@ -115,7 +139,7 @@ class ProfileViewController: UIViewController {
         //sets number of lines of text
         UILabel.appearance(whenContainedInInstancesOf: [UISegmentedControl.self]).numberOfLines = 2
         
-        segmentedCtrl.insertSegment(withTitle: "\(tagAtt.0)\n\(tagAtt.1)", at: 0, animated: true)
+        segmentedCtrl.insertSegment(withTitle: "\(trashTagAtt.0)\n\(trashTagAtt.1)", at: 0, animated: true)
         segmentedCtrl.insertSegment(withTitle: "\(meetupAtt.0)\n\(meetupAtt.1)", at: 1, animated: true)
         segmentedCtrl.insertSegment(withTitle: "\(pointsAtt.0)\n\(pointsAtt.1)", at: 2, animated: true)
         

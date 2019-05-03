@@ -15,8 +15,6 @@ enum MenuOption: Int{
     case Logout
     case Settings
     
-   
-    
     var image: UIImage{
         switch self {
         case .Meetups: return UIImage(named: "calendar") ?? UIImage()

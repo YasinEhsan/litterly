@@ -11,24 +11,26 @@
 //we use protocol to effortlessly sticth the values we pass to this model into a dictionary
 
 import Foundation
-import FirebaseFirestore
-
-//the protocol
-protocol DocumentSerializable {
-    init?(dictionary: [String:Any])
-}
 
 struct TrashDataModel{
     
+    var id: String
+    var author: String
     var lat: Double
     var lon: Double
-    var trashType: String
+    var trash_type: String
+    var street_address: String
+    var is_meetup_scheduled: Bool
     
     var dictionary:[String: Any]{
         return [
+            "id" : id,
             "lat" : lat,
             "lon" : lon,
-            "trashType" : trashType
+            "author" : author,
+            "trash_type" : trash_type,
+            "street_address" : street_address,
+            "is_meetup_scheduled" : is_meetup_scheduled
         ]
     }
 }
@@ -38,10 +40,15 @@ extension TrashDataModel: DocumentSerializable{
     
     init?(dictionary: [String : Any]) {
         //guard let to make sure we don't run into nil values
-        guard let lat = dictionary["lat"] as? Double,
+        guard let id = dictionary["id"] as? String,
+            let lat = dictionary["lat"] as? Double,
             let lon = dictionary["lon"] as? Double,
-            let trashType = dictionary["trashType"] as? String else{return nil}
+            let author = dictionary["author"] as? String,
+            let trash_type = dictionary["trash_type"] as? String,
+            let street_address = dictionary["street_address"] as? String,
+            let is_meetup_scheduled = dictionary["is_meetup_scheduled"] as? Bool else {return nil}
         
-        self.init(lat: lat, lon: lon, trashType: trashType)
+        
+        self.init(id: id, author: author, lat: lat, lon: lon, trash_type: trash_type, street_address: street_address, is_meetup_scheduled: is_meetup_scheduled)
     }
 }

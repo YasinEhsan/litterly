@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import Firebase
+import AlamofireImage
 
 private let reusableIdentifier = "MenuOptionCell"
 
@@ -33,7 +35,13 @@ class MenuController: UIViewController{
     func configureTableView(){
         
         let imageView = UIImageView()
-        let profileImage = ResizeImage(image: UIImage(named: "userPhoto")!, targetSize: CGSize(width: 64, height: 64))
+        
+        let userImage = Auth.auth().currentUser?.photoURL?.absoluteString as! String
+        let imageUrl = URL(string: userImage)
+        let data = try! Data(contentsOf: imageUrl!)
+        let image = UIImage(data: data)
+        
+        let profileImage = ResizeImage(image: image!, targetSize: CGSize(width: 64, height: 64))
         imageView.image = profileImage
         
         //imageView.frame = CGRect(x: 0, y: 0, width: 64, height: 64)

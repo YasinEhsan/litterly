@@ -45,6 +45,7 @@ class MapsViewController: UIViewController {
     var animatorProgressWhenInterrupted:CGFloat = 0
     
     var mapView: GMSMapView?
+    var markers = [GMSMarker]()
     //init the location manager for device location
     let locationManager = CLLocationManager()
     

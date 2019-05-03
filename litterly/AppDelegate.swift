@@ -17,7 +17,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate{
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
-        GMSServices.provideAPIKey("AIzaSyB1srdvHEWS867OD0jFSewpsSqok9vahcM")
+        GMSServices.provideAPIKey("\(GoogleApiKey().key)")
         FirebaseApp.configure()
         
         //if user didn't sign out, send the user directly to the mapsVC

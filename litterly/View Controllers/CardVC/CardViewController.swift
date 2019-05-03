@@ -103,44 +103,38 @@ class CardViewController: UIViewController {
     //func that will request lat, lon, trash type in order to got to the next steps of reporting trash
     @IBAction func reportTrashButtonOnTap(_ sender: UIButton) {
         print("report trash tapped!!")
-        
+        executeTagTrash()
+    }
+    
+    
+    func executeTagTrash(){
         //checking to see if location services is enabled, then proceeding to report the trash
         let mapFuncs = MapsViewController()
         mapFuncs.checkLocationServices()
+        
         if let coordinates = mapFuncs.locationManager.location?.coordinate{
             print(coordinates.latitude)
             print(coordinates.longitude)
             
-            //assigning values to our trash datamodel
-            let reportThisTrash = TrashDataModel(lat: coordinates.latitude, lon: coordinates.longitude, trashType: "\(submitTrashType as String)")
+            guard let firebaseUserInstance = Auth.auth().currentUser else {return}
+            let id = submitTrashType + "\(coordinates.latitude)" + "\(coordinates.longitude)"+"marker" as String
+            let author = firebaseUserInstance.email!
             
-            print(reportThisTrash)
+            //gets tag address and the neighborhood from reverseGeocode
+            mapFuncs.reverseGeocodeApi(on: coordinates.latitude, and: coordinates.longitude) { (address, userCurrentNeighborhood, error) in
             
-            //passing our data to firestore as a dictionary that we init within our trash data model
-            submitTrashToFirestore(with: reportThisTrash.dictionary)
-            
+                print(address!)
+                print(userCurrentNeighborhood!)
+                
+                let address = address
+                let userCurrentNeighborhood = userCurrentNeighborhood
+                let trashTag = TrashDataModel(id: id, author: author, lat: coordinates.latitude, lon: coordinates.longitude, trash_type: self.submitTrashType, street_address: address!, is_meetup_scheduled: false)
+                self.submitTrashToFirestore(with: trashTag.dictionary, for: id)
+                self.updateUserCurrentNeighborhood(forUser: author, with: userCurrentNeighborhood!)
+            }
         } else{
             //show an alert saying that location is off
         }
     }
     
-    //using the db reference, we add documents to the collection "reportedTrash"
-    func submitTrashToFirestore(with dictionary: [String:Any]){
-        
-        var docRef:DocumentReference? = nil
-        
-        docRef = db.collection("reportedTrash").addDocument(data: dictionary, completion: { (error:Error?) in
-            
-            if let error = error{
-                //show an alert
-                print("error submitting data to firestore \(error.localizedDescription)")
-            }else{
-                //show an alert
-                print("successfully submitted to firestore")
-            }
-        })
-    }
-    
-    
-
 }
