@@ -11,8 +11,7 @@ import FirebaseFirestore
 import Firebase
 import AlamofireImage
 
-class ProfileViewController: UIViewController {
-    
+class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     @IBOutlet weak var topView: UIView!
     @IBOutlet weak var profileImageView: UIImageView!
     @IBOutlet weak var usrNameLabel: UILabel!
@@ -24,6 +23,7 @@ class ProfileViewController: UIViewController {
     let activeSegCtrlIndicator = UIView()
     let meetupHistoryLabel = UILabel()
     let containerView = UIView()
+    let tableView = UITableView()
     
     //located in the views folder
     let tagVC:UIView = TagViewController().view
@@ -55,7 +55,14 @@ class ProfileViewController: UIViewController {
         
         configureMeetupHistoryLabel()
         
-        addViewsForContainer()
+        configureTableView()
+        
+        tableView.dataSource = self
+        tableView.delegate = self
+        
+        tableView.rowHeight = 100
+        
+        //addViewsForContainer()
         
         //set the count for the ctrls
         fetchUserTaggedTrash { (count) in
@@ -221,40 +228,107 @@ class ProfileViewController: UIViewController {
         //meetupHistoryLabel.heightAnchor.constraint(equalToConstant: 13).isActive = true
     }
     
-    //the views that will trigger on tap
-    func addViewsForContainer(){
+    func configureTableView(){
+        view.addSubview(tableView)
+        tableView.translatesAutoresizingMaskIntoConstraints = false
         
-        containerView.translatesAutoresizingMaskIntoConstraints = false
-        view.addSubview(containerView)
-        containerView.topAnchor.constraint(equalTo: meetupHistoryLabel.bottomAnchor, constant: 12.4).isActive = true
-        containerView.leftAnchor.constraint(equalTo: view.leftAnchor).isActive = true
-        containerView.rightAnchor.constraint(equalTo: view.rightAnchor).isActive = true
-        containerView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
+        tableView.topAnchor.constraint(equalTo: meetupHistoryLabel.bottomAnchor).isActive = true
+        tableView.leftAnchor.constraint(equalTo: view.leftAnchor).isActive = true
+        tableView.rightAnchor.constraint(equalTo: view.rightAnchor).isActive = true
+        tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
         
-        containerView.addSubview(tagVC)
-        containerView.addSubview(meetVC)
-        containerView.addSubview(pointsVC)
+        //registering the cell here first
+        tableView.register(MenuOptionCell.self, forCellReuseIdentifier: "MenuOptionCell")
     }
     
-    //setting views for cases
+    //the views that will trigger on tap
+//    func addViewsForContainer(){
+//
+//        containerView.translatesAutoresizingMaskIntoConstraints = false
+//        view.addSubview(containerView)
+//        containerView.topAnchor.constraint(equalTo: meetupHistoryLabel.bottomAnchor, constant: 12.4).isActive = true
+//        containerView.leftAnchor.constraint(equalTo: view.leftAnchor).isActive = true
+//        containerView.rightAnchor.constraint(equalTo: view.rightAnchor).isActive = true
+//        containerView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
+//
+//        containerView.addSubview(tagVC)
+//        containerView.addSubview(meetVC)
+//        containerView.addSubview(pointsVC)
+//    }
+//
+//    //setting views for cases
     @objc func segmentedControlValueChanged(_ sender: UISegmentedControl){
         //we animate the buttonBar to go underneath the selected control
         UIView.animate(withDuration: 0.3) {
             self.activeSegCtrlIndicator.frame.origin.x = (self.segmentedCtrl.frame.width / CGFloat(self.segmentedCtrl.numberOfSegments)) * CGFloat(self.segmentedCtrl.selectedSegmentIndex)
         }
+
+//        switch segmentedCtrl.selectedSegmentIndex{
+//        case 0:
+//            break
+//        case 1:
+//            break
+//        case 2:
+//            break
+//
+//        default:
+//            print("Whaaa")
+//        }
+
+        //on value change, reloadData()
+        tableView.reloadData()
+    }
+    
+    
+    //return each array's respectable .cout
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        var returnValue = 0
         
-        switch segmentedCtrl.selectedSegmentIndex{
+        switch(segmentedCtrl.selectedSegmentIndex)
+        {
         case 0:
-            containerView.bringSubviewToFront(tagVC)
+            returnValue = 1
+            break
         case 1:
-            containerView.bringSubviewToFront(meetVC)
+            returnValue = 2
+            break
+            
         case 2:
-            containerView.bringSubviewToFront(pointsVC)
+            returnValue = 3
+            break
             
         default:
-            print("Whaaa")
+            break
+            
         }
         
+        return returnValue
+    }
+    
+    //register the cell first and then call it here
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        let cell = tableView.dequeueReusableCell(withIdentifier: "MenuOptionCell", for: indexPath) as! MenuOptionCell
+        
+        switch(segmentedCtrl.selectedSegmentIndex)
+        {
+        case 0:
+            cell.iconImageView.image = UIImage(named: "52gps")
+            break
+        case 1:
+            cell.iconImageView.image = UIImage(named: "52gps")
+            break
+            
+        case 2:
+            cell.iconImageView.image = UIImage(named: "52gps")
+            break
+            
+        default:
+            break
+            
+        }
+        
+        return cell
     }
     
     
