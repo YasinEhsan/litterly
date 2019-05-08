@@ -104,6 +104,9 @@ class CardViewController: UIViewController {
     @IBAction func reportTrashButtonOnTap(_ sender: UIButton) {
         print("report trash tapped!!")
         executeTagTrash()
+        
+        //Posting a notification
+        NotificationCenter.default.post(name: NSNotification.Name("reportTapped"), object: nil)
     }
     
     

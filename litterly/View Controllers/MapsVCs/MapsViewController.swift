@@ -80,6 +80,9 @@ class MapsViewController: UIViewController {
         checkLocationServices()
         addSlideInCardToMapView()
         mapView?.delegate = self
+        
+        //Receiving a notification
+        NotificationCenter.default.addObserver(self, selector: #selector(reportTapped), name: NSNotification.Name("reportTapped"), object: nil)
     }
     
     //when view has appeared successfully, we call in to add the sliding card
@@ -89,6 +92,10 @@ class MapsViewController: UIViewController {
         addASearchBar()
     }
     
-    
+    //Calling a function to lower the card
+    @objc private func reportTapped() {
+        print("lowering the card")
+        animateTransitionIfNeeded(state: .collapsed, duration: 0.5)
+    }
 }
 
