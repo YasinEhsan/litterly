@@ -7,7 +7,7 @@
 //
 import UIKit
 
-class MarkerInfoWindow: UIView {
+class UnscheduledMarkerInfoWindow: UIView {
     
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var userActionButton: UIButton!
@@ -16,7 +16,6 @@ class MarkerInfoWindow: UIView {
     //button's function
     @IBAction func onTapUserAction(_ sender: UIButton) {
         print("You have pressed the markerView Button")
-        userActionButton.backgroundColor = UIColor.mainGreen
     }
     
     
@@ -29,8 +28,8 @@ class MarkerInfoWindow: UIView {
     }
     
     //loads view from xib file
-    func loadView() -> MarkerInfoWindow{
-        let customInfoWindow = Bundle.main.loadNibNamed("MarkerInfoWindow", owner: self, options: nil)?[0] as! MarkerInfoWindow
+    func loadView() -> UnscheduledMarkerInfoWindow{
+        let customInfoWindow = Bundle.main.loadNibNamed("UnscheduledMarkerInfoWindow", owner: self, options: nil)?[0] as! UnscheduledMarkerInfoWindow
         
         return customInfoWindow
     }

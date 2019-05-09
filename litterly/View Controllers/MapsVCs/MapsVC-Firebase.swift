@@ -98,8 +98,12 @@ extension MapsViewController{
                     //setting the modded document's marker to nil
                     self.markers[modifiedDocOldIndex].map = nil
                     
+                    self.oldTappedArrayElement = self.tappedArrayElement
+                    
                     //setting the old trash array up with the new value
                     self.trashModelArray[modifiedDocOldIndex] = TrashDataModel(dictionary: diff.document.data())!
+                    
+                    NotificationCenter.default.post(name: NSNotification.Name("tappedArrayElement-reloaded"), object: nil)
                     
                     //passing the new values and plotting the marker again
                     let isMeetupScheduled = self.trashModelArray[modifiedDocOldIndex].is_meetup_scheduled

@@ -13,6 +13,12 @@ import CoreLocation
 
 extension MapsViewController: GMSMapViewDelegate{
     
+    func findTheIndex(with lat:Double, and lon:Double) ->Int{
+        let index = trashModelArray.firstIndex{$0.lat == lat && $0.lon == lon}
+        
+        return index!
+    }
+    
     //gets lat and lon for tapped marker
     //configures a new marker and it's info window
     func mapView(_ mapView: GMSMapView, didTap marker: GMSMarker) -> Bool {
@@ -22,6 +28,8 @@ extension MapsViewController: GMSMapViewDelegate{
         
         
         tappedMarker = marker.position
+        let index = findTheIndex(with: tappedMarker.latitude, and: tappedMarker.longitude)
+        tappedArrayElement = trashModelArray[index]
         
         let position = marker.position
         mapView.animate(toLocation: position)
@@ -30,10 +38,15 @@ extension MapsViewController: GMSMapViewDelegate{
         let camera = GMSCameraUpdate.setTarget(newPoint)
         mapView.animate(with: camera)
         
-        setupViewForUnscheduled()
-        
-        markerInfoWindow.center = mapView.projection.point(for: position)
-        mapView.addSubview(markerInfoWindow)
+        if tappedArrayElement.is_meetup_scheduled == false{
+            setupViewForUnscheduled()
+            unScheduledMarkerInfoWindow.center = mapView.projection.point(for: position)
+            mapView.addSubview(unScheduledMarkerInfoWindow)
+        }else if tappedArrayElement.is_meetup_scheduled == true{
+            setupViewForScheduled()
+            scheduledMarkerInfoWindow.center = mapView.projection.point(for: position)
+            mapView.addSubview(scheduledMarkerInfoWindow)
+        }
         
         return false
     }
@@ -45,26 +58,44 @@ extension MapsViewController: GMSMapViewDelegate{
     
     //sets up for unscheduled info Window
     func setupViewForUnscheduled(){
-        markerInfoWindow.layer.backgroundColor = UIColor.mainBlue.cgColor
-        markerInfoWindow.layer.cornerRadius = 12
-        markerInfoWindow.titleLabel.textColor = UIColor.textWhite
-        markerInfoWindow.userActionButton.backgroundColor = UIColor.trashOrange
-        markerInfoWindow.userActionButton.layer.cornerRadius = 12
+        unScheduledMarkerInfoWindow.layer.backgroundColor = UIColor.mainBlue.cgColor
+        unScheduledMarkerInfoWindow.layer.cornerRadius = 12
+        unScheduledMarkerInfoWindow.titleLabel.textColor = UIColor.textWhite
+        unScheduledMarkerInfoWindow.userActionButton.backgroundColor = UIColor.trashOrange
+        unScheduledMarkerInfoWindow.userActionButton.layer.cornerRadius = 12
+    }
+    
+    func setupViewForScheduled(){
+        scheduledMarkerInfoWindow.layer.backgroundColor = UIColor.mainBlue.cgColor
+        scheduledMarkerInfoWindow.layer.cornerRadius = 12
+        scheduledMarkerInfoWindow.titleLabel.textColor = UIColor.textWhite
+        scheduledMarkerInfoWindow.userActionButton.backgroundColor = UIColor.mainGreen
+        scheduledMarkerInfoWindow.userActionButton.layer.cornerRadius = 12
     }
     
     //onTap on mapView remove the custom info view from superview
     func mapView(_ mapView: GMSMapView, didTapAt coordinate: CLLocationCoordinate2D) {
-        markerInfoWindow.removeFromSuperview()
+        unScheduledMarkerInfoWindow.removeFromSuperview()
+        scheduledMarkerInfoWindow.removeFromSuperview()
     }
     
     func mapView(_ mapView: GMSMapView, didChange position: GMSCameraPosition) {
         let position = tappedMarker
         if position != nil{
             //controling the spped of the view popping in with the animation
-            UIView.animate(withDuration: 0.10, delay: 0, options: .showHideTransitionViews, animations: {
-                self.markerInfoWindow.center = mapView.projection.point(for: position!)
-                self.markerInfoWindow.center.y -= 100
-            }, completion: nil)
+            if tappedArrayElement.is_meetup_scheduled == false{
+                scheduledMarkerInfoWindow.removeFromSuperview()
+                UIView.animate(withDuration: 0.10, delay: 0, options: .showHideTransitionViews, animations: {
+                    self.unScheduledMarkerInfoWindow.center = mapView.projection.point(for: position!)
+                    self.unScheduledMarkerInfoWindow.center.y -= 100
+                }, completion: nil)
+            } else if tappedArrayElement.is_meetup_scheduled == true{
+                unScheduledMarkerInfoWindow.removeFromSuperview()
+                UIView.animate(withDuration: 0.10, delay: 0, options: .showHideTransitionViews, animations: {
+                    self.scheduledMarkerInfoWindow.center = mapView.projection.point(for: position!)
+                    self.scheduledMarkerInfoWindow.center.y -= 100
+                }, completion: nil)
+            }
             
         }
     }

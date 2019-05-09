@@ -69,10 +69,18 @@ class MapsViewController: UIViewController {
     let scheduledMetalMarkerIcon = UIImage(named: "green_settings_gears")?.withRenderingMode(.alwaysOriginal)
     
     //the custom infoView for the maerkers. loadView loads the xib file
-    let markerInfoWindow = MarkerInfoWindow().loadView()
+    let unScheduledMarkerInfoWindow = UnscheduledMarkerInfoWindow().loadView()
+    let scheduledMarkerInfoWindow = ScheduledMarkerInfoWindow().loadView()
     
     //keeps tarnck of the tapped marker
     var tappedMarker: CLLocationCoordinate2D!
+    
+    //holds the array element that has been tapped
+    var tappedArrayElement:TrashDataModel!
+    
+    //holds the old values for array element in the event of a modification from firebase
+    var oldTappedArrayElement:TrashDataModel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -81,8 +89,11 @@ class MapsViewController: UIViewController {
         addSlideInCardToMapView()
         mapView?.delegate = self
         
-        //Receiving a notification
+        //listening for buttonTapped
         NotificationCenter.default.addObserver(self, selector: #selector(reportTapped), name: NSNotification.Name("reportTapped"), object: nil)
+        
+        //listening for marker modification event
+        NotificationCenter.default.addObserver(self, selector: #selector(updateTappedArrayElement), name: NSNotification.Name("tappedArrayElement-reloaded"), object: nil)
     }
     
     //when view has appeared successfully, we call in to add the sliding card
@@ -96,6 +107,28 @@ class MapsViewController: UIViewController {
     @objc private func reportTapped() {
         print("lowering the card")
         animateTransitionIfNeeded(state: .collapsed, duration: 0.5)
+    }
+    
+    //calling a func to re-assign userAssignedElement
+    @objc private func updateTappedArrayElement(){
+        guard let userTappedMarker = tappedMarker else {return}
+        
+        let index = findTheIndex(with: userTappedMarker.latitude, and: userTappedMarker.longitude)
+        tappedArrayElement = trashModelArray[index]
+        
+        //if the old var's value doesn't match with the new one, it has been modified, thus remove the info views from superview
+        if (oldTappedArrayElement.is_meetup_scheduled != tappedArrayElement.is_meetup_scheduled){
+            
+            //show an alert saying that it has been modified
+            
+            unScheduledMarkerInfoWindow.removeFromSuperview()
+            scheduledMarkerInfoWindow.removeFromSuperview()
+            
+            print(oldTappedArrayElement.lat)
+            print(tappedArrayElement.lat)
+            print(oldTappedArrayElement.lon)
+            print(oldTappedArrayElement.lon)
+        }
     }
 }
 
