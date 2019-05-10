@@ -26,7 +26,7 @@
                         <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </state>
                     <connections>
-                        <action selector="onTapUserAction:" destination="iN0-l3-epB" eventType="touchUpInside" id="yz0-Mn-7mM"/>
+                        <action selector="onButtonTap:" destination="iN0-l3-epB" eventType="touchUpInside" id="yz0-Mn-7mM"/>
                     </connections>
                 </button>
             </subviews>

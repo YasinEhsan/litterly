@@ -11,11 +11,13 @@ class UnscheduledMarkerInfoWindow: UIView {
     
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var userActionButton: UIButton!
-    var view: UIView!
+    
+    let alertService = AlertService()
     
     //button's function
-    @IBAction func onTapUserAction(_ sender: UIButton) {
-        print("You have pressed the markerView Button")
+    @IBAction func onButtonTap(_ sender: UIButton) {
+        let alert = alertService.alertForSchedule()
+        self.window?.rootViewController?.present(alert, animated: true, completion: nil)
     }
     
     

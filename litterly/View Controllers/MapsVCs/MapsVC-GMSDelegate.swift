@@ -63,6 +63,8 @@ extension MapsViewController: GMSMapViewDelegate{
         unScheduledMarkerInfoWindow.titleLabel.textColor = UIColor.textWhite
         unScheduledMarkerInfoWindow.userActionButton.backgroundColor = UIColor.trashOrange
         unScheduledMarkerInfoWindow.userActionButton.layer.cornerRadius = 12
+        
+        //post a notification containing the data of the tappedArrayElement
     }
     
     func setupViewForScheduled(){
