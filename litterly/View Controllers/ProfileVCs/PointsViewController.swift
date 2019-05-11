@@ -10,8 +10,19 @@ import UIKit
 
 class PointsViewController: UIViewController {
 
+    @IBOutlet weak var redeemButton: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
     }
+    
+    func roundButtonCorners(){
+        redeemButton.layer.cornerRadius = CGFloat(12.0)
+    }
+    
+    @IBAction func redeemOnTap(_ sender: Any) {
+        
+    }
+    
 }
