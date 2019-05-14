@@ -95,6 +95,9 @@
                                                 <state key="normal" title="Create">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="onCreateTap:" destination="pO3-jf-6iY" eventType="touchUpInside" id="m1A-dg-DjU"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                     </stackView>

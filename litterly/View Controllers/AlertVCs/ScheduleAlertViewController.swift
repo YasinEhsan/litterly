@@ -21,6 +21,7 @@ class ScheduleAlertViewController: UIViewController {
     
     let cornerRadius:CGFloat = 12.0
     let nc = NotificationCenter.default
+    let sharedValue = SharedValues.sharedInstance
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,13 +30,8 @@ class ScheduleAlertViewController: UIViewController {
         configuresColors()
         
         //use notification center to get the selected trash type
+    }
 
-    }
-    
-    @objc func trashType(){
-        print("------------\(nc)")
-    }
-    
     func roundsCorners(){
         parentView.layer.cornerRadius = cornerRadius
         organicButton.layer.cornerRadius = cornerRadius
@@ -61,6 +57,14 @@ class ScheduleAlertViewController: UIViewController {
         
         self.dismiss(animated: true, completion: nil)
     }
+    
+    @IBAction func onCreateTap(_ sender: UIButton) {
+        let id:String = ("\(sharedValue.meetupDict.lat)+\(sharedValue.meetupDict.lon)+meetup")
+        
+        //let dict:[String:Any] = sharedValue.meetupDict as [String:Any]
+
+    }
+    
     
 
 }

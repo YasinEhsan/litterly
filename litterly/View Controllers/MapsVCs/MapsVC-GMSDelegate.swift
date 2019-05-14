@@ -41,6 +41,8 @@ extension MapsViewController: GMSMapViewDelegate{
         if tappedArrayElement.is_meetup_scheduled == false{
             setupViewForUnscheduled()
             unScheduledMarkerInfoWindow.center = mapView.projection.point(for: position)
+            let value = SharedValues.sharedInstance
+            value.meetupDict = tappedArrayElement
             mapView.addSubview(unScheduledMarkerInfoWindow)
         }else if tappedArrayElement.is_meetup_scheduled == true{
             setupViewForScheduled()
@@ -64,7 +66,6 @@ extension MapsViewController: GMSMapViewDelegate{
         unScheduledMarkerInfoWindow.userActionButton.backgroundColor = UIColor.trashOrange
         unScheduledMarkerInfoWindow.userActionButton.layer.cornerRadius = 12
         
-        //post a notification containing the data of the tappedArrayElement
     }
     
     func setupViewForScheduled(){
