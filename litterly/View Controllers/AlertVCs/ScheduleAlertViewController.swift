@@ -61,7 +61,13 @@ class ScheduleAlertViewController: UIViewController {
     @IBAction func onCreateTap(_ sender: UIButton) {
         let id:String = ("\(sharedValue.meetupDict.lat)+\(sharedValue.meetupDict.lon)+meetup")
         
-        //let dict:[String:Any] = sharedValue.meetupDict as [String:Any]
+        let dict:MeetupDataModel = MeetupDataModel(marker_lat: sharedValue.meetupDict.lat, marker_lon: sharedValue.meetupDict.lon, meetup_address: sharedValue.meetupDict.street_address, meetup_date: "1111", meetup_time: "9pm", type_of_trash: sharedValue.meetupDict.trash_type, author_id: "\(sharedValue.currentUserEmail as! String)", author_display_name: sharedValue.currentUserDisplayName as! String, confirmed_users: ["\(sharedValue.currentUserEmail as! String)"])
+        
+        createAMeetup(with: dict.dictionary, for: id)
+        
+        updateMeetupProperty(for: "\(sharedValue.meetupDict.id)", with: true)
+        
+        fetchStuff(for: "\(sharedValue.currentUserEmail as! String)")
 
     }
     

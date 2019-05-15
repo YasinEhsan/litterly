@@ -17,7 +17,10 @@ class UnscheduledMarkerInfoWindow: UIView {
     //button's function
     @IBAction func onButtonTap(_ sender: UIButton) {
         let alert = alertService.alertForSchedule()
-        self.window?.rootViewController?.present(alert, animated: true, completion: nil)
+//        self.window?.rootViewController?.present(alert, animated: true, completion: nil)
+        DispatchQueue.main.async {
+            self.getTopMostViewController()?.present(alert, animated: true, completion: nil)
+        }
     }
     
     
@@ -34,6 +37,16 @@ class UnscheduledMarkerInfoWindow: UIView {
         let customInfoWindow = Bundle.main.loadNibNamed("UnscheduledMarkerInfoWindow", owner: self, options: nil)?[0] as! UnscheduledMarkerInfoWindow
         
         return customInfoWindow
+    }
+    
+    func getTopMostViewController() -> UIViewController? {
+        var topMostViewController = UIApplication.shared.keyWindow?.rootViewController
+        
+        while let presentedViewController = topMostViewController?.presentedViewController {
+            topMostViewController = presentedViewController
+        }
+        
+        return topMostViewController
     }
     
 }

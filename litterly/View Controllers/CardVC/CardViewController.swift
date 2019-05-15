@@ -120,7 +120,7 @@ class CardViewController: UIViewController {
             print(coordinates.longitude)
             
             guard let firebaseUserInstance = Auth.auth().currentUser else {return}
-            let id = submitTrashType + "\(coordinates.latitude)" + "\(coordinates.longitude)"+"marker" as String
+            let id = "\(coordinates.latitude)" + "\(coordinates.longitude)"+"marker" as String
             let author = firebaseUserInstance.email!
             
             //gets tag address and the neighborhood from reverseGeocode
