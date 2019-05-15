@@ -74,6 +74,9 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
         fetchUserBasicInfo { (name, neighborhood) in
             self.configureUsrBasicInfo(user: name as! String, on: neighborhood as! String)
         }
+        
+        let redeemNib = UINib(nibName: "RedeemPointsCell", bundle: nil)
+        tableView.register(redeemNib, forCellReuseIdentifier: "redeemCell")
 
     }
     
@@ -294,7 +297,7 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
             break
             
         case 2:
-            returnValue = 3
+            returnValue = 1
             break
             
         default:
@@ -310,18 +313,21 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "MenuOptionCell", for: indexPath) as! MenuOptionCell
         
+        let redeemPoints = tableView.dequeueReusableCell(withIdentifier: "redeemCell", for: indexPath) as! RedeemPointsCell
+        
         switch(segmentedCtrl.selectedSegmentIndex)
         {
         case 0:
             cell.iconImageView.image = UIImage(named: "52gps")
             break
+
         case 1:
             cell.iconImageView.image = UIImage(named: "52gps")
             break
             
         case 2:
-            cell.iconImageView.image = UIImage(named: "52gps")
-            break
+            tableView.rowHeight = 200
+            return redeemPoints
             
         default:
             break
@@ -329,6 +335,12 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
         }
         
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let vc = RewardsVC()
+        self.navigationController?.pushViewController(vc, animated: true)
+        self.tableView.deselectRow(at: indexPath, animated: true)
     }
     
     
