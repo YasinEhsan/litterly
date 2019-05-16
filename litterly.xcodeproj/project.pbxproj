@@ -346,9 +346,9 @@
 		C5907FAA2284ED3A001E720D /* AlertVCs */ = {
 			isa = PBXGroup;
 			children = (
-				C5907FAB2284EDBE001E720D /* ScheduleAlertViewController.swift */,
-				C5907FAD22850156001E720D /* AlertService.swift */,
-				C5863AFD228A3D64004A25E4 /* ScheduleAlertVC-Firebase.swift */,
+				C59D640F228D1FC90073B836 /* AlertService */,
+				C59D640E228D1FAD0073B836 /* UnscheduledAlertVC */,
+				C59D640D228D1F810073B836 /* ScheduleAlertVC */,
 			);
 			path = AlertVCs;
 			sourceTree = "<group>";
@@ -373,6 +373,30 @@
 				C5942AF622738476004F1A43 /* PointsViewController.xib */,
 			);
 			path = ProfileXibs;
+			sourceTree = "<group>";
+		};
+		C59D640D228D1F810073B836 /* ScheduleAlertVC */ = {
+			isa = PBXGroup;
+			children = (
+				C5863AFD228A3D64004A25E4 /* ScheduleAlertVC-Firebase.swift */,
+				C5907FAB2284EDBE001E720D /* ScheduleAlertViewController.swift */,
+			);
+			path = ScheduleAlertVC;
+			sourceTree = "<group>";
+		};
+		C59D640E228D1FAD0073B836 /* UnscheduledAlertVC */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = UnscheduledAlertVC;
+			sourceTree = "<group>";
+		};
+		C59D640F228D1FC90073B836 /* AlertService */ = {
+			isa = PBXGroup;
+			children = (
+				C5907FAD22850156001E720D /* AlertService.swift */,
+			);
+			path = AlertService;
 			sourceTree = "<group>";
 		};
 		C5C35EE8227A1C1C00103AD9 /* CardVC */ = {

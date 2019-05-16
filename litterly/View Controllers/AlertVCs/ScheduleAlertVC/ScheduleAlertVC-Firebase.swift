@@ -11,6 +11,7 @@ import FirebaseFirestore
 
 extension ScheduleAlertViewController{
     
+    //add to the meetups collections with a specefied id
     func createAMeetup(with dictionary: [String:Any], for id:String){
         
         sharedValue.db.collection("Meetups").document("\(id)").setData(dictionary) { (error:Error?) in
@@ -24,6 +25,7 @@ extension ScheduleAlertViewController{
         
     }
     
+    //update meetup property of a marker with a specifice id
     func updateMeetupProperty(for id:String, with value:Bool){
         sharedValue.db.collection("TaggedTrash").document("\(id)").updateData([
             "is_meetup_scheduled" : value
@@ -36,32 +38,14 @@ extension ScheduleAlertViewController{
         }
     }
     
-    func fetchStuff(for id:String){
-        let ref = sharedValue.db.collection("Meetups").whereField("confirmed_users", arrayContains: "\(id)")
+    //append to the confirmedUsers array
+    func appendToConfirmedUsers(for meetupId:String, user_id:String, user_pic_url:String){
+        //get parent's reference
+        let ref = sharedValue.db.collection("Meetups").document("\(meetupId)")
         
-        ref.getDocuments(){
-            QuerySnapshot, Error in
-            
-            //self.userTaggedTrash = (QuerySnapshot!.documents.compactMap({TrashDataModel(dictionary: $0.data())}))
-            
-            guard let snapShot = QuerySnapshot else {return}
-            
-            snapShot.documents.forEach{
-                data in
-                
-                let x = data.data() as [String:Any]
-                let y = x["confirmed_users"] as! [String]
-                
-                print(y)
-            }
-            
-            
-        }
-        
-        //TODO add to this array
-        
-        
-        
+        ref.updateData([
+            "confirmed_users": FieldValue.arrayUnion([["user_id" : "\(user_id as String)", "user_pic_url" : "\(user_pic_url as String)"]])
+            ])
     }
     
 }
