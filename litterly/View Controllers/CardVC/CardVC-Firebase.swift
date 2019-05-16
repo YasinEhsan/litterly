@@ -24,6 +24,8 @@ extension CardViewController{
         
     }
     
+
+    
     //updates neighborhood on each tag
     func updateUserCurrentNeighborhood(forUser id:String, with neighborhood:String){
         db.collection("Users").document("\(id)").updateData([
@@ -36,4 +38,5 @@ extension CardViewController{
             }
         }
     }
+       
 }

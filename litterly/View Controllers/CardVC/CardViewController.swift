@@ -106,7 +106,7 @@ class CardViewController: UIViewController {
         executeTagTrash()
     }
     
-    
+  
     func executeTagTrash(){
         //checking to see if location services is enabled, then proceeding to report the trash
         let mapFuncs = MapsViewController()
@@ -137,4 +137,52 @@ class CardViewController: UIViewController {
         }
     }
     
+    
+    //    @IBAction func LowerCard(_ sender: SelectedButton) {
+    //    if var submitTrashType.isEnabled == true {
+    //       cardView.resignFirstResponder()
+    //
+    //    }
+    
+    //func to lower the card view
+  //  func reportTrashButtonOnTap() {
+   //     cardView.resignFirstResponder()
+   // }
+    
+    
+    
+    
+    
+    //func to call the alert after data has been submitted
+    func AlertAfterFirestoreSubmit() {
+        
+        //if submitTrashToFirestore.isEnabled == true{
+       //if let alertOnSubmit = db() {
+       // if let db.collection == true{
+        
+        func submitTrashToFirestore(completion: (_ success: Bool) -> Void) {
+           
+            //func to lower the card view
+            //cardView.resignFirstResponder()
+            
+            //func that calls the alert
+            func ViewDidAppear(_animated: Bool){
+                createAlert(title: "Report", message: "Trash Report Has been Sumbited!")
+            }
+        }
+    
+    }
+    
+    func createAlert (title:String,  message:String)
+    {
+        let alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertController.Style.alert)
+        
+        alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: {(action) in
+            alert.dismiss(animated: true, completion: nil)
+            
+        }))
+        
+        self.present(alert, animated: true, completion: nil)
+    }
+
 }
