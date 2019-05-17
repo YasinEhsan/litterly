@@ -81,6 +81,8 @@ class MapsViewController: UIViewController {
     //holds the old values for array element in the event of a modification from firebase
     var oldTappedArrayElement:TrashDataModel!
     
+    var justModdedArrayElement:TrashDataModel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -111,23 +113,11 @@ class MapsViewController: UIViewController {
     
     //calling a func to re-assign userAssignedElement
     @objc private func updateTappedArrayElement(){
-        guard let userTappedMarker = tappedMarker else {return}
+        guard tappedMarker != nil else {return}
         
-        let index = findTheIndex(with: userTappedMarker.latitude, and: userTappedMarker.longitude)
-        tappedArrayElement = trashModelArray[index]
-        
-        //if the old var's value doesn't match with the new one, it has been modified, thus remove the info views from superview
-        if (oldTappedArrayElement.is_meetup_scheduled != tappedArrayElement.is_meetup_scheduled){
-            
-            //show an alert saying that it has been modified
-            
+        if (tappedArrayElement.id == justModdedArrayElement.id){
             unScheduledMarkerInfoWindow.removeFromSuperview()
             scheduledMarkerInfoWindow.removeFromSuperview()
-            
-            print(oldTappedArrayElement.lat)
-            print(tappedArrayElement.lat)
-            print(oldTappedArrayElement.lon)
-            print(oldTappedArrayElement.lon)
         }
     }
 }
