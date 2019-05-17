@@ -26,7 +26,7 @@ class CardViewController: UIViewController {
     @IBOutlet weak var trashType3: UIButton!
     @IBOutlet weak var reportTrashButton: UIButton!
     
-    let db = Firestore.firestore()
+    let db = SharedValues.sharedInstance.db
     let trashTypes: [String] = ["organic", "plastic", "metal"]
     var submitTrashType: String!
     var trashModelArray = [TrashDataModel]()

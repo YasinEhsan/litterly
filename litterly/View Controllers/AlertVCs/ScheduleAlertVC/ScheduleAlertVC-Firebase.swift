@@ -28,7 +28,7 @@ extension ScheduleAlertViewController{
     //update meetup property of a marker with a specifice id
     func updateMeetupProperty(for id:String, with value:Bool){
         sharedValue.db.collection("TaggedTrash").document("\(id)").updateData([
-            "is_meetup_scheduled" : value
+            "is_meetup_scheduled" : true
         ]) { (error:Error?) in
             if let err = error {
                 print("Error writing document: \(err)")

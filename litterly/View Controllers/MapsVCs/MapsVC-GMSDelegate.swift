@@ -15,6 +15,7 @@ extension MapsViewController: GMSMapViewDelegate{
     
     func findTheIndex(with lat:Double, and lon:Double) ->Int{
         let index = trashModelArray.firstIndex{$0.lat == lat && $0.lon == lon}
+        print("tapped lat+lon index ->> \(index! as Int)")
         
         return index!
     }
@@ -30,6 +31,8 @@ extension MapsViewController: GMSMapViewDelegate{
         tappedMarker = marker.position
         let index = findTheIndex(with: tappedMarker.latitude, and: tappedMarker.longitude)
         tappedArrayElement = trashModelArray[index]
+        let value = SharedValues.sharedInstance
+        value.meetupDict = trashModelArray[index]
         
         let position = marker.position
         mapView.animate(toLocation: position)
@@ -41,8 +44,6 @@ extension MapsViewController: GMSMapViewDelegate{
         if tappedArrayElement.is_meetup_scheduled == false{
             setupViewForUnscheduled()
             unScheduledMarkerInfoWindow.center = mapView.projection.point(for: position)
-            let value = SharedValues.sharedInstance
-            value.meetupDict = tappedArrayElement
             mapView.addSubview(unScheduledMarkerInfoWindow)
         }else if tappedArrayElement.is_meetup_scheduled == true{
             setupViewForScheduled()
