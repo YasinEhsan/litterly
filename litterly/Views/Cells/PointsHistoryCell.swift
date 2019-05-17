@@ -1,19 +1,19 @@
 //
-//  RedeemPointsCell.swift
+//  PointsHistoryCell.swift
 //  litterly
 //
-//  Created by Joyce Huang on 5/14/19.
+//  Created by Joyce Huang on 5/16/19.
 //  Copyright © 2019 Joy Paul. All rights reserved.
 //
 
 import UIKit
 
-final class RedeemPointsCell: UITableViewCell {
+class PointsHistoryCell: UITableViewCell {
 
-    @IBOutlet weak var trashImage: UIImageView!
-    @IBOutlet weak var pointsButton: UIButton!
-    
-    var actionBlock: (() -> Void)? = nil
+    @IBOutlet weak var lineView: UIImageView!
+    @IBOutlet weak var iconView: UIImageView!
+    @IBOutlet weak var pointsLabel: UILabel!
+    @IBOutlet weak var eventLabel: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -24,10 +24,6 @@ final class RedeemPointsCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state
-    }
-    
-    @IBAction func onTapRedeem(_ sender: UIButton) {
-        actionBlock?()
     }
     
 }

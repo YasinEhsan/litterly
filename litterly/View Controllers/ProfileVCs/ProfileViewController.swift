@@ -12,6 +12,7 @@ import Firebase
 import AlamofireImage
 
 class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+    
     @IBOutlet weak var topView: UIView!
     @IBOutlet weak var profileImageView: UIImageView!
     @IBOutlet weak var usrNameLabel: UILabel!
@@ -38,6 +39,8 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
     let db = Firestore.firestore()
     var userTaggedTrash = [TrashDataModel]()
     var userBasicInfo:UserDataModel!
+    
+    var cellDataArray = [cellData]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -77,6 +80,9 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
         
         let redeemNib = UINib(nibName: "RedeemPointsCell", bundle: nil)
         tableView.register(redeemNib, forCellReuseIdentifier: "redeemCell")
+        
+        let pointsNib = UINib(nibName: "PointsHistoryCell", bundle: nil)
+        tableView.register(pointsNib, forCellReuseIdentifier: "pointsCell")
 
     }
     
@@ -282,6 +288,11 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
         tableView.reloadData()
     }
     
+    struct cellData {
+        let cell : Int!
+        let points : String!
+        let event : String!
+    }
     
     //return each array's respectable .cout
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -297,7 +308,7 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
             break
             
         case 2:
-            returnValue = 1
+            returnValue = 4
             break
             
         default:
@@ -313,7 +324,9 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "MenuOptionCell", for: indexPath) as! MenuOptionCell
         
-        let redeemPoints = tableView.dequeueReusableCell(withIdentifier: "redeemCell", for: indexPath) as! RedeemPointsCell
+        // let redeemPoints = tableView.dequeueReusableCell(withIdentifier: "redeemCell", for: indexPath) as! RedeemPointsCell
+        
+        let pointsHistory = tableView.dequeueReusableCell(withIdentifier: "pointsCell", for: indexPath) as! PointsHistoryCell
         
         switch(segmentedCtrl.selectedSegmentIndex)
         {
@@ -326,8 +339,18 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
             break
             
         case 2:
-            tableView.rowHeight = 200
-            return redeemPoints
+            if (indexPath.item == 0) {
+                let redeemPoints = tableView.dequeueReusableCell(withIdentifier: "redeemCell") as? RedeemPointsCell
+                redeemPoints?.actionBlock = {
+                        self.navigationController?.pushViewController(RewardsVC(), animated: true)
+                        self.tableView.deselectRow(at: indexPath, animated: true)
+                }
+                tableView.rowHeight = 190
+                return redeemPoints!
+            } else {
+                tableView.rowHeight = 125
+                return pointsHistory
+            }
             
         default:
             break
@@ -337,12 +360,11 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
         return cell
     }
     
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let vc = RewardsVC()
-        self.navigationController?.pushViewController(vc, animated: true)
-        self.tableView.deselectRow(at: indexPath, animated: true)
-    }
+//    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+//        let vc = RewardsVC()
+//        self.navigationController?.pushViewController(vc, animated: true)
+//        self.tableView.deselectRow(at: indexPath, animated: true)
+//    }
     
     
-
 }

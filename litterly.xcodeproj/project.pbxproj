@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2F435F62228E591B00EAE817 /* PointsHistoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F435F60228E591B00EAE817 /* PointsHistoryCell.swift */; };
+		2F435F63228E591B00EAE817 /* PointsHistoryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2F435F61228E591B00EAE817 /* PointsHistoryCell.xib */; };
 		2F6C3337228BC62D00B0285F /* RedeemPointsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F6C3335228BC62D00B0285F /* RedeemPointsCell.swift */; };
 		2F6C3338228BC62D00B0285F /* RedeemPointsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2F6C3336228BC62D00B0285F /* RedeemPointsCell.xib */; };
 		2F6C333B228BDBF700B0285F /* RewardsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F6C3339228BDBF700B0285F /* RewardsVC.swift */; };
@@ -66,6 +68,8 @@
 
 /* Begin PBXFileReference section */
 		2F04E5C0226E25C1006EB956 /* gibson-semibold-webfont.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "gibson-semibold-webfont.ttf"; sourceTree = "<group>"; };
+		2F435F60228E591B00EAE817 /* PointsHistoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PointsHistoryCell.swift; sourceTree = "<group>"; };
+		2F435F61228E591B00EAE817 /* PointsHistoryCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PointsHistoryCell.xib; sourceTree = "<group>"; };
 		2F6C3335228BC62D00B0285F /* RedeemPointsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RedeemPointsCell.swift; sourceTree = "<group>"; };
 		2F6C3336228BC62D00B0285F /* RedeemPointsCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RedeemPointsCell.xib; sourceTree = "<group>"; };
 		2F6C3339228BDBF700B0285F /* RewardsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RewardsVC.swift; sourceTree = "<group>"; };
@@ -153,6 +157,7 @@
 				C5063151226E8ED00078265C /* MenuOptionCell.swift */,
 				2FA974CB2272B0F000115FBD /* CardContentTableViewCell.swift */,
 				2F6C3335228BC62D00B0285F /* RedeemPointsCell.swift */,
+				2F435F60228E591B00EAE817 /* PointsHistoryCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -335,6 +340,7 @@
 				C5942AF22273845E004F1A43 /* MeetViewController.xib */,
 				C5942AF622738476004F1A43 /* PointsViewController.xib */,
 				2F6C3336228BC62D00B0285F /* RedeemPointsCell.xib */,
+				2F435F61228E591B00EAE817 /* PointsHistoryCell.xib */,
 				2F6C333A228BDBF700B0285F /* RewardsVC.xib */,
 			);
 			path = ProfileXibs;
@@ -479,6 +485,7 @@
 				C5942AF02273843D004F1A43 /* TagViewController.xib in Resources */,
 				C5942AF42273845E004F1A43 /* MeetViewController.xib in Resources */,
 				C584FC64226698E700ED1B53 /* plant.json in Resources */,
+				2F435F63228E591B00EAE817 /* PointsHistoryCell.xib in Resources */,
 				C58776BA2267DA86007C680D /* GoogleService-Info.plist in Resources */,
 				C5942AF822738476004F1A43 /* PointsViewController.xib in Resources */,
 				C584FC6122668F3300ED1B53 /* alert.json in Resources */,
@@ -635,6 +642,7 @@
 				C56CEA33225D977A005DC40E /* SelectedButton.swift in Sources */,
 				2FA974CC2272B0F000115FBD /* CardContentTableViewCell.swift in Sources */,
 				C5C35EEB227A1C7B00103AD9 /* ApiKeys.swift in Sources */,
+				2F435F62228E591B00EAE817 /* PointsHistoryCell.swift in Sources */,
 				2F6C3337228BC62D00B0285F /* RedeemPointsCell.swift in Sources */,
 				C597957C2264E01100B1797D /* AppColors.swift in Sources */,
 				C5DD0885225845B7000988A3 /* MapsViewController.swift in Sources */,
