@@ -22,7 +22,6 @@
 		C56CEA33225D977A005DC40E /* SelectedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = C56CEA32225D977A005DC40E /* SelectedButton.swift */; };
 		C56CEA35225D9E87005DC40E /* MapsVC-GoogleMaps.swift in Sources */ = {isa = PBXBuildFile; fileRef = C56CEA34225D9E87005DC40E /* MapsVC-GoogleMaps.swift */; };
 		C584FC6122668F3300ED1B53 /* alert.json in Resources */ = {isa = PBXBuildFile; fileRef = C584FC6022668F3200ED1B53 /* alert.json */; };
-		C584FC64226698E700ED1B53 /* plant.json in Resources */ = {isa = PBXBuildFile; fileRef = C584FC63226698E700ED1B53 /* plant.json */; };
 		C584FC6622669DC300ED1B53 /* town.json in Resources */ = {isa = PBXBuildFile; fileRef = C584FC6522669DC300ED1B53 /* town.json */; };
 		C5863AFC228A38B5004A25E4 /* SharedValues.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5863AFB228A38B5004A25E4 /* SharedValues.swift */; };
 		C5863AFE228A3D64004A25E4 /* ScheduleAlertVC-Firebase.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5863AFD228A3D64004A25E4 /* ScheduleAlertVC-Firebase.swift */; };
@@ -33,6 +32,10 @@
 		C5907FAC2284EDBE001E720D /* ScheduleAlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5907FAB2284EDBE001E720D /* ScheduleAlertViewController.swift */; };
 		C5907FAE22850156001E720D /* AlertService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5907FAD22850156001E720D /* AlertService.swift */; };
 		C5931BD6225EBBA400ECBEEB /* MapsVC-SearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5931BD5225EBBA400ECBEEB /* MapsVC-SearchBar.swift */; };
+		C593FB72229359FC002FAE72 /* JoinAlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C593FB71229359FC002FAE72 /* JoinAlertViewController.swift */; };
+		C593FB7422935EC4002FAE72 /* plant.json in Resources */ = {isa = PBXBuildFile; fileRef = C593FB7322935EC4002FAE72 /* plant.json */; };
+		C593FB782293693D002FAE72 /* PeopleAttendingCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C593FB772293693D002FAE72 /* PeopleAttendingCollectionViewCell.swift */; };
+		C593FB7A229381B9002FAE72 /* JoinAlertVC-Firebase.swift in Sources */ = {isa = PBXBuildFile; fileRef = C593FB79229381B9002FAE72 /* JoinAlertVC-Firebase.swift */; };
 		C5942AEF2273843D004F1A43 /* TagViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5942AED2273843D004F1A43 /* TagViewController.swift */; };
 		C5942AF02273843D004F1A43 /* TagViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C5942AEE2273843D004F1A43 /* TagViewController.xib */; };
 		C5942AF32273845E004F1A43 /* MeetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5942AF12273845E004F1A43 /* MeetViewController.swift */; };
@@ -87,7 +90,6 @@
 		C56CEA32225D977A005DC40E /* SelectedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectedButton.swift; sourceTree = "<group>"; };
 		C56CEA34225D9E87005DC40E /* MapsVC-GoogleMaps.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MapsVC-GoogleMaps.swift"; sourceTree = "<group>"; };
 		C584FC6022668F3200ED1B53 /* alert.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = alert.json; sourceTree = "<group>"; };
-		C584FC63226698E700ED1B53 /* plant.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = plant.json; sourceTree = "<group>"; };
 		C584FC6522669DC300ED1B53 /* town.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = town.json; sourceTree = "<group>"; };
 		C5863AFB228A38B5004A25E4 /* SharedValues.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedValues.swift; sourceTree = "<group>"; };
 		C5863AFD228A3D64004A25E4 /* ScheduleAlertVC-Firebase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ScheduleAlertVC-Firebase.swift"; sourceTree = "<group>"; };
@@ -98,6 +100,10 @@
 		C5907FAB2284EDBE001E720D /* ScheduleAlertViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleAlertViewController.swift; sourceTree = "<group>"; };
 		C5907FAD22850156001E720D /* AlertService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertService.swift; sourceTree = "<group>"; };
 		C5931BD5225EBBA400ECBEEB /* MapsVC-SearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MapsVC-SearchBar.swift"; sourceTree = "<group>"; };
+		C593FB71229359FC002FAE72 /* JoinAlertViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JoinAlertViewController.swift; sourceTree = "<group>"; };
+		C593FB7322935EC4002FAE72 /* plant.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = plant.json; sourceTree = "<group>"; };
+		C593FB772293693D002FAE72 /* PeopleAttendingCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeopleAttendingCollectionViewCell.swift; sourceTree = "<group>"; };
+		C593FB79229381B9002FAE72 /* JoinAlertVC-Firebase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "JoinAlertVC-Firebase.swift"; sourceTree = "<group>"; };
 		C5942AED2273843D004F1A43 /* TagViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagViewController.swift; sourceTree = "<group>"; };
 		C5942AEE2273843D004F1A43 /* TagViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TagViewController.xib; sourceTree = "<group>"; };
 		C5942AF12273845E004F1A43 /* MeetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeetViewController.swift; sourceTree = "<group>"; };
@@ -160,6 +166,7 @@
 			children = (
 				C5063151226E8ED00078265C /* MenuOptionCell.swift */,
 				2FA974CB2272B0F000115FBD /* CardContentTableViewCell.swift */,
+				C593FB772293693D002FAE72 /* PeopleAttendingCollectionViewCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -268,8 +275,8 @@
 		C584FC622266986D00ED1B53 /* Animations */ = {
 			isa = PBXGroup;
 			children = (
-				C584FC63226698E700ED1B53 /* plant.json */,
 				C584FC6022668F3200ED1B53 /* alert.json */,
+				C593FB7322935EC4002FAE72 /* plant.json */,
 				C584FC6522669DC300ED1B53 /* town.json */,
 			);
 			path = Animations;
@@ -347,7 +354,7 @@
 			isa = PBXGroup;
 			children = (
 				C59D640F228D1FC90073B836 /* AlertService */,
-				C59D640E228D1FAD0073B836 /* UnscheduledAlertVC */,
+				C59D640E228D1FAD0073B836 /* JoinAlertVC */,
 				C59D640D228D1F810073B836 /* ScheduleAlertVC */,
 			);
 			path = AlertVCs;
@@ -384,11 +391,13 @@
 			path = ScheduleAlertVC;
 			sourceTree = "<group>";
 		};
-		C59D640E228D1FAD0073B836 /* UnscheduledAlertVC */ = {
+		C59D640E228D1FAD0073B836 /* JoinAlertVC */ = {
 			isa = PBXGroup;
 			children = (
+				C593FB71229359FC002FAE72 /* JoinAlertViewController.swift */,
+				C593FB79229381B9002FAE72 /* JoinAlertVC-Firebase.swift */,
 			);
-			path = UnscheduledAlertVC;
+			path = JoinAlertVC;
 			sourceTree = "<group>";
 		};
 		C59D640F228D1FC90073B836 /* AlertService */ = {
@@ -535,9 +544,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				C5E8F20622656A0C009FAE68 /* AuthPickerViewController.xib in Resources */,
+				C593FB7422935EC4002FAE72 /* plant.json in Resources */,
 				C5942AF02273843D004F1A43 /* TagViewController.xib in Resources */,
 				C5942AF42273845E004F1A43 /* MeetViewController.xib in Resources */,
-				C584FC64226698E700ED1B53 /* plant.json in Resources */,
 				C58776BA2267DA86007C680D /* GoogleService-Info.plist in Resources */,
 				C5942AF822738476004F1A43 /* PointsViewController.xib in Resources */,
 				C584FC6122668F3300ED1B53 /* alert.json in Resources */,
@@ -681,7 +690,10 @@
 				C5907FAE22850156001E720D /* AlertService.swift in Sources */,
 				C5063154226E8EF30078265C /* MenuOption.swift in Sources */,
 				C5063152226E8ED00078265C /* MenuOptionCell.swift in Sources */,
+				C593FB72229359FC002FAE72 /* JoinAlertViewController.swift in Sources */,
+				C593FB782293693D002FAE72 /* PeopleAttendingCollectionViewCell.swift in Sources */,
 				C58D911D225D54B2006A0390 /* MapsVC-SlideInCard.swift in Sources */,
+				C593FB7A229381B9002FAE72 /* JoinAlertVC-Firebase.swift in Sources */,
 				C5D3E903225BB10900C03AFB /* CardViewController.swift in Sources */,
 				C5DD0887225845D1000988A3 /* ProfileViewController.swift in Sources */,
 				C5942AF32273845E004F1A43 /* MeetViewController.swift in Sources */,

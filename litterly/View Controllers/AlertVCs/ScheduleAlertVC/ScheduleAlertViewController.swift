@@ -60,7 +60,7 @@ class ScheduleAlertViewController: UIViewController {
     //returns a formatted date when given an input
     func getFormattedDate(date: Date) -> String {
         let dateFormatter = DateFormatter()
-        dateFormatter.dateStyle = .short
+        dateFormatter.dateStyle = .medium
         dateFormatter.timeZone = TimeZone.current
         dateFormatter.timeStyle = DateFormatter.Style.short
         let formattedDateAndTime = dateFormatter.string(from: date)

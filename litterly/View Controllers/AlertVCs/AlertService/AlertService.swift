@@ -17,4 +17,12 @@ class AlertService {
         
         return alertVC
     }
+    
+    func alertForJoin() -> JoinAlertViewController{
+        let storyboard = UIStoryboard(name: "Alert", bundle: .main)
+        
+        let alertVC = storyboard.instantiateViewController(withIdentifier: "JoinAlertVC") as! JoinAlertViewController
+        
+        return alertVC
+    }
 }

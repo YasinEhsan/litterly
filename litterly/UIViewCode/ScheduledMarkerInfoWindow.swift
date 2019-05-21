@@ -13,9 +13,16 @@ class ScheduledMarkerInfoWindow: UIView {
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var userActionButton: UIButton!
     
+    let alertService = AlertService()
+    
     
     @IBAction func onButtonTap(_ sender: UIButton) {
         print("Yee have tapped the button!")
+        let alert = alertService.alertForJoin()
+        //        self.window?.rootViewController?.present(alert, animated: true, completion: nil)
+        DispatchQueue.main.async {
+            self.getTopMostViewController()?.present(alert, animated: true, completion: nil)
+        }
     }
     
     
@@ -32,6 +39,16 @@ class ScheduledMarkerInfoWindow: UIView {
         let scheduledInfoWindow = Bundle.main.loadNibNamed("ScheduledMarkerInfoWindow", owner: self, options: nil)?[0] as! ScheduledMarkerInfoWindow
         
         return scheduledInfoWindow
+    }
+    
+    func getTopMostViewController() -> UIViewController? {
+        var topMostViewController = UIApplication.shared.keyWindow?.rootViewController
+        
+        while let presentedViewController = topMostViewController?.presentedViewController {
+            topMostViewController = presentedViewController
+        }
+        
+        return topMostViewController
     }
 
 }

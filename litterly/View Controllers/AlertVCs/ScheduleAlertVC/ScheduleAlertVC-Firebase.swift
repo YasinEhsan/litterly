@@ -38,14 +38,4 @@ extension ScheduleAlertViewController{
         }
     }
     
-    //append to the confirmedUsers array
-    func appendToConfirmedUsers(for meetupId:String, user_id:String, user_pic_url:String){
-        //get parent's reference
-        let ref = sharedValue.db.collection("Meetups").document("\(meetupId)")
-        
-        ref.updateData([
-            "confirmed_users": FieldValue.arrayUnion([["user_id" : "\(user_id as String)", "user_pic_url" : "\(user_pic_url as String)"]])
-            ])
-    }
-    
 }

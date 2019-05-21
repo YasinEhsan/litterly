@@ -14,7 +14,7 @@ import Lottie
 
 class SigninViewController: UIViewController {
     
-    let animationView = AnimationView(name: "town")
+    let animationView = AnimationView(name: "plant")
     let signInButton = UIButton()
     let db = Firestore.firestore()
     var userDataModel = [UserDataModel]()
