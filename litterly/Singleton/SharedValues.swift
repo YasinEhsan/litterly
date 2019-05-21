@@ -19,8 +19,8 @@ class SharedValues{
     
     var meetupDict:TrashDataModel!
     
-    let currentUserDisplayName = Auth.auth().currentUser?.displayName
-    let currentUserEmail = Auth.auth().currentUser?.email
-    let currentUserProfileImageURL = Auth.auth().currentUser?.photoURL?.absoluteString
+    var currentUserDisplayName = Auth.auth().currentUser?.displayName
+    var currentUserEmail = Auth.auth().currentUser?.email
+    var currentUserProfileImageURL = Auth.auth().currentUser?.photoURL?.absoluteString
     
 }
