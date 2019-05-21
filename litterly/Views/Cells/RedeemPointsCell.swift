@@ -17,7 +17,8 @@ final class RedeemPointsCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        pointsButton.layer.cornerRadius = 10
+        pointsButton.clipsToBounds = true
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

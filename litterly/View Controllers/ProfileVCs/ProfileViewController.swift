@@ -327,6 +327,9 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
         // let redeemPoints = tableView.dequeueReusableCell(withIdentifier: "redeemCell", for: indexPath) as! RedeemPointsCell
         
         let pointsHistory = tableView.dequeueReusableCell(withIdentifier: "pointsCell", for: indexPath) as! PointsHistoryCell
+        self.tableView.separatorStyle = UITableViewCell.SeparatorStyle.none
+        cell.selectionStyle = .none
+        pointsHistory.selectionStyle = .none
         
         switch(segmentedCtrl.selectedSegmentIndex)
         {
@@ -341,9 +344,10 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
         case 2:
             if (indexPath.item == 0) {
                 let redeemPoints = tableView.dequeueReusableCell(withIdentifier: "redeemCell") as? RedeemPointsCell
+                redeemPoints?.selectionStyle = .none
                 redeemPoints?.actionBlock = {
-                        self.navigationController?.pushViewController(RewardsVC(), animated: true)
-                        self.tableView.deselectRow(at: indexPath, animated: true)
+                    self.navigationController?.pushViewController(RewardsVC(), animated: true)
+                    self.tableView.deselectRow(at: indexPath, animated: true)
                 }
                 tableView.rowHeight = 190
                 return redeemPoints!
@@ -359,12 +363,6 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
         
         return cell
     }
-    
-//    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//        let vc = RewardsVC()
-//        self.navigationController?.pushViewController(vc, animated: true)
-//        self.tableView.deselectRow(at: indexPath, animated: true)
-//    }
     
     
 }

@@ -339,9 +339,9 @@
 				C5942AEE2273843D004F1A43 /* TagViewController.xib */,
 				C5942AF22273845E004F1A43 /* MeetViewController.xib */,
 				C5942AF622738476004F1A43 /* PointsViewController.xib */,
+				2F6C333A228BDBF700B0285F /* RewardsVC.xib */,
 				2F6C3336228BC62D00B0285F /* RedeemPointsCell.xib */,
 				2F435F61228E591B00EAE817 /* PointsHistoryCell.xib */,
-				2F6C333A228BDBF700B0285F /* RewardsVC.xib */,
 			);
 			path = ProfileXibs;
 			sourceTree = "<group>";
