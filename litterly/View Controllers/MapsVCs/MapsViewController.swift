@@ -115,10 +115,15 @@ class MapsViewController: UIViewController {
     @objc private func updateTappedArrayElement(){
         guard tappedMarker != nil else {return}
         
-        if (tappedArrayElement.id == justModdedArrayElement.id){
-            unScheduledMarkerInfoWindow.removeFromSuperview()
-            scheduledMarkerInfoWindow.removeFromSuperview()
-        }
+        //TODO: fix nil value when checking for matching id
+        
+//        if (tappedArrayElement.id == justModdedArrayElement.id){
+//            unScheduledMarkerInfoWindow.removeFromSuperview()
+//            scheduledMarkerInfoWindow.removeFromSuperview()
+//        }
+        
+        unScheduledMarkerInfoWindow.removeFromSuperview()
+        scheduledMarkerInfoWindow.removeFromSuperview()
     }
 }
 

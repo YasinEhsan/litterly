@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import AlamofireImage
 
 class JoinAlertViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
     
@@ -23,13 +24,13 @@ class JoinAlertViewController: UIViewController, UICollectionViewDelegate, UICol
     
     let cornerRadiusValue = 12
     let sharedValue = SharedValues.sharedInstance
-    var meetupDetails:MeetupDataModel!
+    var confirmedUsers:[[String:String]]!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setupColors()
         roundCorners()
-        queryForUser()
+        fetchMeetupDetails()
 
         attendingUserCollectionView.dataSource = self
         attendingUserCollectionView.delegate = self
@@ -42,7 +43,7 @@ class JoinAlertViewController: UIViewController, UICollectionViewDelegate, UICol
         meetupDateAndTime.textColor = UIColor.joinAlertGrey
         attendingUserCollectionView.backgroundColor = UIColor.mainBlue
         joinButton.backgroundColor = UIColor.mainGreen
-        cancelButton.backgroundColor = UIColor.mainGreen
+        cancelButton.backgroundColor = UIColor.unselectedGrey
     }
     
     func roundCorners(){
@@ -59,20 +60,36 @@ class JoinAlertViewController: UIViewController, UICollectionViewDelegate, UICol
         self.dismiss(animated: true, completion: nil)
     }
     
-    func queryForUser(){
+    func fetchMeetupDetails(){
         let meetupId = ("\(sharedValue.meetupDict.lat)\(sharedValue.meetupDict.lon)meetup")
         
-        didUserAlreadyJoin(for: meetupId, check: sharedValue.currentUserEmail! as String)
+        meetupDetailsFromFirestore(for: meetupId)
     }
     
+    //returns 0 if confirmedUsers is nil
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 10
+        
+        if confirmedUsers != nil{
+            return confirmedUsers.count
+        } else {
+            return 0
+        }
+        
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "PeopleAttendingCollectionViewCell", for: indexPath) as! PeopleAttendingCollectionViewCell
         
-        cell.attendingUserProfileImages.image = UIImage(named: "userPhoto")
+        guard let usersData = confirmedUsers else {return cell}
+        
+        //gets image from network
+        let userImage = usersData[indexPath.row]["user_pic_url"] as! String
+        let imageUrl = URL(string: userImage)
+        let data = try! Data(contentsOf: imageUrl!)
+        let image = UIImage(data: data)
+        cell.attendingUserProfileImages.image = image
+        
+        //rounds and configures the cell
         cell.attendingUserProfileImages.contentMode = .scaleAspectFill
         cell.attendingUserProfileImages.isOpaque = false
         cell.attendingUserProfileImages.layer.borderWidth = 1

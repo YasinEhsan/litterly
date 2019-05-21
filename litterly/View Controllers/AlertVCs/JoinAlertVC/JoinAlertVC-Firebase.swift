@@ -21,16 +21,26 @@ extension JoinAlertViewController{
             ])
     }
     
-    //check if user has already joined
-    func didUserAlreadyJoin(for meetupId:String, check userEmail:String){
+    //get meetup details
+    func meetupDetailsFromFirestore(for meetupId:String){
         
         let ref = sharedValue.db.collection("Meetups").document("\(meetupId)")
         
         ref.getDocument { (document, error) in
             
-            //why nil????????
-            self.meetupDetails = MeetupDataModel(dictionary: (document?.data())!)
-            print(self.meetupDetails)
+            let address = document?.data()!["meetup_address"]
+            let meetup_date_time = document?.data()!["meetup_date_time"]
+            let confirmed_users = document?.data()!["confirmed_users"] as! [[String:String]]
+            
+            self.meetupAddress.fadeTransition(0.4)
+            self.meetupAddress.text = address as! String
+            
+            self.meetupDateAndTime.fadeTransition(0.4)
+            self.meetupDateAndTime.text = meetup_date_time as! String
+            
+            self.confirmedUsers = confirmed_users
+            
+            self.attendingUserCollectionView.reloadData()
         }
 
         
