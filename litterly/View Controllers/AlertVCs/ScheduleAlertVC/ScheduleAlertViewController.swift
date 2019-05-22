@@ -19,6 +19,7 @@ class ScheduleAlertViewController: UIViewController {
     @IBOutlet weak var meetupdatePicker: UIDatePicker!
     
     let cornerRadius:CGFloat = 12.0
+    let alertService = AlertService()
     let sharedValue = SharedValues.sharedInstance
     var meetupDate:String!
     
@@ -129,10 +130,26 @@ class ScheduleAlertViewController: UIViewController {
         updateMeetupProperty(for: "\(sharedValue.meetupDict.id)", with: true)
         print(sharedValue.meetupDict.id)
         //sharedValue.meetupDict = nil
-        self.dismiss(animated: true, completion: nil)
+        self.dismiss(animated: true, completion: showSuccessAlert)
 
     }
     
+    func showSuccessAlert(){
+        let alert = alertService.alertForGeneral()
+        DispatchQueue.main.async {
+            self.getTopMostViewController()?.present(alert, animated: true, completion: nil)
+        }
+    }
+    
+    func getTopMostViewController() -> UIViewController? {
+        var topMostViewController = UIApplication.shared.keyWindow?.rootViewController
+        
+        while let presentedViewController = topMostViewController?.presentedViewController {
+            topMostViewController = presentedViewController
+        }
+        
+        return topMostViewController
+    }
     
 
 }

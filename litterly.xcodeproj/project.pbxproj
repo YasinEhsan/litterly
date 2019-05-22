@@ -50,6 +50,8 @@
 		C59A8BB7227B65A4009CAA90 /* CardVC-Firebase.swift in Sources */ = {isa = PBXBuildFile; fileRef = C59A8BB6227B65A4009CAA90 /* CardVC-Firebase.swift */; };
 		C59A8BB9227B665E009CAA90 /* SigninVC-Firebase.swift in Sources */ = {isa = PBXBuildFile; fileRef = C59A8BB8227B665E009CAA90 /* SigninVC-Firebase.swift */; };
 		C59A8BBB227B66DC009CAA90 /* ProfileVC-Firebase.swift in Sources */ = {isa = PBXBuildFile; fileRef = C59A8BBA227B66DC009CAA90 /* ProfileVC-Firebase.swift */; };
+		C5B6858A2294DAF300421EE1 /* GeneralAlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5B685892294DAF300421EE1 /* GeneralAlertViewController.swift */; };
+		C5B6858D2294E08800421EE1 /* check.json in Resources */ = {isa = PBXBuildFile; fileRef = C5B6858C2294E08800421EE1 /* check.json */; };
 		C5C35EE122791B9900103AD9 /* UserDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5C35EE022791B9900103AD9 /* UserDataModel.swift */; };
 		C5C35EE322791FD300103AD9 /* DocumentSerializableProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5C35EE222791FD300103AD9 /* DocumentSerializableProtocol.swift */; };
 		C5C35EE7227A1A9900103AD9 /* MapsVC-GMSDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5C35EE6227A1A9900103AD9 /* MapsVC-GMSDelegate.swift */; };
@@ -119,6 +121,8 @@
 		C59A8BB6227B65A4009CAA90 /* CardVC-Firebase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CardVC-Firebase.swift"; sourceTree = "<group>"; };
 		C59A8BB8227B665E009CAA90 /* SigninVC-Firebase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SigninVC-Firebase.swift"; sourceTree = "<group>"; };
 		C59A8BBA227B66DC009CAA90 /* ProfileVC-Firebase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ProfileVC-Firebase.swift"; sourceTree = "<group>"; };
+		C5B685892294DAF300421EE1 /* GeneralAlertViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralAlertViewController.swift; sourceTree = "<group>"; };
+		C5B6858C2294E08800421EE1 /* check.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = check.json; sourceTree = "<group>"; };
 		C5C35EE022791B9900103AD9 /* UserDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDataModel.swift; sourceTree = "<group>"; };
 		C5C35EE222791FD300103AD9 /* DocumentSerializableProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentSerializableProtocol.swift; sourceTree = "<group>"; };
 		C5C35EE6227A1A9900103AD9 /* MapsVC-GMSDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MapsVC-GMSDelegate.swift"; sourceTree = "<group>"; };
@@ -277,6 +281,7 @@
 		C584FC622266986D00ED1B53 /* Animations */ = {
 			isa = PBXGroup;
 			children = (
+				C5B6858C2294E08800421EE1 /* check.json */,
 				C584FC6022668F3200ED1B53 /* alert.json */,
 				C593FB7322935EC4002FAE72 /* plant.json */,
 				C584FC6522669DC300ED1B53 /* town.json */,
@@ -356,6 +361,7 @@
 		C5907FAA2284ED3A001E720D /* AlertVCs */ = {
 			isa = PBXGroup;
 			children = (
+				C5B6858B2294DAF900421EE1 /* General Alerts */,
 				C59D640F228D1FC90073B836 /* AlertService */,
 				C59D640E228D1FAD0073B836 /* JoinAlertVC */,
 				C59D640D228D1F810073B836 /* ScheduleAlertVC */,
@@ -409,6 +415,14 @@
 				C5907FAD22850156001E720D /* AlertService.swift */,
 			);
 			path = AlertService;
+			sourceTree = "<group>";
+		};
+		C5B6858B2294DAF900421EE1 /* General Alerts */ = {
+			isa = PBXGroup;
+			children = (
+				C5B685892294DAF300421EE1 /* GeneralAlertViewController.swift */,
+			);
+			path = "General Alerts";
 			sourceTree = "<group>";
 		};
 		C5C35EE8227A1C1C00103AD9 /* CardVC */ = {
@@ -546,6 +560,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C5B6858D2294E08800421EE1 /* check.json in Resources */,
 				C5E8F20622656A0C009FAE68 /* AuthPickerViewController.xib in Resources */,
 				C593FB7422935EC4002FAE72 /* plant.json in Resources */,
 				C5942AF02273843D004F1A43 /* TagViewController.xib in Resources */,
@@ -706,6 +721,7 @@
 				C543BF9B2277D67A000C2FC7 /* UnscheduledMarkerInfoWindow.swift in Sources */,
 				C56CEA35225D9E87005DC40E /* MapsVC-GoogleMaps.swift in Sources */,
 				C564B480226A9EB300F2DEF1 /* MapsVCLocationServices.swift in Sources */,
+				C5B6858A2294DAF300421EE1 /* GeneralAlertViewController.swift in Sources */,
 				C506314E226E8E430078265C /* ContainerController.swift in Sources */,
 				C5942AEF2273843D004F1A43 /* TagViewController.swift in Sources */,
 				2FA974CA2272AE3800115FBD /* EventsViewController.swift in Sources */,

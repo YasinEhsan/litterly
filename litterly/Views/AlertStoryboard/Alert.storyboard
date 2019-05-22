@@ -319,7 +319,38 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GXD-qt-S2F" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="968.79999999999995" y="20.239880059970016"/>
+            <point key="canvasLocation" x="799" y="21"/>
+        </scene>
+        <!--General Alert View Controller-->
+        <scene sceneID="OIG-cr-8mG">
+            <objects>
+                <viewController storyboardIdentifier="GeneralAlertVC" modalTransitionStyle="crossDissolve" modalPresentationStyle="overFullScreen" id="4DU-Au-abW" customClass="GeneralAlertViewController" customModule="litterly" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="pzj-Ss-dfv">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LDH-a7-7ig">
+                                <rect key="frame" x="67" y="240.5" width="241" height="186"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="186" id="EcY-lg-CKV"/>
+                                    <constraint firstAttribute="width" constant="241" id="ub7-dD-XQu"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="tintColor" red="0.20784313730000001" green="0.2274509804" blue="0.31372549020000001" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="LDH-a7-7ig" firstAttribute="centerY" secondItem="pzj-Ss-dfv" secondAttribute="centerY" id="OIT-ms-K4G"/>
+                            <constraint firstItem="LDH-a7-7ig" firstAttribute="centerX" secondItem="pzj-Ss-dfv" secondAttribute="centerX" id="W7J-Nr-Ido"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="LQb-sT-W9s"/>
+                    </view>
+                    <connections>
+                        <outlet property="parentView" destination="LDH-a7-7ig" id="558-Qc-opV"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0h3-LM-hKH" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1543.2" y="20.239880059970016"/>
         </scene>
     </scenes>
     <resources>

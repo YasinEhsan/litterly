@@ -26,7 +26,7 @@
                     <rect key="frame" x="10" y="72.5" width="108" height="45.5"/>
                     <color key="backgroundColor" red="0.18039215689999999" green="0.80000000000000004" blue="0.4431372549" alpha="1" colorSpace="calibratedRGB"/>
                     <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="27"/>
-                    <state key="normal" title="Join">
+                    <state key="normal" title="Details">
                         <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </state>
                     <connections>

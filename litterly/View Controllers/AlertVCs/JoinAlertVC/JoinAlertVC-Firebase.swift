@@ -16,6 +16,7 @@ extension JoinAlertViewController{
         //get parent's reference
         let ref = sharedValue.db.collection("Meetups").document("\(meetupId)")
         
+        //update the objects array using arrayUnion
         ref.updateData([
             "confirmed_users": FieldValue.arrayUnion([["user_id" : "\(user_id as String)", "user_pic_url" : "\(user_pic_url as String)"]])
             ])
@@ -41,8 +42,43 @@ extension JoinAlertViewController{
             self.confirmedUsers = confirmed_users
             
             self.attendingUserCollectionView.reloadData()
+            
+            let isUserOnTheList = self.didUserAlreadyJoin(search: "\(self.sharedValue.currentUserEmail! as String)")
+            
+            isUserOnTheList ? self.changeAlertHeader() : self.enableJoinButton()
+            
+            print("isUserPresent: \(isUserOnTheList)")
         }
-
         
+    }
+    
+    //appends user_id to confirmed_users array
+    func updateConfirmedUsersArray(for id:String, with userId:String, and picUrl:String){
+        
+        let meetupRef = sharedValue.db.collection("Meetups").document("\(id)")
+        
+        meetupRef.updateData([
+            "confirmed_users" : FieldValue.arrayUnion([["user_id" : "\(userId)", "user_pic_url" : "\(picUrl)"]])
+            ])
+    }
+    
+    //searches the confirmed users array for current user id
+    func didUserAlreadyJoin(search id:String) -> Bool{
+        for users in self.confirmedUsers{
+            if let id = users["user_id"]{
+                if id == "\(sharedValue.currentUserEmail! as String)"{
+                    return true
+                }
+            }
+        }
+        return false
+    }
+    
+    func enableJoinButton(){
+        joinButton.isEnabled = true
+    }
+    
+    func changeAlertHeader(){
+        headerTitle.text = "You are on the list!"
     }
 }

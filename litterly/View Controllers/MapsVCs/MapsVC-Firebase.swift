@@ -75,6 +75,7 @@ extension MapsViewController{
                     marker.opacity = 0.8
                     //appends to marker tracking array
                     self.markers.append(marker)
+                    marker.appearAnimation = .pop
                     marker.map = self.mapView
                     
                     print("TYPE ADDED->> \(diff.document.data())")
@@ -119,6 +120,7 @@ extension MapsViewController{
                     let marker = self.giveMeAMarker(for: position, on: trashType, and: isMeetupScheduled)
                     
                     marker.opacity = 0.8
+                    marker.appearAnimation = .pop
                     self.markers[index] = marker
                     self.markers[index].map = self.mapView
 

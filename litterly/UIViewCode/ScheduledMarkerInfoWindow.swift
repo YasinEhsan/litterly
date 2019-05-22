@@ -19,7 +19,6 @@ class ScheduledMarkerInfoWindow: UIView {
     @IBAction func onButtonTap(_ sender: UIButton) {
         print("Yee have tapped the button!")
         let alert = alertService.alertForJoin()
-        //        self.window?.rootViewController?.present(alert, animated: true, completion: nil)
         DispatchQueue.main.async {
             self.getTopMostViewController()?.present(alert, animated: true, completion: nil)
         }

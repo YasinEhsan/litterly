@@ -24,16 +24,23 @@ class JoinAlertViewController: UIViewController, UICollectionViewDelegate, UICol
     
     let cornerRadiusValue = 12
     let sharedValue = SharedValues.sharedInstance
+    let alertService = AlertService()
     var confirmedUsers:[[String:String]]!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        disableJoinButton()
         setupColors()
         roundCorners()
         fetchMeetupDetails()
 
         attendingUserCollectionView.dataSource = self
         attendingUserCollectionView.delegate = self
+    }
+    
+    func disableJoinButton(){
+        joinButton.isEnabled = false
+        joinButton.setTitleColor(UIColor.lightGray, for: .disabled)
     }
     
     func setupColors(){
@@ -57,7 +64,32 @@ class JoinAlertViewController: UIViewController, UICollectionViewDelegate, UICol
     }
     
     @IBAction func onJoinTap(_ sender: UIButton) {
-        self.dismiss(animated: true, completion: nil)
+        
+        let userId = sharedValue.currentUserEmail as! String
+        let userPicUrl = sharedValue.currentUserProfileImageURL as! String
+        let meetupId = ("\(sharedValue.meetupDict.lat)\(sharedValue.meetupDict.lon)meetup")
+        
+        updateConfirmedUsersArray(for: meetupId, with: userId, and: userPicUrl)
+        
+        self.dismiss(animated: true, completion: showSuccessAlert)
+    }
+    
+    func showSuccessAlert(){
+        let alert = alertService.alertForGeneral()
+        
+        DispatchQueue.main.async {
+            self.getTopMostViewController()?.present(alert, animated: true, completion: nil)
+        }
+    }
+    
+    func getTopMostViewController() -> UIViewController? {
+        var topMostViewController = UIApplication.shared.keyWindow?.rootViewController
+        
+        while let presentedViewController = topMostViewController?.presentedViewController {
+            topMostViewController = presentedViewController
+        }
+        
+        return topMostViewController
     }
     
     func fetchMeetupDetails(){

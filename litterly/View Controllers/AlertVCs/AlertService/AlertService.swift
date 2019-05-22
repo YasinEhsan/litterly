@@ -25,4 +25,12 @@ class AlertService {
         
         return alertVC
     }
+    
+    func alertForGeneral() -> GeneralAlertViewController{
+        let storyboard = UIStoryboard(name: "Alert", bundle: .main)
+        
+        let alertVC = storyboard.instantiateViewController(withIdentifier: "GeneralAlertVC") as! GeneralAlertViewController
+        
+        return alertVC
+    }
 }
