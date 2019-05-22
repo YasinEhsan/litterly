@@ -17,7 +17,8 @@ class SharedValues{
     
     let db = Firestore.firestore()
     
-    var meetupDict:TrashDataModel!
+    var tappedArrayElementDict:TrashDataModel!
+    
     
     var currentUserDisplayName = Auth.auth().currentUser?.displayName
     var currentUserEmail = Auth.auth().currentUser?.email

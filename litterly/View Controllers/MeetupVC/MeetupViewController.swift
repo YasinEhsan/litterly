@@ -11,6 +11,9 @@ import Cards
 
 class MeetupViewController: UIViewController {
     
+    let sharedValues = SharedValues.sharedInstance
+    var organicMeetupCount:Int!
+    
     //init a stackView for the cards and configure them
     lazy var stackView: UIStackView = {
         let stackView = UIStackView(arrangedSubviews: [organicCardView, plasticCardView, metalCardView])
@@ -26,15 +29,14 @@ class MeetupViewController: UIViewController {
     var organicCardView: Card = {
         let card = CardHighlight()
         
-        //card.backgroundColor = UIColor.unselectedGrey
         card.backgroundImage = UIImage(named: "organic_trash")
-        card.title = "Organics"
+        card.title = ""
         card.itemTitle = ""
         card.itemSubtitle = ""
         card.textColor = UIColor.unselectedGrey
         card.hasParallax = true
         
-        card.buttonText = "150 Meetups"
+        card.buttonText = "Organics"
         
         card.translatesAutoresizingMaskIntoConstraints = false
         
@@ -47,13 +49,13 @@ class MeetupViewController: UIViewController {
         
         //card.backgroundColor = UIColor.unselectedGrey
         card.backgroundImage = UIImage(named: "plastic_trash")
-        card.title = "Plastic"
+        card.title = ""
         card.itemTitle = ""
         card.itemSubtitle = ""
         card.textColor = UIColor.unselectedGrey
         card.hasParallax = true
         
-        card.buttonText = "150 Meetups"
+        card.buttonText = "Plastic"
         
         card.translatesAutoresizingMaskIntoConstraints = false
         
@@ -66,13 +68,13 @@ class MeetupViewController: UIViewController {
         
         //card.backgroundColor = UIColor.unselectedGrey
         card.backgroundImage = UIImage(named: "metal_trash")
-        card.title = "Metal"
+        card.title = ""
         card.itemTitle = ""
         card.itemSubtitle = ""
         card.textColor = UIColor.unselectedGrey
         card.hasParallax = true
         
-        card.buttonText = "150 Meetups"
+        card.buttonText = "Metal"
         
         card.translatesAutoresizingMaskIntoConstraints = false
         
@@ -92,13 +94,13 @@ class MeetupViewController: UIViewController {
     
     //holds storyBoard IDs for their respective detail VC
     func actionsForCardViews(){
-        let organicMeetupDetail:UIViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "CardContent") as UIViewController
+        let organicMeetupDetail:UIViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "OrganicMeetups") as UIViewController
         organicCardView.shouldPresent(organicMeetupDetail, from: self, fullscreen: false)
         
-        let plasticMeetupDetail:UIViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "CardContent") as UIViewController
+        let plasticMeetupDetail:UIViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "PlasticMeetups") as UIViewController
         plasticCardView.shouldPresent(plasticMeetupDetail, from: self, fullscreen: false)
         
-        let metalMeetupDetail:UIViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "CardContent") as UIViewController
+        let metalMeetupDetail:UIViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "MetalMeetups") as UIViewController
         metalCardView.shouldPresent(metalMeetupDetail, from: self, fullscreen: false)
     }
     

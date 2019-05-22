@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		2FA974CA2272AE3800115FBD /* EventsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FA974C92272AE3800115FBD /* EventsViewController.swift */; };
 		2FA974CC2272B0F000115FBD /* CardContentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FA974CB2272B0F000115FBD /* CardContentTableViewCell.swift */; };
 		C506314E226E8E430078265C /* ContainerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C506314D226E8E430078265C /* ContainerController.swift */; };
 		C5063150226E8E7C0078265C /* MenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C506314F226E8E7C0078265C /* MenuController.swift */; };
@@ -50,6 +49,15 @@
 		C59A8BB7227B65A4009CAA90 /* CardVC-Firebase.swift in Sources */ = {isa = PBXBuildFile; fileRef = C59A8BB6227B65A4009CAA90 /* CardVC-Firebase.swift */; };
 		C59A8BB9227B665E009CAA90 /* SigninVC-Firebase.swift in Sources */ = {isa = PBXBuildFile; fileRef = C59A8BB8227B665E009CAA90 /* SigninVC-Firebase.swift */; };
 		C59A8BBB227B66DC009CAA90 /* ProfileVC-Firebase.swift in Sources */ = {isa = PBXBuildFile; fileRef = C59A8BBA227B66DC009CAA90 /* ProfileVC-Firebase.swift */; };
+		C59C82AB2295B09F0051F3F8 /* MeetupVC-Firebase.swift in Sources */ = {isa = PBXBuildFile; fileRef = C59C82AA2295B09F0051F3F8 /* MeetupVC-Firebase.swift */; };
+		C59C82AD2295BE3B0051F3F8 /* PlasticMeetupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C59C82AC2295BE3B0051F3F8 /* PlasticMeetupViewController.swift */; };
+		C59C82AF2295BF450051F3F8 /* MetalMeetupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C59C82AE2295BF450051F3F8 /* MetalMeetupViewController.swift */; };
+		C59C82B12295C0D40051F3F8 /* OrganicMeetupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C59C82B02295C0D40051F3F8 /* OrganicMeetupViewController.swift */; };
+		C59C82B62295C1F70051F3F8 /* OrganicMeetups-Firebase.swift in Sources */ = {isa = PBXBuildFile; fileRef = C59C82B52295C1F70051F3F8 /* OrganicMeetups-Firebase.swift */; };
+		C59C82B82295C2D60051F3F8 /* MeetupsQueryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C59C82B72295C2D60051F3F8 /* MeetupsQueryModel.swift */; };
+		C59C82BA2295C9820051F3F8 /* PlasticMeetup-Firebase.swift in Sources */ = {isa = PBXBuildFile; fileRef = C59C82B92295C9820051F3F8 /* PlasticMeetup-Firebase.swift */; };
+		C59C82BC2295CB6F0051F3F8 /* MetalMeetups-Firebase.swift in Sources */ = {isa = PBXBuildFile; fileRef = C59C82BB2295CB6F0051F3F8 /* MetalMeetups-Firebase.swift */; };
+		C59C82BF2295D1550051F3F8 /* UIImageExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C59C82BE2295D1550051F3F8 /* UIImageExtension.swift */; };
 		C5B6858A2294DAF300421EE1 /* GeneralAlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5B685892294DAF300421EE1 /* GeneralAlertViewController.swift */; };
 		C5B6858D2294E08800421EE1 /* check.json in Resources */ = {isa = PBXBuildFile; fileRef = C5B6858C2294E08800421EE1 /* check.json */; };
 		C5C35EE122791B9900103AD9 /* UserDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5C35EE022791B9900103AD9 /* UserDataModel.swift */; };
@@ -76,7 +84,6 @@
 
 /* Begin PBXFileReference section */
 		2F04E5C0226E25C1006EB956 /* gibson-semibold-webfont.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "gibson-semibold-webfont.ttf"; sourceTree = "<group>"; };
-		2FA974C92272AE3800115FBD /* EventsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsViewController.swift; sourceTree = "<group>"; };
 		2FA974CB2272B0F000115FBD /* CardContentTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardContentTableViewCell.swift; sourceTree = "<group>"; };
 		39E256F25A70D3C807D7B6F4 /* Pods-litterly.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-litterly.release.xcconfig"; path = "Target Support Files/Pods-litterly/Pods-litterly.release.xcconfig"; sourceTree = "<group>"; };
 		A6E706035DFCD681245FB63D /* Pods_litterly.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_litterly.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -121,6 +128,15 @@
 		C59A8BB6227B65A4009CAA90 /* CardVC-Firebase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CardVC-Firebase.swift"; sourceTree = "<group>"; };
 		C59A8BB8227B665E009CAA90 /* SigninVC-Firebase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SigninVC-Firebase.swift"; sourceTree = "<group>"; };
 		C59A8BBA227B66DC009CAA90 /* ProfileVC-Firebase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ProfileVC-Firebase.swift"; sourceTree = "<group>"; };
+		C59C82AA2295B09F0051F3F8 /* MeetupVC-Firebase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MeetupVC-Firebase.swift"; sourceTree = "<group>"; };
+		C59C82AC2295BE3B0051F3F8 /* PlasticMeetupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlasticMeetupViewController.swift; sourceTree = "<group>"; };
+		C59C82AE2295BF450051F3F8 /* MetalMeetupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetalMeetupViewController.swift; sourceTree = "<group>"; };
+		C59C82B02295C0D40051F3F8 /* OrganicMeetupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrganicMeetupViewController.swift; sourceTree = "<group>"; };
+		C59C82B52295C1F70051F3F8 /* OrganicMeetups-Firebase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "OrganicMeetups-Firebase.swift"; sourceTree = "<group>"; };
+		C59C82B72295C2D60051F3F8 /* MeetupsQueryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeetupsQueryModel.swift; sourceTree = "<group>"; };
+		C59C82B92295C9820051F3F8 /* PlasticMeetup-Firebase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PlasticMeetup-Firebase.swift"; sourceTree = "<group>"; };
+		C59C82BB2295CB6F0051F3F8 /* MetalMeetups-Firebase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MetalMeetups-Firebase.swift"; sourceTree = "<group>"; };
+		C59C82BE2295D1550051F3F8 /* UIImageExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageExtension.swift; sourceTree = "<group>"; };
 		C5B685892294DAF300421EE1 /* GeneralAlertViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralAlertViewController.swift; sourceTree = "<group>"; };
 		C5B6858C2294E08800421EE1 /* check.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = check.json; sourceTree = "<group>"; };
 		C5C35EE022791B9900103AD9 /* UserDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDataModel.swift; sourceTree = "<group>"; };
@@ -274,6 +290,7 @@
 				C5063153226E8EF30078265C /* MenuOption.swift */,
 				C5C35EE022791B9900103AD9 /* UserDataModel.swift */,
 				C5863AFF228A4443004A25E4 /* MeetupDataModel.swift */,
+				C59C82B72295C2D60051F3F8 /* MeetupsQueryModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -285,7 +302,6 @@
 				C584FC6022668F3200ED1B53 /* alert.json */,
 				C593FB7322935EC4002FAE72 /* plant.json */,
 				C584FC6522669DC300ED1B53 /* town.json */,
-				C59909622294573A00E16E44 /* TextFadeTransition.swift */,
 			);
 			path = Animations;
 			sourceTree = "<group>";
@@ -391,6 +407,59 @@
 			path = ProfileXibs;
 			sourceTree = "<group>";
 		};
+		C59C82B22295C13B0051F3F8 /* Organic Meetups */ = {
+			isa = PBXGroup;
+			children = (
+				C59C82B02295C0D40051F3F8 /* OrganicMeetupViewController.swift */,
+				C59C82B52295C1F70051F3F8 /* OrganicMeetups-Firebase.swift */,
+			);
+			path = "Organic Meetups";
+			sourceTree = "<group>";
+		};
+		C59C82B32295C1500051F3F8 /* Plastic Meetups */ = {
+			isa = PBXGroup;
+			children = (
+				C59C82AC2295BE3B0051F3F8 /* PlasticMeetupViewController.swift */,
+				C59C82B92295C9820051F3F8 /* PlasticMeetup-Firebase.swift */,
+			);
+			path = "Plastic Meetups";
+			sourceTree = "<group>";
+		};
+		C59C82B42295C1610051F3F8 /* Metal Meetups */ = {
+			isa = PBXGroup;
+			children = (
+				C59C82AE2295BF450051F3F8 /* MetalMeetupViewController.swift */,
+				C59C82BB2295CB6F0051F3F8 /* MetalMeetups-Firebase.swift */,
+			);
+			path = "Metal Meetups";
+			sourceTree = "<group>";
+		};
+		C59C82BD2295D1250051F3F8 /* Subclassing Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				C59C82C12295D2150051F3F8 /* Text */,
+				C58D9120225D55BE006A0390 /* Colors */,
+				C59C82C02295D1EC0051F3F8 /* UIImage */,
+			);
+			path = "Subclassing Extensions";
+			sourceTree = "<group>";
+		};
+		C59C82C02295D1EC0051F3F8 /* UIImage */ = {
+			isa = PBXGroup;
+			children = (
+				C59C82BE2295D1550051F3F8 /* UIImageExtension.swift */,
+			);
+			path = UIImage;
+			sourceTree = "<group>";
+		};
+		C59C82C12295D2150051F3F8 /* Text */ = {
+			isa = PBXGroup;
+			children = (
+				C59909622294573A00E16E44 /* TextFadeTransition.swift */,
+			);
+			path = Text;
+			sourceTree = "<group>";
+		};
 		C59D640D228D1F810073B836 /* ScheduleAlertVC */ = {
 			isa = PBXGroup;
 			children = (
@@ -445,8 +514,11 @@
 		C5CA15A122695080008B04EB /* MeetupVC */ = {
 			isa = PBXGroup;
 			children = (
+				C59C82B42295C1610051F3F8 /* Metal Meetups */,
+				C59C82B32295C1500051F3F8 /* Plastic Meetups */,
+				C59C82B22295C13B0051F3F8 /* Organic Meetups */,
 				C5CA15A2226950AD008B04EB /* MeetupViewController.swift */,
-				2FA974C92272AE3800115FBD /* EventsViewController.swift */,
+				C59C82AA2295B09F0051F3F8 /* MeetupVC-Firebase.swift */,
 			);
 			path = MeetupVC;
 			sourceTree = "<group>";
@@ -472,13 +544,13 @@
 		C5D83E1F22581793009CB884 /* litterly */ = {
 			isa = PBXGroup;
 			children = (
+				C59C82BD2295D1250051F3F8 /* Subclassing Extensions */,
 				C5863AFA228A3886004A25E4 /* Singleton */,
 				C5C35EE9227A1C5A00103AD9 /* Keys */,
 				C506314C226E8C4A0078265C /* Protocols */,
 				2F04E5BF226E25A6006EB956 /* Fonts */,
 				C564B481226AA03D00F2DEF1 /* Models */,
 				C584FC622266986D00ED1B53 /* Animations */,
-				C58D9120225D55BE006A0390 /* Colors */,
 				C543BF992277D644000C2FC7 /* UIViewCode */,
 				C58D911F225D559D006A0390 /* View Controllers */,
 				C58D911E225D5581006A0390 /* Views */,
@@ -690,12 +762,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				C5063150226E8E7C0078265C /* MenuController.swift in Sources */,
+				C59C82AD2295BE3B0051F3F8 /* PlasticMeetupViewController.swift in Sources */,
 				C5942AF722738476004F1A43 /* PointsViewController.swift in Sources */,
 				C5863AFC228A38B5004A25E4 /* SharedValues.swift in Sources */,
 				C5063156226E8F100078265C /* HomeControllerDelegateProtocol.swift in Sources */,
 				C599F5EC2263044C0038A1A6 /* PageTwoViewController.swift in Sources */,
 				C599F5EA2262FD830038A1A6 /* PageOneViewController.swift in Sources */,
 				C5C35EE122791B9900103AD9 /* UserDataModel.swift in Sources */,
+				C59C82B62295C1F70051F3F8 /* OrganicMeetups-Firebase.swift in Sources */,
 				C5DD088322584589000988A3 /* SigninViewController.swift in Sources */,
 				C5C675D82283DEF20005AFEA /* ScheduledMarkerInfoWindow.swift in Sources */,
 				C5DD088122584562000988A3 /* IntroPageViewController.swift in Sources */,
@@ -706,6 +780,8 @@
 				C5863AFE228A3D64004A25E4 /* ScheduleAlertVC-Firebase.swift in Sources */,
 				C59A8BBB227B66DC009CAA90 /* ProfileVC-Firebase.swift in Sources */,
 				C5907FAE22850156001E720D /* AlertService.swift in Sources */,
+				C59C82B12295C0D40051F3F8 /* OrganicMeetupViewController.swift in Sources */,
+				C59C82AF2295BF450051F3F8 /* MetalMeetupViewController.swift in Sources */,
 				C5063154226E8EF30078265C /* MenuOption.swift in Sources */,
 				C5063152226E8ED00078265C /* MenuOptionCell.swift in Sources */,
 				C593FB72229359FC002FAE72 /* JoinAlertViewController.swift in Sources */,
@@ -718,24 +794,28 @@
 				C5942AF32273845E004F1A43 /* MeetViewController.swift in Sources */,
 				C543BF982277D5CE000C2FC7 /* MapsVC-Firebase.swift in Sources */,
 				C599F5EE226304590038A1A6 /* PageThreeViewController.swift in Sources */,
+				C59C82BC2295CB6F0051F3F8 /* MetalMeetups-Firebase.swift in Sources */,
 				C543BF9B2277D67A000C2FC7 /* UnscheduledMarkerInfoWindow.swift in Sources */,
 				C56CEA35225D9E87005DC40E /* MapsVC-GoogleMaps.swift in Sources */,
 				C564B480226A9EB300F2DEF1 /* MapsVCLocationServices.swift in Sources */,
 				C5B6858A2294DAF300421EE1 /* GeneralAlertViewController.swift in Sources */,
 				C506314E226E8E430078265C /* ContainerController.swift in Sources */,
+				C59C82B82295C2D60051F3F8 /* MeetupsQueryModel.swift in Sources */,
+				C59C82BA2295C9820051F3F8 /* PlasticMeetup-Firebase.swift in Sources */,
 				C5942AEF2273843D004F1A43 /* TagViewController.swift in Sources */,
-				2FA974CA2272AE3800115FBD /* EventsViewController.swift in Sources */,
 				C5D83E2122581793009CB884 /* AppDelegate.swift in Sources */,
 				C5C35EE322791FD300103AD9 /* DocumentSerializableProtocol.swift in Sources */,
 				C56CEA33225D977A005DC40E /* SelectedButton.swift in Sources */,
 				2FA974CC2272B0F000115FBD /* CardContentTableViewCell.swift in Sources */,
 				C5C35EEB227A1C7B00103AD9 /* ApiKeys.swift in Sources */,
 				C597957C2264E01100B1797D /* AppColors.swift in Sources */,
+				C59C82BF2295D1550051F3F8 /* UIImageExtension.swift in Sources */,
 				C5907FAC2284EDBE001E720D /* ScheduleAlertViewController.swift in Sources */,
 				C5DD0885225845B7000988A3 /* MapsViewController.swift in Sources */,
 				C5C35EE7227A1A9900103AD9 /* MapsVC-GMSDelegate.swift in Sources */,
 				C5863B00228A4443004A25E4 /* MeetupDataModel.swift in Sources */,
 				C5E8F20522656A0C009FAE68 /* AuthPickerViewController.swift in Sources */,
+				C59C82AB2295B09F0051F3F8 /* MeetupVC-Firebase.swift in Sources */,
 				C5931BD6225EBBA400ECBEEB /* MapsVC-SearchBar.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
