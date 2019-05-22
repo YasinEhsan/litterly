@@ -69,10 +69,20 @@ class MapsViewController: UIViewController {
     let scheduledMetalMarkerIcon = UIImage(named: "green_settings_gears")?.withRenderingMode(.alwaysOriginal)
     
     //the custom infoView for the maerkers. loadView loads the xib file
-    let markerInfoWindow = MarkerInfoWindow().loadView()
+    let unScheduledMarkerInfoWindow = UnscheduledMarkerInfoWindow().loadView()
+    let scheduledMarkerInfoWindow = ScheduledMarkerInfoWindow().loadView()
     
     //keeps tarnck of the tapped marker
     var tappedMarker: CLLocationCoordinate2D!
+    
+    //holds the array element that has been tapped
+    var tappedArrayElement:TrashDataModel!
+    
+    //holds the old values for array element in the event of a modification from firebase
+    var oldTappedArrayElement:TrashDataModel!
+    
+    var justModdedArrayElement:TrashDataModel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -80,6 +90,12 @@ class MapsViewController: UIViewController {
         checkLocationServices()
         addSlideInCardToMapView()
         mapView?.delegate = self
+        
+        //listening for buttonTapped
+        NotificationCenter.default.addObserver(self, selector: #selector(reportTapped), name: NSNotification.Name("reportTapped"), object: nil)
+        
+        //listening for marker modification event
+        NotificationCenter.default.addObserver(self, selector: #selector(updateTappedArrayElement), name: NSNotification.Name("tappedArrayElement-reloaded"), object: nil)
     }
     
     //when view has appeared successfully, we call in to add the sliding card
@@ -89,6 +105,25 @@ class MapsViewController: UIViewController {
         addASearchBar()
     }
     
+    //Calling a function to lower the card
+    @objc private func reportTapped() {
+        print("lowering the card")
+        animateTransitionIfNeeded(state: .collapsed, duration: 0.5)
+    }
     
+    //calling a func to re-assign userAssignedElement
+    @objc private func updateTappedArrayElement(){
+        guard tappedMarker != nil else {return}
+        
+        //TODO: fix nil value when checking for matching id
+        
+//        if (tappedArrayElement.id == justModdedArrayElement.id){
+//            unScheduledMarkerInfoWindow.removeFromSuperview()
+//            scheduledMarkerInfoWindow.removeFromSuperview()
+//        }
+        
+        unScheduledMarkerInfoWindow.removeFromSuperview()
+        scheduledMarkerInfoWindow.removeFromSuperview()
+    }
 }
 

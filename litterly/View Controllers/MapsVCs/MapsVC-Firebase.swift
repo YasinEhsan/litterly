@@ -33,7 +33,7 @@ extension MapsViewController{
             }
             
             return customMarker
-        } else{
+        } else {
             if isMeetupScheduled{
                 customMarker.icon = self.scheduledMetalMarkerIcon
             }else{
@@ -67,6 +67,7 @@ extension MapsViewController{
                     
                     let isMeetupScheduled = self.trashModelArray.last!.is_meetup_scheduled
                     print(isMeetupScheduled)
+                    
                     let position = CLLocationCoordinate2D(latitude: self.trashModelArray.last!.lat, longitude: self.trashModelArray.last!.lon)
                     let trashType = self.trashModelArray.last!.trash_type
                     let marker = self.giveMeAMarker(for: position, on: trashType, and: isMeetupScheduled)
@@ -74,7 +75,10 @@ extension MapsViewController{
                     marker.opacity = 0.8
                     //appends to marker tracking array
                     self.markers.append(marker)
+                    marker.appearAnimation = .pop
                     marker.map = self.mapView
+                    
+                    print("TYPE ADDED->> \(diff.document.data())")
                     
                     //if removed (when a clean up is complete, add a ghost trail of the previous marker
                 } else if diff.type == .removed{
@@ -88,29 +92,39 @@ extension MapsViewController{
                     //or modified an existing one (when a cleanup is scheduled)
                 } else if diff.type == .modified{
                     
-                    //getting the modified doc's info
-                    let modifiedDocId = diff.document.documentID
-                    let modifiedDocNewIndex = diff.newIndex
-                    let modifiedDocOldIndex = Int(diff.oldIndex)
-                    print(modifiedDocId, modifiedDocOldIndex, modifiedDocNewIndex)
-                    print(self.trashModelArray[modifiedDocOldIndex].is_meetup_scheduled)
+                    //self.oldTappedArrayElement = self.tappedArrayElement
                     
-                    //setting the modded document's marker to nil
-                    self.markers[modifiedDocOldIndex].map = nil
+                    let data = TrashDataModel(dictionary: diff.document.data())
+                    //gets the index of the modded data with the lat and long
+                    let index = self.findTheIndex(with: data!.lat, and: data!.lon)
                     
-                    //setting the old trash array up with the new value
-                    self.trashModelArray[modifiedDocOldIndex] = TrashDataModel(dictionary: diff.document.data())!
+                    //assigning a reference to the modded data
+                    self.justModdedArrayElement = data
+                    //and then posting a notification
+                    NotificationCenter.default.post(name: NSNotification.Name("tappedArrayElement-reloaded"), object: nil)
                     
-                    //passing the new values and plotting the marker again
-                    let isMeetupScheduled = self.trashModelArray[modifiedDocOldIndex].is_meetup_scheduled
-                    print(isMeetupScheduled)
-                    let position = CLLocationCoordinate2D(latitude: self.trashModelArray[modifiedDocOldIndex].lat, longitude: self.trashModelArray[modifiedDocOldIndex].lon)
-                    let trashType = self.trashModelArray[modifiedDocOldIndex].trash_type
+                    print("The index of the modded data ->>> \(index)")
+                    print("Before change ->>> \(self.trashModelArray[index])")
+                    //removing the marker from the modded index
+                    self.markers[index].map = nil
+                    
+                    //assigning the new data to the modded index
+                    self.trashModelArray[index] = data!
+                    print("After change ->>> \(self.trashModelArray[index])")
+                    
+                    //plotting the new marker
+                    let position = CLLocationCoordinate2D(latitude: self.trashModelArray[index].lat, longitude: self.trashModelArray[index].lon)
+                    let trashType = self.trashModelArray[index].trash_type
+                    let isMeetupScheduled = self.trashModelArray[index].is_meetup_scheduled
+                    
                     let marker = self.giveMeAMarker(for: position, on: trashType, and: isMeetupScheduled)
                     
                     marker.opacity = 0.8
-                    self.markers[modifiedDocOldIndex] = marker
-                    marker.map = self.mapView
+                    marker.appearAnimation = .pop
+                    self.markers[index] = marker
+                    self.markers[index].map = self.mapView
+
+                    print("TYPE MODDED ->>>")
                     
                 }
             }

@@ -26,7 +26,7 @@ class CardViewController: UIViewController {
     @IBOutlet weak var trashType3: UIButton!
     @IBOutlet weak var reportTrashButton: UIButton!
     
-    let db = Firestore.firestore()
+    let db = SharedValues.sharedInstance.db
     let trashTypes: [String] = ["organic", "plastic", "metal"]
     var submitTrashType: String!
     var trashModelArray = [TrashDataModel]()
@@ -104,6 +104,9 @@ class CardViewController: UIViewController {
     @IBAction func reportTrashButtonOnTap(_ sender: UIButton) {
         print("report trash tapped!!")
         executeTagTrash()
+        
+        //Posting a notification
+        NotificationCenter.default.post(name: NSNotification.Name("reportTapped"), object: nil)
     }
     
     
@@ -117,7 +120,7 @@ class CardViewController: UIViewController {
             print(coordinates.longitude)
             
             guard let firebaseUserInstance = Auth.auth().currentUser else {return}
-            let id = submitTrashType + "\(coordinates.latitude)" + "\(coordinates.longitude)"+"marker" as String
+            let id = "\(coordinates.latitude)" + "\(coordinates.longitude)"+"marker" as String
             let author = firebaseUserInstance.email!
             
             //gets tag address and the neighborhood from reverseGeocode

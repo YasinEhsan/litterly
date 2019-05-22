@@ -14,7 +14,7 @@ import Lottie
 
 class SigninViewController: UIViewController {
     
-    let animationView = AnimationView(name: "town")
+    let animationView = AnimationView(name: "plant")
     let signInButton = UIButton()
     let db = Firestore.firestore()
     var userDataModel = [UserDataModel]()
@@ -138,6 +138,13 @@ extension SigninViewController: FUIAuthDelegate{
             let user_id = firebaseUserInstance.email
             let user_name = firebaseUserInstance.displayName!
             let profile_pic_url = firebaseUserInstance.photoURL?.absoluteString as! String
+            
+            let singletonValues = SharedValues.sharedInstance
+            
+            singletonValues.currentUserEmail = user_id
+            singletonValues.currentUserDisplayName = user_name
+            singletonValues.currentUserProfileImageURL = profile_pic_url
+            
             
             
             let currentUser = UserDataModel(user_id: user_id!, user_name: user_name, profile_pic_url: profile_pic_url, neighborhood: "")
