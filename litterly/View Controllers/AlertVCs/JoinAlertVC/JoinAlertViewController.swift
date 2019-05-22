@@ -67,7 +67,7 @@ class JoinAlertViewController: UIViewController, UICollectionViewDelegate, UICol
         
         let userId = sharedValue.currentUserEmail as! String
         let userPicUrl = sharedValue.currentUserProfileImageURL as! String
-        let meetupId = ("\(sharedValue.meetupDict.lat)\(sharedValue.meetupDict.lon)meetup")
+        let meetupId = ("\(sharedValue.tappedArrayElementDict.lat)\(sharedValue.tappedArrayElementDict.lon)meetup")
         
         updateConfirmedUsersArray(for: meetupId, with: userId, and: userPicUrl)
         
@@ -93,7 +93,7 @@ class JoinAlertViewController: UIViewController, UICollectionViewDelegate, UICol
     }
     
     func fetchMeetupDetails(){
-        let meetupId = ("\(sharedValue.meetupDict.lat)\(sharedValue.meetupDict.lon)meetup")
+        let meetupId = ("\(sharedValue.tappedArrayElementDict.lat)\(sharedValue.tappedArrayElementDict.lon)meetup")
         
         meetupDetailsFromFirestore(for: meetupId)
     }

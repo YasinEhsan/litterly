@@ -32,7 +32,7 @@ extension MapsViewController: GMSMapViewDelegate{
         
         //passing the data to the singleton
         let value = SharedValues.sharedInstance
-        value.meetupDict = trashModelArray[index]
+        value.tappedArrayElementDict = trashModelArray[index]
         
         let position = marker.position
         mapView.animate(toLocation: position)

@@ -24,6 +24,7 @@ extension UIColor{
     static let profileViewGray = UIColor(hex: 0xF7F7FA)
     static let backBarViewGray = UIColor(hex: 0x959DAD)
     static let joinAlertGrey = UIColor(hex: 0xB6B6B6)
+    static let meetupCardTint = UIColor(hex: 0x626FF8, a: 0.60)
     
     //init method for RGB type UIColor
     convenience init(red: Int, green: Int, blue: Int, a: CGFloat = 1.0){

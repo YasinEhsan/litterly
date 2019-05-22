@@ -1,23 +1,25 @@
 //
-//  EventsViewController.swift
+//  MetalMeetupViewController.swift
 //  litterly
 //
-//  Created by Joyce Huang on 4/25/19.
+//  Created by Joy Paul on 5/22/19.
 //  Copyright © 2019 Joy Paul. All rights reserved.
 //
 
 import UIKit
 
-class OrganicMeetupViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class MetalMeetupViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     @IBOutlet weak var embeddedTableview: UITableView!
-    var data = ["Organic Meetup", "Metal Meetup", "Plastic Meetup"]
-    var addressData = ["14 st Union Sq", "23rd street, Baruch college", "sdf"]
+    let sharedValues = SharedValues.sharedInstance
+    var queriedMeetupArray = [MeetupsQueryModel]()
     let indentifier = "CardContentTableViewCell"
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        fetchMetalMeetups()
         
         embeddedTableview.dataSource = self
         embeddedTableview.delegate = self
@@ -30,7 +32,11 @@ class OrganicMeetupViewController: UIViewController, UITableViewDelegate, UITabl
     
     // MARK: - TABLE VIEW DELEGATE & DATASOURCE
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return data.count
+        if queriedMeetupArray != nil{
+            return queriedMeetupArray.count
+        } else {
+            return 0
+        }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -47,8 +53,8 @@ class OrganicMeetupViewController: UIViewController, UITableViewDelegate, UITabl
         cell.iconImageButton.setImage(UIImage(named: "icons8-gears-100"), for: .normal)
         
         //passing data to the labels
-        cell.eventAddressLabel.text = addressData[indexPath.row]
-        cell.eventNameLabel.text = data[indexPath.row]
+        cell.eventAddressLabel.text = queriedMeetupArray[indexPath.row].meetup_address
+        cell.eventNameLabel.text = queriedMeetupArray[indexPath.row].meetup_date_time
         
         
         return cell
@@ -58,5 +64,4 @@ class OrganicMeetupViewController: UIViewController, UITableViewDelegate, UITabl
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
     }
-    
 }
