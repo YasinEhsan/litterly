@@ -18,7 +18,7 @@ class GeneralAlertViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.view.backgroundColor = UIColor.unselectedGrey.withAlphaComponent(0.35)
+        self.view.backgroundColor = .clear
         setupAnimation()
         //setupOkayButton()
     }

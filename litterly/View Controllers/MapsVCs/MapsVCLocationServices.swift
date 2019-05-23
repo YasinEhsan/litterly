@@ -9,6 +9,7 @@
 import GoogleMaps
 import UIKit
 import CoreLocation
+import GooglePlaces
 import Firebase
 
 //contains all the location permission related cods
@@ -135,7 +136,7 @@ extension MapsViewController: CLLocationManagerDelegate{
                 completionHandler(nil, nil, error)
             }
             
-            }.resume()
+        }.resume()
     }
     
     func updateUserCurrentNeighborhood(forUser id:String, with neighborhood:String){

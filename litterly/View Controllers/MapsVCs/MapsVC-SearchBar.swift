@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import GooglePlaces
+import GoogleMaps
 
 extension MapsViewController{
     
@@ -40,12 +42,13 @@ extension MapsViewController{
         
         searchView.addSubview(imageView)
         
-        let searchBox = UITextField()
+        
         searchBox.frame = CGRect(x: 73, y: 16, width: self.view.frame.width - 104, height: 24)
         searchBox.backgroundColor = UIColor.textWhite
         searchBox.textColor = UIColor.searchBoxTextGray
         searchBox.font = UIFont(name: "MarkerFelt-Wide", size: 16)
         searchBox.text = "Search a place?"
+        searchBox.addTarget(self, action: #selector(launchAutocomplete), for: .touchDown)
         searchBox.translatesAutoresizingMaskIntoConstraints = false
         searchView.addSubview(searchBox)
         

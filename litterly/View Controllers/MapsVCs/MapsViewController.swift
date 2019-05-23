@@ -12,7 +12,7 @@ import CoreLocation
 import Firebase
 import FirebaseFirestore
 
-class MapsViewController: UIViewController {
+class MapsViewController: UIViewController{
     
     var delegate: HomeControllerDelegate?
     
@@ -55,6 +55,8 @@ class MapsViewController: UIViewController {
         return bar
     }()
     
+    let searchBox = UITextField()
+    
     let db = Firestore.firestore()
     
     var trashModelArray = [TrashDataModel]()
@@ -85,7 +87,6 @@ class MapsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         initMapView()
         checkLocationServices()
         addSlideInCardToMapView()

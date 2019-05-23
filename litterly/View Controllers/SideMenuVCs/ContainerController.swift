@@ -95,6 +95,8 @@ class ContainerController: UIViewController{
                 //adding the blur effect
                 self.centerController.view.addSubview(self.blurEffectView)
                 
+                //add the gesture so user can tap to compress the panel
+                self.addGestureToBlurView()
                 
             }, completion: nil)
         } else {
@@ -117,6 +119,20 @@ class ContainerController: UIViewController{
         
         //also animate the status bar
         animateStatusBar()
+    }
+    
+    //add a gesture recognizer and a target
+    func addGestureToBlurView(){
+        let tapGesture = UITapGestureRecognizer()
+        
+        blurEffectView.addGestureRecognizer(tapGesture)
+        
+        tapGesture.addTarget(self, action: #selector(compressPanel))
+    }
+    
+    //calls handleMenuToggle to compress the menu
+    @objc func compressPanel(){
+        handleMenuToggle(forMenuOption: nil)
     }
     
     //tracks what menu option is currently selected, call your vc here

@@ -89,7 +89,7 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
         
         // create the button
         let backImage  = UIImage(named: "white_back_arrow")!.withRenderingMode(.alwaysOriginal)
-        let backButton = UIButton(frame: CGRect(x: 0, y: 0, width: 20, height: 20))
+        let backButton = UIButton(frame: CGRect(x: 0, y: 0, width: 30, height: 30))
         backButton.setBackgroundImage(backImage, for: .normal)
         backButton.addTarget(self, action: #selector(goBackToMap), for: .touchUpInside)
         
