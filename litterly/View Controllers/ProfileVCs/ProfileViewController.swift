@@ -31,12 +31,13 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
     let pointsVC:UIView = PointsViewController().view
 
     let trashTagAtt = ("---", "TRASHTAG")
-    let meetupAtt = ("0", "MEETUPS")
+    let meetupAtt = ("___", "MEETUPS")
     let pointsAtt = ("0", "POINTS")
     
     //firestore instance and the data model vars
     let db = Firestore.firestore()
     var userTaggedTrash = [TrashDataModel]()
+    var userCreatedMeetups = [MeetupsQueryModel]()
     var userBasicInfo:UserDataModel!
     
     override func viewDidLoad() {
@@ -60,14 +61,18 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
         tableView.dataSource = self
         tableView.delegate = self
         
-        tableView.rowHeight = 100
-        
-        //addViewsForContainer()
+        tableView.rowHeight = UITableView.automaticDimension
+        tableView.estimatedRowHeight = 100
+        tableView.separatorStyle = .none
         
         //set the count for the ctrls
         fetchUserTaggedTrash { (count) in
             print(count as! Int)
             self.segmentedCtrl.setTitle("\(count as! Int)\n\(self.trashTagAtt.1)", forSegmentAt: 0)
+        }
+        
+        fetchUserCreatedMeetup { (count) in
+            self.segmentedCtrl.setTitle("\(count as! Int)\n\(self.meetupAtt.1)", forSegmentAt: 1)
         }
         
         //gets basic user info and configures them
@@ -89,7 +94,7 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
         
         // create the button
         let backImage  = UIImage(named: "white_back_arrow")!.withRenderingMode(.alwaysOriginal)
-        let backButton = UIButton(frame: CGRect(x: 0, y: 0, width: 20, height: 20))
+        let backButton = UIButton(frame: CGRect(x: 0, y: 0, width: 30, height: 30))
         backButton.setBackgroundImage(backImage, for: .normal)
         backButton.addTarget(self, action: #selector(goBackToMap), for: .touchUpInside)
         
@@ -216,7 +221,7 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
     
     //the history label text and settings
     func configureMeetupHistoryLabel(){
-        meetupHistoryLabel.text = "Meetup History"
+        meetupHistoryLabel.text = "Tag History"
         meetupHistoryLabel.textColor = UIColor.searchBoxTextGray
         meetupHistoryLabel.font = UIFont(name: "MarkerFelt-Wide", size: 12)
         
@@ -241,41 +246,12 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
         tableView.register(MenuOptionCell.self, forCellReuseIdentifier: "MenuOptionCell")
     }
     
-    //the views that will trigger on tap
-//    func addViewsForContainer(){
-//
-//        containerView.translatesAutoresizingMaskIntoConstraints = false
-//        view.addSubview(containerView)
-//        containerView.topAnchor.constraint(equalTo: meetupHistoryLabel.bottomAnchor, constant: 12.4).isActive = true
-//        containerView.leftAnchor.constraint(equalTo: view.leftAnchor).isActive = true
-//        containerView.rightAnchor.constraint(equalTo: view.rightAnchor).isActive = true
-//        containerView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
-//
-//        containerView.addSubview(tagVC)
-//        containerView.addSubview(meetVC)
-//        containerView.addSubview(pointsVC)
-//    }
-//
-//    //setting views for cases
     @objc func segmentedControlValueChanged(_ sender: UISegmentedControl){
         //we animate the buttonBar to go underneath the selected control
         UIView.animate(withDuration: 0.3) {
             self.activeSegCtrlIndicator.frame.origin.x = (self.segmentedCtrl.frame.width / CGFloat(self.segmentedCtrl.numberOfSegments)) * CGFloat(self.segmentedCtrl.selectedSegmentIndex)
         }
 
-//        switch segmentedCtrl.selectedSegmentIndex{
-//        case 0:
-//            break
-//        case 1:
-//            break
-//        case 2:
-//            break
-//
-//        default:
-//            print("Whaaa")
-//        }
-
-        //on value change, reloadData()
         tableView.reloadData()
     }
     
@@ -287,14 +263,30 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
         switch(segmentedCtrl.selectedSegmentIndex)
         {
         case 0:
-            returnValue = 1
-            break
+            
+            meetupHistoryLabel.text = "Tag History"
+            
+            if userTaggedTrash != nil{
+                return userTaggedTrash.count
+            } else {
+                return 0
+            }
+            
         case 1:
-            returnValue = 2
-            break
+            
+            meetupHistoryLabel.text = "Meetup History"
+            
+            if userCreatedMeetups != nil{
+                return userCreatedMeetups.count
+            } else {
+                return 0
+            }
             
         case 2:
-            returnValue = 3
+            
+            meetupHistoryLabel.text = "Reedem your points"
+            
+            returnValue = 1
             break
             
         default:
@@ -308,29 +300,107 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
     //register the cell first and then call it here
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cell = tableView.dequeueReusableCell(withIdentifier: "MenuOptionCell", for: indexPath) as! MenuOptionCell
+        let cell = Bundle.main.loadNibNamed("ProfileVCTrashandMeetupsCell", owner: self, options: nil)?.first as! ProfileVCTrashandMeetupsCell
         
         switch(segmentedCtrl.selectedSegmentIndex)
         {
         case 0:
-            cell.iconImageView.image = UIImage(named: "52gps")
-            break
+            
+            let cell = Bundle.main.loadNibNamed("ProfileVCTrashandMeetupsCell", owner: self, options: nil)?.first as! ProfileVCTrashandMeetupsCell
+
+            cell.lineView.backgroundColor = UIColor.backBarViewGray
+            cell.buttonParentView.layer.cornerRadius = 12
+            
+            if userTaggedTrash[indexPath.row].is_meetup_scheduled {
+                cell.buttonParentView.backgroundColor = UIColor.trashOrange
+            } else{
+                cell.buttonParentView.backgroundColor = UIColor.unselectedGrey
+            }
+            
+            switch userTaggedTrash[indexPath.row].trash_type{
+            case "organic" :
+                cell.trashTypeButton.setImage(UIImage(named: "icons8-natural-food-100"), for: .normal)
+                    break
+            case "plastic" :
+                cell.trashTypeButton.setImage(UIImage(named: "icons8-plastic-100"), for: .normal)
+                    break
+            case "metal" :
+                cell.trashTypeButton.setImage(UIImage(named: "icons8-gears-100"), for: .normal)
+                break
+            default:
+                print("error")
+            }
+            
+            cell.addressLabel.textColor = UIColor.backBarViewGray
+            cell.dateAndTimeLabel.textColor = UIColor.containerDividerGrey
+            
+            cell.addressLabel.text = userTaggedTrash[indexPath.row].street_address
+            
+            if userTaggedTrash[indexPath.row].is_meetup_scheduled {
+                cell.dateAndTimeLabel.text = "Meetup has been scheduled"
+            } else{
+                cell.dateAndTimeLabel.text = "Awaiting meetup"
+            }
+            
+            cell.selectionStyle = .none
+            return cell
+            
         case 1:
-            cell.iconImageView.image = UIImage(named: "52gps")
-            break
+            let cell = Bundle.main.loadNibNamed("ProfileVCTrashandMeetupsCell", owner: self, options: nil)?.first as! ProfileVCTrashandMeetupsCell
+            
+            cell.lineView.backgroundColor = UIColor.backBarViewGray
+            cell.buttonParentView.layer.cornerRadius = 12
+            cell.buttonParentView.backgroundColor = UIColor.trashOrange
+            cell.addressLabel.textColor = UIColor.backBarViewGray
+            cell.dateAndTimeLabel.textColor = UIColor.containerDividerGrey
+            
+            switch userCreatedMeetups[indexPath.row].type_of_trash{
+            case "organic" :
+                cell.trashTypeButton.setImage(UIImage(named: "icons8-natural-food-100"), for: .normal)
+                break
+            case "plastic" :
+                cell.trashTypeButton.setImage(UIImage(named: "icons8-plastic-100"), for: .normal)
+                break
+            case "metal" :
+                cell.trashTypeButton.setImage(UIImage(named: "icons8-gears-100"), for: .normal)
+                break
+            default:
+                print("error")
+            }
+            
+            cell.addressLabel.text = userCreatedMeetups[indexPath.row].meetup_address
+            cell.dateAndTimeLabel.text = userCreatedMeetups[indexPath.row].meetup_date_time
+            
+            cell.selectionStyle = .none
+            return cell
             
         case 2:
-            cell.iconImageView.image = UIImage(named: "52gps")
-            break
+            
+            let cell = Bundle.main.loadNibNamed("RedeemPointsCell", owner: self, options: nil)?.first as! RedeemPointsCell
+            
+            cell.redeemButton.layer.cornerRadius = 12
+            
+            cell.selectionStyle = .none
+            return cell
             
         default:
             break
             
         }
         
-        return cell
+        cell.selectionStyle = .none
+         return cell
     }
     
-    
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        let rotationTransform = CATransform3DTranslate(CATransform3DIdentity, 0, 50, 0)
+        cell.layer.transform = rotationTransform
+        cell.alpha = 0
+        
+        UIView.animate(withDuration: 0.75) {
+            cell.layer.transform = CATransform3DIdentity
+            cell.alpha = 1.0
+        }
+    }
 
 }

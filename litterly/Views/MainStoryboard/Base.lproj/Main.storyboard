@@ -149,26 +149,26 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Q5r-Pu-aCL">
-                                <rect key="frame" x="0.0" y="20" width="375" height="230"/>
+                                <rect key="frame" x="0.0" y="20" width="375" height="165"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="blue" translatesAutoresizingMaskIntoConstraints="NO" id="oPJ-aF-EJb">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="230"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="165"/>
                                     </imageView>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="RB0-07-RKq">
-                                        <rect key="frame" x="123.5" y="6.5" width="128" height="128"/>
+                                        <rect key="frame" x="153.5" y="1.5" width="68" height="68"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="128" id="Fj7-2I-cew"/>
-                                            <constraint firstAttribute="width" constant="128" id="xrC-5L-7JG"/>
+                                            <constraint firstAttribute="height" constant="68" id="Fj7-2I-cew"/>
+                                            <constraint firstAttribute="width" constant="68" id="xrC-5L-7JG"/>
                                         </constraints>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Placeholder Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xc8-yC-JvR">
-                                        <rect key="frame" x="94" y="141.5" width="187.5" height="32"/>
+                                        <rect key="frame" x="94" y="76.5" width="187.5" height="32"/>
                                         <fontDescription key="fontDescription" name="MarkerFelt-Wide" family="Marker Felt" pointSize="24"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Placeholder City" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mys-1w-whL">
-                                        <rect key="frame" x="130" y="180.5" width="115" height="21"/>
+                                        <rect key="frame" x="130" y="115.5" width="115" height="21"/>
                                         <fontDescription key="fontDescription" name="MarkerFelt-Wide" family="Marker Felt" pointSize="16"/>
                                         <color key="textColor" red="0.96078431369999995" green="0.95686274510000002" blue="0.98039215690000003" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
@@ -182,7 +182,7 @@
                                     <constraint firstAttribute="trailing" relation="lessThanOrEqual" secondItem="mys-1w-whL" secondAttribute="trailing" constant="139" id="Q4T-1S-wb9"/>
                                     <constraint firstItem="Xc8-yC-JvR" firstAttribute="top" secondItem="RB0-07-RKq" secondAttribute="bottom" constant="7" id="QjX-ZB-DtQ"/>
                                     <constraint firstItem="mys-1w-whL" firstAttribute="centerX" secondItem="Q5r-Pu-aCL" secondAttribute="centerX" id="U1U-oV-pG0"/>
-                                    <constraint firstAttribute="height" constant="230" id="WA7-2x-6FC"/>
+                                    <constraint firstAttribute="height" constant="165" id="WA7-2x-6FC"/>
                                     <constraint firstAttribute="bottom" secondItem="mys-1w-whL" secondAttribute="bottom" constant="28.68" id="Yfs-MZ-dL2"/>
                                     <constraint firstItem="oPJ-aF-EJb" firstAttribute="leading" secondItem="Q5r-Pu-aCL" secondAttribute="leading" id="eEH-aP-2pJ"/>
                                     <constraint firstItem="RB0-07-RKq" firstAttribute="centerX" secondItem="Q5r-Pu-aCL" secondAttribute="centerX" id="js9-eX-ywo"/>

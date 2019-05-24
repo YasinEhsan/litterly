@@ -31,7 +31,40 @@ extension ProfileViewController{
             }
             
             completion(self.userTaggedTrash.count as Int)
+            self.tableView.reloadData()
             //print(self.userTaggedTrash.count as Int)
+        }
+        
+        
+    }
+    
+    func fetchUserCreatedMeetup(completion: @escaping (Int?) -> ()){
+        let currentUserId = Auth.auth().currentUser?.email
+        let trashTagCountQuery = db.collection("Meetups").whereField("author_id", isEqualTo: "\(currentUserId! as String)" )
+        
+        trashTagCountQuery.getDocuments(){
+            QuerySnapshot, Error in
+            
+            guard let snapShot = QuerySnapshot else {return}
+            
+            snapShot.documents.forEach{
+                data in
+                
+                //print(data.data())
+                
+                let address = data.data()["meetup_address"]
+                let meetup_date_time = data.data()["meetup_date_time"]
+                let type_of_trash = data.data()["type_of_trash"]
+                
+                let dataToAppend = MeetupsQueryModel(meetup_address: address as! String, meetup_date_time: meetup_date_time as! String, type_of_trash: type_of_trash as! String)
+                
+                self.userCreatedMeetups.append(dataToAppend)
+                
+            }
+            
+            completion(self.userCreatedMeetups.count)
+            print(self.userCreatedMeetups)
+            self.tableView.reloadData()
         }
         
     }
