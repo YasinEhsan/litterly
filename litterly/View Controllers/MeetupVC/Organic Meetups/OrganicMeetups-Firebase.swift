@@ -26,7 +26,7 @@ extension OrganicMeetupViewController{
                 let meetupAddress = data["meetup_address"] as! String
                 let meetupDateAndTime = data["meetup_date_time"] as! String
                 
-                let dataToAppend = MeetupsQueryModel(meetup_address: meetupAddress, meetup_date_time: meetupDateAndTime)
+                let dataToAppend = MeetupsQueryModel(meetup_address: meetupAddress, meetup_date_time: meetupDateAndTime, type_of_trash: "")
                 
                 self.queriedMeetupArray.append(dataToAppend)
                 

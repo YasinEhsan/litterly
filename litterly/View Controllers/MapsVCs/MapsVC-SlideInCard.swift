@@ -110,8 +110,10 @@ extension MapsViewController{
                     //TODO add a blur effect to the nav bar
                     self.navigationController?.navigationBar.isUserInteractionEnabled = false
                     self.cardViewController.view.frame.origin.y = self.view.frame.height - self.cardHeight
+                    self.cardViewController.arrowImage.image = UIImage(named: "down_arrow")
                 case .collapsed:
                     self.cardViewController.view.frame.origin.y = self.view.frame.height - self.cardHandleAreaHeight
+                    self.cardViewController.arrowImage.image = UIImage(named: "up_arrow")
                 }
             }
             
